@@ -15,8 +15,13 @@
 <div class="intransparent">
     <div class="hellohello">
         <div class="text-center">
+            <img src="<?php echo get_stylesheet_directory_uri()?>/text.svg" alt="" />
         </div>
     </div>
+</div>
+
+<div class="intransparent-after">
+
 </div>
 
 <!-- Another section

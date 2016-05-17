@@ -51,8 +51,8 @@ $('.annonces-container').owlCarousel({
 </script>
 <script type="text/javascript">
 	$('a').on('click', function(){
-		//$('.appear').removeClass('animated fadeInUp');
-		//$('.appear').addClass('animated fadeOutUp');
+		$('.appear').removeClass('animated fadeInUp');
+		$('.appear').addClass('animated fadeOutUp');
 	});
 
 	var lanavigation = $(".navigation-header");
@@ -66,11 +66,11 @@ $('.annonces-container').owlCarousel({
 	});
 
 	$(".intransparent").on('inview', function(event, isInView) {
-		if (isInView) {
+		/*if (isInView) {
 			$('.video-bg').show();
 		} else {
 			$('.video-bg').hide();
-		}
+		}*/
 	});
 
 	$('.inzer').on('mouseenter', function(){
