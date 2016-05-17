@@ -1,0 +1,128 @@
+/* Navigation breakpoints */
+
+.desktop-menu, .top-bar-left {
+  @include show-for(medium);
+}
+
+#mobile-menu, .title-bar {
+  @include hide-for(medium);
+}
+
+/* Mobile menu */
+
+.off-canvas {
+ > ul.menu {
+    height: 100vh;
+    padding: 1rem;
+  }
+}
+
+.title-bar-title {
+  a {
+    font-size: 1rem;
+    color: #B9B9B9;
+  }
+}
+
+/* Tablet and desktop menu */
+
+.fixednav{
+
+  width:100%;
+  height:50px;
+  position:fixed;
+  background:black;
+  z-index:999;
+  transition:0.5s;
+  opacity:0;
+}
+
+.scaled{
+    transform:scale(1.5);
+
+}
+
+.navigation-top{
+    margin-bottom:20px;
+    text-transform:uppercase;
+    font-weight:bold;
+    top:0;
+
+    .centered-nav{
+        margin-top:50px;
+        text-align:center;
+
+        .menu{
+            width:100%;
+
+            a{
+
+            }
+        }
+
+        li{
+            display:inline-block;
+            padding-left:30px;
+            padding-right:30px;
+
+            a{
+                color:black;
+                // padding-left:10px;
+                // padding-right:10px;
+                letter-spacing:2px;
+                padding-bottom:10px;
+                // border-bottom:3px solid black;
+
+                &:hover{
+                    //background:black;
+                    //color:white;
+                }
+            }
+        }
+    }
+}
+
+.top-bar {
+    text-align:center;
+
+  .menu .home a {
+    font-size: 1rem;
+    color: #000;
+  }
+
+  .menu a {
+    height: 45px;
+    line-height: 45px;
+    text-transform:uppercase;
+    color: #000;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align:center;
+    line-height: 1;
+
+    &:hover:not(.button) {
+      //background-color: #2a2a2a;
+    }
+  }
+
+  .menu>li:not(.menu-text)>a { padding: 1rem; }
+  .menu li:not(:last-child) { /*border-right: 1px solid #4e4e4e;*/ }
+
+  .dropdown.menu .submenu {
+    background-color: #121212;
+    color: #e6e6e6;
+    border: 0;
+  }
+
+  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
+
+  .dropdown.menu:first-child >
+    li.is-dropdown-submenu-parent >
+    a::after {
+      display: none;
+    }
+
+}

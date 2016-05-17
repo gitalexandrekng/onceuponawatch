@@ -1,0 +1,286 @@
+h3{
+    text-transform: uppercase;
+}
+
+.title{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+
+    h3{
+        position:relative;
+        z-index:10;
+        border-bottom:12px inset #d7eefa;
+        padding-left:5px;
+        padding-right:5px;
+        height:40px;
+    }
+}
+
+hr{
+    height:1px;
+    border:0;
+    background:#000;
+    width:100%;
+}
+
+.description{
+
+    .citation{
+        font-family: "Merriweather";
+        display: block;
+        margin-bottom:30px;
+    }
+}
+
+.last-articles{
+    text-align:center;
+    margin-top:50px;
+
+    .article-subtitle{
+        display:block;
+        font-family: "Merriweather";
+        margin-top:10px;
+    }
+
+    .article-title{
+        display:block;
+        font-size:24px;
+        color:#828080;
+        text-transform: uppercase;
+        margin-bottom:10px;
+    }
+}
+
+.article-in{
+    position:relative;
+
+    .fade{
+        display:none;
+        position:absolute;
+        top:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.8);
+        z-index:10;
+    }
+
+    #yesplease{
+        position:relative;
+        z-index:200;
+    }
+
+    &:hover{
+    }
+}
+
+.bestseller{
+    text-align:center;
+    margin-top:50px;
+
+    .article-subtitle{
+        display:block;
+        font-family: "Merriweather";
+        margin-top:10px;
+    }
+
+    .article-title{
+        display:block;
+        font-size:24px;
+        color:#828080;
+        text-transform: uppercase;
+        margin-bottom:10px;
+    }
+}
+
+.promotions-container{
+    padding-left::20px;
+    padding-right:20px;
+
+    .promotions{
+        display:flex;
+
+        .dismoi{
+            //display: block;
+            display:none;
+            color:black;
+            border:1px solid black;
+            width:50%;
+            padding:10px;
+            margin:10px auto 5px auto;
+        }
+
+        .indiv{
+            display:block;
+            width:33.33%;
+            text-align:center;
+            padding:10px;
+            text-transform: uppercase;
+            font-size:14px;
+            color:black;
+            transition: 0.5s;
+
+            &:hover{
+            }
+        }
+
+        .indiv-left{
+            background:#dceedc;
+            margin-right:10px;
+
+            &:hover{
+                background:darken(#dceedc, 10%);
+            }
+        }
+
+        .indiv-middle{
+            background:#ffe7d5;
+            margin-left:10px;
+
+            &:hover{
+                background:darken(#ffe7d5, 10%);
+            }
+        }
+
+        .indiv-right{
+            margin-left:10px;
+        }
+    }
+}
+
+.annonces{
+    margin-top:50px;
+    color:white;
+
+    .annonces-container{
+
+        .in{
+            background-position: center;
+            background-size:cover;
+            height:400px;
+            width:100%;
+
+            .texte{
+                height:100%;
+                width:50%;
+                display:flex;
+
+                .inset{
+                    margin:auto;
+                    text-align:center;
+                    padding:10px;
+                }
+            }
+        }
+
+        .owl-dots{
+            padding-top:10px;
+            width:100%;
+            text-align: center;
+
+            .owl-dot{
+                height:10px;
+                width:10px;
+                background:#BBB;
+                display:inline-block;
+                border-radius:50%;
+                margin:0px 4px 0px 4px;
+                transition:0.5s;
+
+                &:hover{
+                    background:#666;
+                }
+            }
+
+            .active{
+                background:#666;
+            }
+        }
+    }
+}
+
+.collections{
+    margin-top:50px;
+    position:relative;
+
+    .in-collections{
+        position:relative;
+
+        .left{
+            height:400px;
+            width:100%;
+            background:url(../../images/visuel1.jpg);
+            background-size:cover;
+        }
+
+        .right{
+            height:400px;
+            width:100%;
+            background:url(../../images/visuel2.jpg);
+            background-size:cover;
+        }
+    }
+
+    .channel-style{
+        position:absolute;
+        top:50px;
+        left:0;
+        right:0;
+        margin:auto;
+
+        .channel-texte{
+            height:300px;
+            background:rgba(255,255,255,0.7);
+            padding:15px;
+
+            .in{
+                border:1px solid rgba(0,0,0,0.3);
+                height:100%;
+                padding:10px;
+                display:flex;
+
+                .inz{
+                    text-align:center;
+                    margin:auto;
+                }
+            }
+        }
+    }
+}
+
+.brands{
+    display:none;
+    margin-top:50px;
+    text-align:center;
+
+    .logo-in{
+        text-align: center;
+
+        .logo-content{
+            img{
+            }
+        }
+    }
+}
+
+.excellence-band{
+    background:url(../../images/parallax.jpg) center fixed no-repeat;
+    background-size:cover;
+    padding-top:100px;
+    padding-bottom:100px;
+    color:white;
+    text-align:center;
+    margin-top:50px;
+    margin-bottom:50px;
+
+    hr{
+        background:white;
+        width:100px;
+    }
+
+    .in{
+        width:50%;
+        margin:auto;
+        padding-bottom:20px;
+    }
+}

@@ -1,0 +1,27 @@
+.fixed-navi{
+    background:rgba(255,255,255,1);
+    position:fixed;
+    font-weight:bold;
+    top:0;
+    margin:auto;
+    width:100%;
+    z-index:800;
+    opacity:0;
+    transition:0.5s;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-transform: uppercase;
+
+    ul{
+        margin:0;padding:0;
+
+        li{
+            font-size:14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right:20px;
+            margin-left:20px;
+        }
+    }
+}

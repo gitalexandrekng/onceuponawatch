@@ -1,0 +1,226 @@
+.site-header{
+    display:none;
+}
+
+html, body{
+    height:100%;
+}
+
+body{opacity:1;}
+
+.appear{
+    opacity:0;
+    height:100%;
+}
+
+.custom-button{
+    @extend .button;
+    background:black;
+    transition:0.5s;
+    font-family: "Raleway";
+    text-transform: uppercase;
+
+    &:hover{
+        border:1px solid white;
+        background:transparent;
+    }
+}
+
+.custom-button-reverse-white{
+    @extend .button;
+    background:transparent;
+    transition:0.5s;
+    font-family: "Raleway";
+    text-transform: uppercase;
+    border:1px solid white;
+
+    &:hover{
+        border:1px solid black;
+        background:black;
+    }
+}
+
+.custom-button-reverse{
+    @extend .button;
+    background:transparent;
+    transition:0.5s;
+    font-family: "Raleway";
+    text-transform: uppercase;
+    border:1px solid black;
+    color:black;
+
+    &:hover{
+        background:black;
+    }
+}
+
+.custom-header{
+    display: table;
+    height:100%;
+    width:100%;
+    //background:#CCC;
+    position:relative;
+
+    .infos{
+        //display: table-row;
+        width:100%;
+        position:relative;
+        text-transform:uppercase;
+        font-family:"Raleway";
+        font-size:11px;
+        padding-top:5px;
+        letter-spacing: 2px;
+
+        .left-infos{
+        }
+
+        .right-infos{
+            position:absolute;
+            right:0;
+        }
+
+        ul{
+            display:inline-block;
+
+            li{
+                display:inline-block;
+                margin-right:30px;
+
+                a{
+                    color:#afafaf;
+                }
+            }
+        }
+    }
+
+    .navigation-header{
+        display:table-row;
+        width:100%;
+        font-family:"Montserrat";
+        text-transform: uppercase;
+
+        .navigation-container{
+            display:table-cell;
+
+            .in-navigation{
+                text-align: center;
+                padding-top:60px;
+                padding-bottom:20px;
+
+                ul{
+                    margin:0;padding:0;
+
+                    li{
+                        font-size:14px;
+                        letter-spacing: 1px;
+                        display: inline-block;
+                        margin-right:20px;
+                        margin-left:20px;
+                    }
+                }
+            }
+        }
+    }
+
+    #title-header{
+        display: table-row;
+        margin-bottom:40px;
+        text-align: center;
+
+        .in-title{
+            font-size:30px;
+            font-family:"Merriweather";
+        }
+
+        .subtitle{
+            display:block;
+            font-size:11px;
+            font-family:"Raleway";
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    }
+
+    .wrapper{
+        display: table-row;
+        height:100%;
+
+        .header-image-container{
+            display:table-cell;
+            height:100%;
+            padding:20px 20px 20px 20px;
+            width:100%;
+
+            .in{
+                height:100%;
+                width:100%;
+                background-image:url(../../images/hands.jpg);
+                background-size:cover;
+                position:relative;
+                text-align:center;
+                background-attachment:fixed;
+
+                .left-citation{
+                    position:absolute;
+                    padding:0px 100px 50px 100px;
+                    bottom:0;
+                    left:0;
+
+                    .citation-header{
+                        font-family: "Merriweather";
+                        color:white;
+                        font-size:24px;
+                    }
+
+                    .auteur-header{
+                        font-family: "Montserrat";
+                        display:block;
+                        color:white;
+                        margin:10px auto 30px auto;
+                        text-align:right;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .searchbar{
+                    width:800px;
+                    margin-left:auto;
+                    margin-right:auto;
+                    left:0;
+                    right:0;
+                    top:-20px;
+                    position:absolute;
+
+                    .probox{
+                        background-color:transparent !important;
+                        border:0px !important;
+                        box-shadow:0px 0px 0px !important;
+
+                        input{
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.reassurance{
+    display:none;
+    .theimage{
+        text-align:center;
+
+        span{
+            display:block;
+            margin-top:10px;
+            font-size:12px;
+            text-transform: uppercase;
+            font-family: "Montserrat"
+        }
+
+        img{
+            width:40px;
+            height:auto;
+        }
+    }
+}

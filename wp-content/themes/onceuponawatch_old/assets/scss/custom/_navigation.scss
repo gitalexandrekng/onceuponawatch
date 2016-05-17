@@ -1,0 +1,36 @@
+.fixed-navi{
+    background:rgba(255,255,255,1);
+    position:fixed;
+    font-weight:bold;
+    top:0;
+    margin:auto;
+    width:100%;
+    z-index:800;
+    opacity:0;
+    transition:0.5s;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+
+    ul{
+        margin:0;padding:0;
+
+        .active{
+            background-color:transparent;
+
+            a{
+                background:transparent;
+                color:black;
+                border-bottom:5px solid black;
+            }
+        }
+
+        li{
+            font-size:14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right:20px;
+            margin-left:20px;
+        }
+    }
+}
