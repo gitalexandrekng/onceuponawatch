@@ -27,6 +27,14 @@ function foundationpress_sidebar_widgets() {
 	  'before_title' => '<h6>',
 	  'after_title' => '</h6>',
 	));
+
+	register_sidebar(array(
+	  'id' => 'filtres-woocommerce',
+	  'name' => __( 'Widgets woocommerce', 'foundationpress' ),
+	  'description' => __( 'Drag widgets to this woocommerce', 'foundationpress' ),
+	  'before_title' => '<h6>',
+	  'after_title' => '</h6>',
+	));
 }
 
 add_action( 'widgets_init', 'foundationpress_sidebar_widgets' );

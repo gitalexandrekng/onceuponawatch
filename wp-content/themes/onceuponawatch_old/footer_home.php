@@ -45,7 +45,7 @@
 
     <div class="row" style="margin-top:30px;">
         <div class="small-4 columns">
-            <div class="photo"><img src="http://images.twistmagazine.com/uploads/posts/image/74485/cara-delevingne.jpg" alt=""></div>
+            <div class="photo"><img src="http://images.j-14.com/uploads/posts/image/78599/camila-cabello-ikwydls.jpg" alt=""></div>
             <div class="thename">Cara Delevingne</div>
             <div class="theavis">
                 <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
@@ -79,7 +79,7 @@
                     <div class="text-center"><input type="submit" class="custom-button-reverse" value="Envoyer"></div>
                 </form>
             <?php } else { ?>
-                Pas bonjour
+                Il faut être connecté pour pouvoir donner votre avis.
             <?php } ?>
         </div>
     </div>

@@ -18,9 +18,9 @@
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/components/owl.carousel/dist/assets/owl.carousel.min.css" media="screen" title="no title" charset="utf-8">
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
         <script>
-		/*$(window).load(function(){
+		$(window).load(function(){
         	$('.appear').addClass('animated fadeInUp');
-        });*/
+        });
 		</script>
 
 		<?php wp_head(); ?>

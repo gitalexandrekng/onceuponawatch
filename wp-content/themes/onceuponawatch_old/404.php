@@ -9,7 +9,7 @@
 get_header(); ?>
 
 <div class="row">
-	<div class="small-12 large-8 columns" role="main">
+	<div class="small-12 large-12 columns" role="main">
 
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<header>
@@ -29,6 +29,5 @@ get_header(); ?>
 		</article>
 
 	</div>
-	<?php get_sidebar(); ?>
 </div>
 <?php get_footer();

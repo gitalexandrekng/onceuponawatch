@@ -105,6 +105,24 @@ hr{
     text-align:center;
     padding-top:50px;
 
+    .product-link{
+        display:block;
+        overflow:hidden;
+
+        #left-disappear{
+            opacity:0;
+            margin-left:-250px;
+            transition:0.5s;
+            border-bottom:4px solid #d7eefa;
+        }
+    }
+
+    .image-product{
+        img{
+            transition:2s;
+        }
+    }
+
     .article-subtitle{
         display:block;
         font-family: "Merriweather";

@@ -9,7 +9,7 @@ html, body{
 body{overflow-x:hidden;}
 
 .appear{
-    opacity:1;
+    opacity:0;
     height:100%;
 }
 
@@ -92,7 +92,7 @@ body{overflow-x:hidden;}
 
     .navigation-header{
         width:100%;
-        font-family:"Montserrat";
+        margin-bottom:20px;
         text-transform: uppercase;
 
         .navigation-container{
@@ -156,13 +156,14 @@ body{overflow-x:hidden;}
     }
 
     .wrapper{
-        height:400px;
+        height:500px;
+        padding:0px 20px 20px 20px;
 
         .header-image-container{
             height:100%;
             //padding:20px 20px 20px 20px;
-            padding-bottom:20px;
-            padding-top:20px;
+            //padding-bottom:20px;
+            //padding-top:20px;
             width:100%;
 
             .in{
@@ -170,32 +171,23 @@ body{overflow-x:hidden;}
                 width:100%;
                 background-image:url(../../images/walpp.jpg);
                 background-size:cover;
+                background-attachment: fixed;
                 position:relative;
                 text-align:center;
-                background-attachment:fixed;
 
-                .left-citation{
-                    display: none;
+                .scrollsvpcontain{
+                    width:100%;
                     position:absolute;
-                    padding:0px 100px 50px 100px;
                     bottom:0;
-                    left:0;
-                    /*right:0;
-                    margin:auto;*/
 
-                    .citation-header{
-                        font-family: "Merriweather";
-                        color:white;
-                        font-size:24px;
-                    }
-
-                    .auteur-header{
-                        font-family: "Montserrat";
-                        display:block;
-                        color:white;
-                        margin:10px auto 30px auto;
-                        text-align:right;
-                        text-transform: uppercase;
+                    .scrollsvp{
+                        width:100px;
+                        height:100px;
+                        background:white;
+                        transform:rotate(45deg);
+                        margin-bottom:-50px;
+                        margin-left:auto;
+                        margin-right:auto;
                     }
                 }
 
@@ -233,7 +225,7 @@ body{overflow-x:hidden;}
             margin-top:10px;
             font-size:12px;
             text-transform: uppercase;
-            font-family: "Montserrat"
+            // font-family: "Montserrat"
         }
 
         img{
