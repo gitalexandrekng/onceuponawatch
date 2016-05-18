@@ -47,3 +47,46 @@
         }
     }
 }
+
+// Pafe produit
+
+.custom-title-produit{
+    max-width:1200px;
+    margin:auto;
+}
+
+.custom-li{
+    // background:#d7eefa !important;
+    border-radius:0 !important;
+
+    &:after{
+        display:none;
+    }
+
+    &:before{
+        display:none;
+    }
+}
+
+.custom-h2{
+    text-transform: uppercase;
+}
+
+.tabs{
+    border:0;
+
+
+    &:before{
+        display:none;
+    }
+}
+
+.wc-tabs{
+
+    &:before{
+    }
+}
+
+.additional_information_tab{
+    border:1px solid black;
+}
