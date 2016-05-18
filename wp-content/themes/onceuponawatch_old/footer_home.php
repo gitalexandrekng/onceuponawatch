@@ -1,7 +1,7 @@
 <!-- Excellence bandeau
 ======================= -->
 
-<section class="excellence-band">
+<section class="excellence-band" STYLE="DISPLAY:NONE;">
     <div class="fade">
         <h3>L'excellence d'un tout nouveau genre</h3>
         <hr>

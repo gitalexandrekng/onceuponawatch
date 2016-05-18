@@ -27,11 +27,18 @@
 </div><!-- Close off-canvas content wrapper -->
 <?php endif; ?>
 
+<?php if (is_page( 43 )){
+
+	echo 'Je suis sur la page contact';
+}
+
+?>
+
 <script src="<?php echo get_stylesheet_directory_uri() ?>/jquery.parallax.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	//$('.excellence-band').parallax("50%", 0.5);
-	//$('.header-image-container .in').parallax("50%", 0.5);
+	$('.excellence-band').parallax("50%", 0.5);
+	$('.header-image-container .in').parallax("50%", 0.5);
 })
 </script>
 
@@ -52,6 +59,8 @@ $('.annonces-container').owlCarousel({
 </script>
 <script type="text/javascript">
 	$('a.add_to_cart_button').addClass('non');
+
+	$('.star-rating').css('margin', 'auto');
 
 	$('body').on('click', "a:not('.non')", function(){
 		/*$('.appear').removeClass('animated fadeInUp');

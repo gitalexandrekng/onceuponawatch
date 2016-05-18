@@ -160,7 +160,9 @@ body{overflow-x:hidden;}
 
         .header-image-container{
             height:100%;
-            padding:20px 20px 20px 20px;
+            //padding:20px 20px 20px 20px;
+            padding-bottom:20px;
+            padding-top:20px;
             width:100%;
 
             .in{
@@ -170,7 +172,7 @@ body{overflow-x:hidden;}
                 background-size:cover;
                 position:relative;
                 text-align:center;
-                //background-attachment:fixed;
+                background-attachment:fixed;
 
                 .left-citation{
                     display: none;
