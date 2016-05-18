@@ -13,7 +13,8 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+get_header();
+?>
 
 <section class="intheblog">
 

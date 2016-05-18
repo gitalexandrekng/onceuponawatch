@@ -16,12 +16,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/components/animate.css/animate.min.css" charset="utf-8">
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/components/owl.carousel/dist/assets/owl.carousel.min.css" media="screen" title="no title" charset="utf-8">
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-		<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/components/scrollme/jquery.scrollme.min.js" type="text/javascript"></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
         <script>
-		$(window).load(function(){
+		/*$(window).load(function(){
         	$('.appear').addClass('animated fadeInUp');
-        });
+        });*/
 		</script>
 
 		<?php wp_head(); ?>
@@ -42,7 +41,7 @@
     <div id="openLogin" class="loginDialog">
     	<div class="inlogin">
     		<div class="texte">
-                <a href="#close" title="Close" class="close"><i class="fa fa-times-circle-o"></i></a>
+                <a href="#close" title="Close" class="close non"><i class="fa fa-times-circle-o"></i></a>
         		<div class="title">
         		    <h3>Connexion</h3>
         		</div>
@@ -71,17 +70,9 @@
 
     <div class="appear">
 
-		<?php
+        <?php include('custom-header.php') ?>
 
-		if (is_home()){
-
-			include("header-home.php");
-
-		} else {
-			include("header-other.php");
-		}
-
-		?>
+		<?php if (is_home()){ include("custom-homepage.php"); } ?>
 
 	<div style="height:100%" class="container">
 		<?php do_action( 'foundationpress_after_header' );

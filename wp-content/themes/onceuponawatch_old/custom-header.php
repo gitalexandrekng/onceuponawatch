@@ -7,9 +7,17 @@
             <li><a href="#">Besoin d'aide ?</a></li>
         </ul>
         <ul class="right-infos">
-            <li><a href="#openLogin">S'identifier</a></li>
-            <li><a href="#">Panier</a></li>
+            <li><?php if (is_user_logged_in()){ echo '<a href="' . wp_logout_url( site_url( '/' ) ) .'">Se déconnecter</a>'; } else { ?><a href="#openLogin" class="non">S'identifier</a><?php } ?></li>
+            <li><?php if (is_user_logged_in()){ ?><a href="<?php echo bloginfo('home')?>/mon-compte/">Mon compte</a><?php } ?></li>
+            <li><a href="#openBasket" class="non openBasket">Panier</a></li>
         </ul>
+    </div>
+
+    <!-- Le panier -->
+    <div class="lepanier">
+        <div class="title">
+            <h3>Panier</h3>
+        </div>
     </div>
 
     <!-- Titre -->

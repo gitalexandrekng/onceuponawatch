@@ -1,56 +1,3 @@
-<section class="custom-header">
-
-    <!-- Informations de langues -->
-    <div class="infos">
-        <ul class="left-infos">
-            <li><a href="#">FR</a></li>
-            <li><a href="#">Besoin d'aide ?</a></li>
-        </ul>
-        <ul class="right-infos">
-            <li><a href="#openLogin">S'identifier</a></li>
-            <li><a href="#">Panier</a></li>
-        </ul>
-    </div>
-
-    <!-- Titre -->
-    <div id="title-header">
-        <span class="in-title">Once upon a Watch</span>
-        <span class="subtitle">A chaque montre son histoire</span>
-    </div>
-
-    <!-- Navigation -->
-    <div class="navigation-header">
-        <div class="navigation-container">
-            <div class="in-navigation">
-                <?php wp_nav_menu( array( 'theme_location' => 'headmenu' ) ); ?>
-            </div>
-        </div>
-    </div>
-
-    <!-- Image -->
-    <div class="wrapper">
-        <div class="header-image-container">
-            <div class="in">
-                <div class="row">
-                    <div class="small-6 columns end left-citation">
-                        <span class="citation-header">« Le style est une manière de dire qui vous êtes sans parler. »</span>
-                        <span class="auteur-header">- Rachel zoe</span>
-                        <div class="row">
-                            <div class="small-6 columns">
-                                <a href="#" class="custom-button" style="width:100%">Toutes les montres</a>
-                            </div>
-                            <div class="small-6 columns">
-                                <a href="#" class="custom-button-reverse-white" id="reverse" style="width:100%">Collections</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="searchbar"><?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?></div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Promotions
 =================== -->
 
@@ -68,54 +15,45 @@
 
 <section class="last-articles">
 
-    <div class="title">
-        <h3>Derniers articles</h3>
-    </div>
-    <div class="row">
-        <div class="small-4 small-centered columns">
-            <div class="description">
-                <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
-                <hr>
-                <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+    <div>
+        <div class="title">
+            <h3>Derniers articles</h3>
+        </div>
+        <div class="row">
+            <div class="small-4 small-centered columns">
+                <div class="description">
+                    <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
+                    <hr>
+                    <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+                </div>
             </div>
         </div>
     </div>
 
     <article>
+
         <div class="row">
+
+            <?php
+            $args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 4, 'orderby' =>'date','order' => 'DESC' );
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post(); global $product;
+            ?>
+
             <div class="small-3 columns">
-                <a href="#" class="product-link">
-                    <div class="image-product"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/watch-last.jpg" alt=""></div>
-                    <span class="article-subtitle">Oyster perpetual</span>
+                <a href="<?php the_permalink(); ?>" class="product-link" title="<?php the_title(); ?>">
+                    <div class="image-product"><?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" />'; ?></div>
+                    <span class="article-subtitle"><?php the_title(); ?></span>
                     <span class="article-title">Oyster perpetual</span>
+                    <span class="price" style="display:none;"><?php echo $product->get_price_html(); ?></span>
                     <button class="custom-button-yo" id="left-disappear">Découvrir</button>
                 </a>
             </div>
-            <div class="small-3 columns">
-                <a href="#" class="product-link">
-                    <div class="image-product"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/watch-last.jpg" alt=""></div>
-                    <span class="article-subtitle">Oyster perpetual</span>
-                    <span class="article-title">Oyster perpetual</span>
-                    <button class="custom-button-yo" id="left-disappear">Découvrir</button>
-                </a>
-            </div>
-            <div class="small-3 columns">
-                <a href="#" class="product-link">
-                    <div class="image-product"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/watch-last.jpg" alt=""></div>
-                    <span class="article-subtitle">Oyster perpetual</span>
-                    <span class="article-title">Oyster perpetual</span>
-                    <button class="custom-button-yo" id="left-disappear">Découvrir</button>
-                </a>
-            </div>
-            <div class="small-3 columns">
-                <a href="#" class="product-link">
-                    <div class="image-product"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/watch-last.jpg" alt=""></div>
-                    <span class="article-subtitle">Oyster perpetual</span>
-                    <span class="article-title">Oyster perpetual</span>
-                    <button class="custom-button-yo" id="left-disappear">Découvrir</button>
-                </a>
-            </div>
+            <?php /* woocommerce_template_loop_add_to_cart( $loop->post, $product ); */ ?>
+            <?php endwhile; ?>
+            <?php wp_reset_query(); ?>
         </div>
+
     </article>
 
     <a href="#" class="custom-button-reverse" style="margin-top:30px;">Tout découvrir</a>
@@ -159,15 +97,17 @@
 =========================== -->
 
 <section class="bestseller">
-    <div class="title">
-        <h3>Les plus vendus</h3>
-    </div>
-    <div class="row">
-        <div class="small-4 small-centered columns">
-            <div class="description">
-                <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
-                <hr>
-                <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+    <div class="scrollme">
+        <div class="title">
+            <h3>Les plus vendus</h3>
+        </div>
+        <div class="row">
+            <div class="small-4 small-centered columns">
+                <div class="description">
+                    <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
+                    <hr>
+                    <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+                </div>
             </div>
         </div>
     </div>

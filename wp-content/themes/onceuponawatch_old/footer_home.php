@@ -18,10 +18,11 @@
             <img src="<?php echo get_stylesheet_directory_uri()?>/text.svg" alt="" />
         </div>
     </div>
-</div>
-
-<div class="intransparent-after">
-
+    <div class="intransparent-after">
+        <div style="width:50%;margin:auto">
+            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+        </div>
+    </div>
 </div>
 
 <!-- Another section
@@ -29,7 +30,58 @@
 
 <section class="another">
     <div class="title">
-        <h3>Another section</h3>
+        <h3>Avis clients</h3>
+    </div>
+
+    <div class="row" style="text-align:center;">
+        <div class="small-4 small-centered columns">
+            <div class="description">
+                <span>Ils nous font confiance et le font savoir !.</span>
+                <hr>
+                <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:30px;">
+        <div class="small-4 columns">
+            <div class="photo"><img src="http://images.twistmagazine.com/uploads/posts/image/74485/cara-delevingne.jpg" alt=""></div>
+            <div class="thename">Cara Delevingne</div>
+            <div class="theavis">
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
+                <p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>
+            </div>
+        </div>
+        <div class="small-4 columns">
+            <div class="photo"><img src="http://images.j-14.com/uploads/posts/image/78599/camila-cabello-ikwydls.jpg" alt=""></div>
+            <div class="thename">Camila Cabillo</div>
+            <div class="theavis">
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
+                <p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>
+            </div>
+        </div>
+        <div class="small-4 columns">
+            <div class="photo"><img src="http://www.rapghetto.com/uploads/151249/sx/nekfeu-mal-aime_48088.jpg" alt=""></div>
+            <div class="thename">Nekfeu</div>
+            <div class="theavis">
+                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
+                <p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:30px;">
+        <div class="small-6 small-centered columns">
+            <div class="text-center"><h5>Donnez vous aussi votre avis !</h5></div>
+            <?php if (is_user_logged_in()){ ?>
+                <form action="#">
+                    <textarea name="" id="avisclients"></textarea>
+                    <div class="text-center"><input type="submit" class="custom-button-reverse" value="Envoyer"></div>
+                </form>
+            <?php } else { ?>
+                Pas bonjour
+            <?php } ?>
+        </div>
     </div>
 </section>
 

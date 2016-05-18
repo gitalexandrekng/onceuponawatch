@@ -6,6 +6,8 @@ h3{
 
 section{
     background:#FFF;
+    z-index:10;
+    position:relative;
 }
 
 .title{
@@ -401,7 +403,7 @@ hr{
 
 .video-bg{
     position:fixed;
-    //display:none;
+    display:none;
     top:0;
 
     video {
@@ -421,9 +423,10 @@ hr{
 }
 
 .intransparent{
-    min-height:400px;
     width:100%;
     background:transparent;
+    position:relative;
+    z-index:10;
 
     .hellohello{
         img{
@@ -435,11 +438,54 @@ hr{
 .intransparent-after{
     height:100%;
     width:100%;
+    padding-top:100px;
+    padding-bottom:100px;
+    text-align: center;
+    color:white;
 }
 
 .another{
     padding-top:50px;
     padding-bottom:50px;
+
+    .theavis{
+        text-align: justify;
+        background:white;
+        padding:10px;
+        position:relative;
+    }
+
+    .thename{
+        background:white;
+        font-family:"Oswald";
+        text-transform: uppercase;
+        font-size:16px;
+        text-align: center;
+        margin:auto;
+        color:black;
+        position:relative;
+        padding-top:10px;
+    }
+
+    #avisclients{
+        height:100px;
+        border:1px solid black;
+        box-shadow:0px 0px 0px;
+    }
+
+    .photo{
+        position:relative;
+        width:150px;
+        height:150px;
+        border-radius: 50%;
+        overflow:hidden;
+        margin:auto auto -30px auto;
+
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
 }
 
 .newsletter{

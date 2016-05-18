@@ -20,9 +20,11 @@
     position:relative;
     text-align: center;
     margin:-120px 0px 50px 0px;
+    z-index:20;
 
     img{
         border:15px solid white;
+        //box-shadow:0px -15px 15px rgba(0,0,0,0.3);
     }
 }
 
@@ -83,5 +85,48 @@
 	font-weight: bold;
 
     &:hover{
+    }
+}
+
+.lepanier{
+    width:250px;
+    height:300px;
+    background:white;
+    position:absolute;
+    z-index:900;
+    top:50px;
+    right:-250px;
+    opacity:0;
+    transition:0.5s;
+}
+
+.shopping{
+
+    h1{
+        font-family:"Oswald";
+        font-weight:normal;
+        text-transform: uppercase;
+        margin:auto;
+        position:relative;
+        z-index:10;
+        border-bottom:12px inset #d7eefa;
+        padding-left:5px;
+        padding-right:5px;
+        height:60px;
+        margin-bottom:20px;
+    }
+
+    .product{
+        overflow:hidden;
+        text-align: center;
+
+        img{
+            transition:0.5s;
+        }
+    }
+
+    .add_to_cart_button{
+        margin:0px 0px 0px -300px;
+        transition:0.5s;
     }
 }

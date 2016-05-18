@@ -68,7 +68,7 @@ endif;
 if ( comments_open() ) :
 	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
 ?>
-<section id="respond">
+<section id="respond" class="text-center">
 	<h3><?php comment_form_title( __( 'Leave a Reply', 'foundationpress' ), __( 'Leave a Reply to %s', 'foundationpress' ) ); ?></h3>
 	<p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
 	<?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
@@ -104,7 +104,7 @@ if ( comments_open() ) :
 		</p>
 		<?php endif; ?>
 		<p>
-			<label for="comment" style="text-align:center;">
+			<label for="comment">
 					<?php
 						_e( 'Comment', 'foundationpress' );
 					?>
@@ -119,7 +119,7 @@ if ( comments_open() ) :
 				<?php echo allowed_tags(); ?>
 			</code>
 		</p>-->
-		<p style="text-align:center;"><input name="submit" class="custom-button-reverse" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'foundationpress' ); ?>"></p>
+		<p><input name="submit" class="custom-button-reverse" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'foundationpress' ); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>

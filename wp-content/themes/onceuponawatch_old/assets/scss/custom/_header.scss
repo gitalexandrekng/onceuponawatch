@@ -6,10 +6,10 @@ html, body{
     height:100%;
 }
 
-body{opacity:1;}
+body{overflow-x:hidden;}
 
 .appear{
-    opacity:0;
+    opacity:1;
     height:100%;
 }
 
@@ -120,6 +120,17 @@ body{opacity:1;}
                         display: inline-block;
                         margin-right:20px;
                         margin-left:20px;
+
+                        a{
+                            border-bottom:5px solid white;
+                            transition:0.5s;
+                            color:#b0b0b0;
+
+                            &:hover{
+                                border-bottom:5px solid #000;
+                                color:#000;
+                            }
+                        }
                     }
                 }
             }
@@ -155,11 +166,11 @@ body{opacity:1;}
             .in{
                 height:100%;
                 width:100%;
-                background-image:url(../../images/hands.jpg);
+                background-image:url(../../images/walpp.jpg);
                 background-size:cover;
                 position:relative;
                 text-align:center;
-                background-attachment:fixed;
+                //background-attachment:fixed;
 
                 .left-citation{
                     display: none;
