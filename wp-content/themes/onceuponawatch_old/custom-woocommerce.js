@@ -58,4 +58,8 @@ $('.shopping li.product').on('mouseleave', function(){
         if( $('.myaccount_user').length){
             $('header.title').after($("a.edit").css({display:'block', width:'100%', textAlign: 'center'}))
         }
+
+        if( $('.removeheader').length){
+            $('.wrapper').remove();
+        }
     })
