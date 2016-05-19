@@ -24,11 +24,21 @@ $('.shopping li.product').on('mouseleave', function(){
             $('.ui-slider-range').css('background-color', 'blue');
 
             if ($('.product_title').length ) {
-                $('.inboutique').after($('h1'));
+                //$('.inboutique').after($('h1'));
                 $('h1').addClass('custom-title-produit');
                 $('.tabs li').addClass('custom-li').removeClass('additional_information_tab description_tab reviews_tab');
                 $('h2').addClass('custom-h2');
-                $('img.wp-post-image').after($('h1'))
+                //$('img.wp-post-image').after($('h1'));
+                $('.inboutique').remove();
+                //$( "div.row:first" ).removeClass('row');
+                $('p.price').css('text-align', 'left')
+                $('.shopping').css({backgroundColor:'#FFF', minWidth:'100%', padding:'20px',}).removeClass('small-12 large-12 columns');
+                $('button').removeClass('').css({borderRadius:'0px', height:'39px'});
+                //$('.cart').after($('.woocommerce-product-rating'))
+                $('.woocommerce-product-rating').remove();
+                //$('.cart').after($('.woocommerce-tabs'))
+                $('#tab-description h2').replaceWith($('.descriptionduproduit').show());
+                $('#tab-additional_information h2').replaceWith($('.informationscomplementaires').show());
             }
 
             // Custom button $('.price_slider_amount .button').addClass('custom-button-reverse').removeClass('button');

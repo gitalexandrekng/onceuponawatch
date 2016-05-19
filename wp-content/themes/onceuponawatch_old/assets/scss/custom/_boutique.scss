@@ -53,11 +53,14 @@
 .custom-title-produit{
     max-width:1200px;
     margin:auto;
+    border:0 !important;
+    text-align:left;
 }
 
 .custom-li{
     // background:#d7eefa !important;
     border-radius:0 !important;
+    border:0px !important;
 
     &:after{
         display:none;
@@ -70,6 +73,15 @@
 
 .custom-h2{
     text-transform: uppercase;
+    position:relative;
+    z-index:10;
+    border-bottom:12px inset #d7eefa;
+    padding-left:5px;
+    padding-right:5px;
+    height:40px;
+    font-family:"Oswald";
+    margin-bottom:20px;
+    font-size:31px;
 }
 
 .tabs{
@@ -84,6 +96,7 @@
 .wc-tabs{
 
     &:before{
+        display:none !important;
     }
 }
 
