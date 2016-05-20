@@ -169,8 +169,12 @@ body{overflow-x:hidden;}
                 height:100%;
                 width:100%;
                 background-image:url(../../images/walpp.jpg);
+                /*-moz-background-attachement: fixed;
+                -webkit-background-attachement: fixed;
+                background-attachment: fixed;*/
                 background-size:cover;
-                background-attachment: fixed;
+                -moz-background-size:cover;
+                -webkit-background-size:cover;
                 position:relative;
                 text-align:center;
 

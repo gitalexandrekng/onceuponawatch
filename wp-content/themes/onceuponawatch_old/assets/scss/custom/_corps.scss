@@ -288,8 +288,10 @@ hr{
 .collections{
     padding-top:50px;
     position:relative;
-    background:#ededed;
+    background:#fafafa;
     padding-bottom:50px;
+    border-top:1px solid darken(#fafafa, 10%);
+    border-bottom:1px solid darken(#fafafa, 10%);
 
     .in-collections{
         position:relative;

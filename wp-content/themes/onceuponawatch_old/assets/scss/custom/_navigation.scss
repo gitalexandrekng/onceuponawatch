@@ -10,6 +10,8 @@
     transition:0.5s;
     text-align: center;
     text-transform: uppercase;
+    padding-top:15px;
+    padding-bottom:15px;
     //box-shadow:0px 0px 15px rgba(0,0,0,0.2);
 
     ul{
@@ -21,7 +23,7 @@
             a{
                 background:transparent;
                 color:black;
-                border-bottom:5px solid black;
+                //border-bottom:5px solid black;
             }
         }
 

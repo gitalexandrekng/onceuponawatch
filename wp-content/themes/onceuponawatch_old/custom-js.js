@@ -19,11 +19,11 @@ $('.annonces-container').owlCarousel({
 
 	$('.annonces-container .item').css('height', $( window ).height());
 
-	$('.annonces-container').hover(function(){
+	/*$('.annonces-container').hover(function(){
 		$('.annonces-container .in').css('transform', 'scale(1.1)');
 	}, function(){
 		$('.annonces-container .in').css('transform', 'scale(1)')
-	})
+	})*/
 
 	$('a.add_to_cart_button').addClass('non');
 

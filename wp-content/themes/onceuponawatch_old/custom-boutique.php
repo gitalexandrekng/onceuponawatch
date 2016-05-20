@@ -28,6 +28,26 @@
         <div class="divtwoin"></div>
     </div>
 
+    <!-- Reviews
+    ================= -->
+    <div class="divthree">
+        <div class="divthreefade">
+            <div class="title">
+                <h3>L'avis des clients</h3>
+            </div>
+            <div class="row">
+                <div class="small-4 small-centered columns" style="margin-bottom:50px;">
+                    <div class="description">
+                        <span>Ces personnes ont été satisfaites, et pourquoi pas vous ?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Produits relatifs
+    ====================-->
+
     <div class="produitsrelatifs">
         <div class="title">
             <h3>Produits relatifs</h3>
@@ -46,22 +66,7 @@
 
     <!--<div class="yaprobleme"></div>-->
 
-    <!-- Reviews
-    ================= -->
-    <div class="divthree">
-        <div class="divthreefade">
-            <div class="title">
-                <h3>L'avis des clients</h3>
-            </div>
-            <div class="row">
-                <div class="small-4 small-centered columns">
-                    <div class="description">
-                        <span>Ces personnes ont été satisfaites, et pourquoi pas vous ?</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Probleme
     ==================== -->
