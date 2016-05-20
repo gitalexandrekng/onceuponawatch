@@ -30,7 +30,7 @@
 
     <div class="produitsrelatifs">
         <div class="title">
-            <h3>Produitsrelatifs</h3>
+            <h3>Produits relatifs</h3>
         </div>
         <div class="row">
             <div class="small-4 small-centered columns">
@@ -44,7 +44,7 @@
         <div class="produitsrelatifsin"></div>
     </div>
 
-    <div class="yaprobleme"></div>
+    <!--<div class="yaprobleme"></div>-->
 
     <!-- Reviews
     ================= -->

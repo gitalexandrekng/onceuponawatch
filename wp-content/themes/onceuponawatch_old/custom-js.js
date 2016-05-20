@@ -17,6 +17,14 @@ $('.annonces-container').owlCarousel({
 
 	$('.wrapper').css('height', $( window ).height() - 220);
 
+	$('.annonces-container .item').css('height', $( window ).height());
+
+	$('.annonces-container').hover(function(){
+		$('.annonces-container .in').css('transform', 'scale(1.1)');
+	}, function(){
+		$('.annonces-container .in').css('transform', 'scale(1)')
+	})
+
 	$('a.add_to_cart_button').addClass('non');
 
 	$('.star-rating').css('margin', 'auto');
@@ -27,6 +35,8 @@ $('.annonces-container').owlCarousel({
 
 	$('.shopping a').addClass('non');
 	$('.inboutique a').addClass('non');
+
+	$('.login-submit #wp-submit').addClass('custom-button-reverse');
 
 	var lanavigation = $(".navigation-header");
 
@@ -46,20 +56,20 @@ $('.annonces-container').owlCarousel({
 		}
 	});
 
-	$('.inzer').on('mouseenter', function(){
-		$(this).find('.fadeyo').css('bottom', '0');
-	});
+	// Aperçu des articles du journal
 
-	$('.inzer').on('mouseleave', function(){
+	$('.inzer').hover(function(){
+		$(this).find('.fadeyo').css('bottom', '0');
+	}, function(){
 		$(this).find('.fadeyo').css('bottom', '-250px');
 	});
 
-	$('.product-link').on('mouseenter', function(){
+	// Image produit
+
+	$('.product-link').hover(function(){
 		$(this).find('img').css('transform', 'scale(1.1)');
 		$(this).find('#left-disappear').css({opacity : "1", margin : "0px 0px 0px 0px"})
-	});
-
-	$('.product-link').on('mouseleave', function(){
+	}, function(){
 		$(this).find('img').css('transform', 'scale(1)');
 		$(this).find('#left-disappear').css({opacity : "0", margin : "0px 0px 0px -300px"})
-	})
+	});

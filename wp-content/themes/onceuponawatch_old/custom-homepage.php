@@ -61,7 +61,7 @@
 
     </article>
 
-    <a href="#" class="custom-button-reverse" style="margin-top:30px;">Tout découvrir</a>
+    <!--<a href="#" class="custom-button-reverse" style="margin-top:30px;">Tout découvrir</a>-->
 
 </section>
 
@@ -83,11 +83,16 @@
         <?php endif; ?>
 
         <div class="item">
-            <div class="in" style="background-image:url(<?php echo $image[0]; ?>)">
-                <div class="texte">
-                    <div class="inset">
-                        <h3><?php the_title(); ?></h3>
-                        <span><?php the_excerpt(); ?></span>
+            <div class="in" style="background-image:url(<?php echo $image[0]; ?>)"></div>
+            <div class="texte">
+                <div class="inset">
+                    <div class="inzzz">
+                        <div class="zzz">
+                            <span class="toutpetit">Onceuponawatch</span>
+                            <h3><?php the_title(); ?></h3>
+                            <span><?php the_excerpt(); ?></span>
+                            <a href="<?php the_permalink(); ?>" class="custom-button">En savoir plus</a>
+                        </div>
                     </div>
                 </div>
             </div>
