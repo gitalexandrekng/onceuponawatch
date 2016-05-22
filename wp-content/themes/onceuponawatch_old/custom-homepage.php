@@ -1,15 +1,3 @@
-<!-- Promotions
-=================== -->
-
-<section class="promotions-container">
-    <div class="promotions">
-        <!--<div class="indiv indiv-left"><strong>-10%</strong> sur les incontournables de l'été <a href="#" class="dismoi">En profiter</a></div>-->
-        <a href="#" class="indiv indiv-left"><strong>-10%</strong> sur les incontournables de l'été</a>
-        <a href="#" class="indiv indiv-middle"><strong>-20%</strong> sur l'achat d'un bracelet et d'une montre</a>
-        <a href="#" class="indiv indiv-right"><strong>Livraison et retours gratuits</strong></a>
-    </div>
-</section>
-
 <!-- Derniers articles
 ============================= -->
 
@@ -63,6 +51,18 @@
 
     <!--<a href="#" class="custom-button-reverse" style="margin-top:30px;">Tout découvrir</a>-->
 
+</section>
+
+<!-- Promotions
+=================== -->
+
+<section class="promotions-container">
+    <div class="promotions">
+        <!--<div class="indiv indiv-left"><strong>-10%</strong> sur les incontournables de l'été <a href="#" class="dismoi">En profiter</a></div>-->
+        <a href="#" class="indiv indiv-left"><strong>-10%</strong> sur les incontournables de l'été</a>
+        <a href="#" class="indiv indiv-middle"><strong>-20%</strong> sur l'achat d'un bracelet et d'une montre</a>
+        <a href="#" class="indiv indiv-right"><strong>Livraison et retours gratuits</strong></a>
+    </div>
 </section>
 
 <!-- Annonces genre promotions

@@ -45,6 +45,10 @@
         </div>
     </div>
 
+    <!-- Hello -->
+
+    <div class="yaprobleme"></div>
+
     <!-- Produits relatifs
     ====================-->
 
@@ -63,10 +67,6 @@
         </div>
         <div class="produitsrelatifsin"></div>
     </div>
-
-    <!--<div class="yaprobleme"></div>-->
-
-
 
     <!-- Probleme
     ==================== -->

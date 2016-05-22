@@ -47,8 +47,8 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	//$('.excellence-band').parallax("50%", 0.5);
-	//$('.header-image-container .in').parallax("50%", 0.5);
-	//$('.yaprobleme').parallax("50%", 0.5);
+	$('.header-image-container .in').parallax("50%", 0.5);
+	$('.yaprobleme').parallax("50%", 0.5);
 })
 </script>
 <?php wp_footer(); ?>

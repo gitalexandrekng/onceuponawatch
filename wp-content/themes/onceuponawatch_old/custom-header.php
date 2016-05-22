@@ -8,7 +8,8 @@
         </ul>
         <ul class="right-infos">
             <li><?php if (is_user_logged_in()){ echo '<a href="' . wp_logout_url( site_url( '/' ) ) .'">Se déconnecter</a>'; } else { ?><a href="#openLogin" class="non">S'identifier</a><?php } ?></li>
-            <li><?php if (is_user_logged_in()){ ?><a href="<?php echo bloginfo('home')?>/mon-compte/">Mon compte</a><?php } ?></li>
+            <?php if (!is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/inscription">Inscription</a></li><?php } ?>
+            <?php if (is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/mon-compte/">Mon compte</a></li><?php } ?>
             <li><a href="#openBasket" class="non openBasket">Panier</a></li>
         </ul>
     </div>
