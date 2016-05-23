@@ -38,6 +38,7 @@
 <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/components/owl.carousel/dist/owl.carousel.min.js" type="text/javascript"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/components/protonet/jquery.inview/jquery.inview.min.js" type="text/javascript"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/components/scrollme/jquery.scrollme.min.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/components/jquery-fadethis/dist/jquery.fadethis.min.js"></script>
 
 <!-- Javascript perso -->
 <script src="<?php echo get_stylesheet_directory_uri() ?>/custom-js.js" type="text/javascript"></script>
@@ -51,6 +52,12 @@ $(document).ready(function(){
 	$('.yaprobleme').parallax("50%", 0.5);
 })
 </script>
+
+<!-- Fade this plugin -->
+<script>$(window).fadeThis({
+	reverse:false,
+});</script>
+
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
 </body>

@@ -34,8 +34,16 @@
         <div class="header-image-container">
             <div class="in">
                 <div class="searchbar"><?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?></div>
+                <div class="owl-carousel sloganz sloganz-slide">
+                    <div class="item">Finesse</div>
+                    <div class="item">Eminence</div>
+                    <div class="item">Qualité</div>
+                </div>
                 <div class="scrollsvpcontain">
-                    <div class="scrollsvp"></div>
+                    <div class="scrollsvp">
+                        <div class="inz">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

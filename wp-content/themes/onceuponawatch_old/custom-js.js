@@ -9,6 +9,18 @@ $('.annonces-container').owlCarousel({
 	nav:false
 })
 
+$('.sloganz-slide').owlCarousel({
+	animateOut: 'slideOutDown',
+    animateIn: 'flipInX',
+    items:1,
+    margin:30,
+    stagePadding:30,
+    smartSpeed:450,
+	autoplayTimeout:2500,
+	loop:true,
+	autoplay:true,
+})
+
 	$('.appear').ready(function(){
 		setTimeout(function(){
 			$('.appear').removeClass('animated fadeInUp').css('opacity', '1');

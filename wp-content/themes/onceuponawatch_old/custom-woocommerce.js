@@ -16,6 +16,7 @@ $('.shopping li.product').on('mouseleave', function(){
             $('.widget_price_filter').css({maxWidth:'1200px', margin:'auto auto 50px auto', listStyleType:'none', textAlign:'center'});
 
             if ($('.product_title').length ) {
+                $('.single_add_to_cart_button').css('background', 'black')
                 $('h1').addClass('custom-title-produit');
                 $('.inboutique').remove();
                 $('p.price').css('text-align', 'left')
