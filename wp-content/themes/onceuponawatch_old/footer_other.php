@@ -2,9 +2,7 @@
 ======================== -->
 
 <section class="newsletter">
-    <div class="title">
-        <h3>Restez informés</h3>
-    </div>
+    <div class="text-center"><h3>Restez informés</h3></div>
     <div class="row" style="text-align:center;">
         <div class="small-4 small-centered columns">
             <div class="description">
@@ -83,7 +81,7 @@
         <div class="small-6 columns">
             <div class="payments">
                 <div class="text-center">
-                    <h4>Modes de paiement</h4>
+                    <h4>Paiement sécurisé</h4>
                     <ul>
                         <li><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icons/payments/1.jpg" alt=""></li>
                         <li><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icons/payments/2.jpg" alt=""></li>

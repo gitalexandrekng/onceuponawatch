@@ -58,7 +58,7 @@ body{overflow-x:hidden;}
     position:relative;
 
     .infos{
-        //display: table-row;
+        z-index:10;
         width:100%;
         position:relative;
         text-transform:uppercase;
@@ -90,8 +90,10 @@ body{overflow-x:hidden;}
     }
 
     .navigation-header{
+        z-index:10;
         width:100%;
         margin-bottom:20px;
+        position:relative;
         text-transform: uppercase;
 
         .navigation-container{
@@ -121,7 +123,7 @@ body{overflow-x:hidden;}
                         margin-left:20px;
 
                         a{
-                            border-bottom:5px solid white;
+                            border-bottom:5px solid transparent;
                             transition:0.5s;
                             color:#b0b0b0;
 
@@ -137,6 +139,8 @@ body{overflow-x:hidden;}
     }
 
     #title-header{
+        position:relative;
+        z-index:10;
         margin-bottom:40px;
         text-align: center;
 
@@ -160,31 +164,25 @@ body{overflow-x:hidden;}
 
         .header-image-container{
             height:100%;
-            //padding:20px 20px 20px 20px;
-            //padding-bottom:20px;
-            //padding-top:20px;
+            z-index:10;
+            position:relative;
             width:100%;
 
             .in{
                 height:100%;
                 width:100%;
                 background-image:url(../../images/walpp.jpg);
-                /*-moz-background-attachement: fixed;
-                -webkit-background-attachement: fixed;*/
                 background-attachment: fixed;
-                background-size:cover;
-                -moz-background-size:cover;
-                -webkit-background-size:cover;
                 position:relative;
                 text-align:center;
-                display:flex;
+                position:relative;
+                background-size:cover;
 
                 .sloganz{
+                    position:absolute;
+                    top:0;left:0;bottom:0;right:0;
                     margin:auto;
-                    font-size:100px;
                     color:white;
-                    text-shadow:0px 0px 15px rgba(0,0,0,0.8);
-                    font-family:"Merriweather";
                 }
 
                 .scrollsvpcontain{

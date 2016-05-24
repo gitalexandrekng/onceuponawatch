@@ -3,15 +3,34 @@
 
 <section class="last-articles">
 
-    <div class="title">
-        <h3>Derniers articles</h3>
-    </div>
-    <div class="row">
-        <div class="small-4 small-centered columns">
-            <div class="description">
-                <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
-                <hr>
-                <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+    <div class="jesuisletitre">
+        <div class="containz">
+            <article class="clock">
+                <div class="seconds-container">
+                    <div class="seconds"></div>
+                </div>
+                <div class="circle-container">
+                    <div class="circle-one"></div>
+                    <div class="circle-two"></div>
+                </div>
+                <div class="circle-petit-container">
+                    <div class="circle-petit-one"></div>
+                </div>
+                <div class="circle-petit-petit-container"></div>
+            </article>
+        </div>
+        <div class="thetitle">
+            <div class="title">
+                <h3>Derniers articles</h3>
+            </div>
+            <div class="row">
+                <div class="small-4 small-centered columns">
+                    <div class="description">
+                        <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
+                        <hr>
+                        <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -35,7 +54,12 @@
                     <!--<div class="image-product"><?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" />'; ?></div>-->
                     <div class="image-product"><img src="<?php echo $image[0]; ?>" alt=""></div>
                     <span class="article-subtitle"><?php the_title(); ?></span>
-                    <span class="article-title">Rolex</span>
+                    <span class="article-title">
+                        <?php
+                        $name = get_the_terms($product->ID, 'product_cat');
+                        echo $name[0]->name;
+                        ?>
+                    </span>
                     <span class="price" style="display:none;"><?php echo $product->get_price_html(); ?></span>
                     <button class="custom-button-yo" id="left-disappear">Découvrir</button>
                 </a>
@@ -105,16 +129,37 @@
 =========================== -->
 
 <section class="bestseller">
-    <div>
-        <div class="title">
-            <h3>Les plus vendus</h3>
+
+    <!-- Titre -->
+
+    <div class="jesuisletitre">
+        <div class="containz">
+            <article class="clock">
+                <div class="seconds-container">
+                    <div class="seconds"></div>
+                </div>
+                <div class="circle-container">
+                    <div class="circle-one"></div>
+                    <div class="circle-two"></div>
+                </div>
+                <div class="circle-petit-container">
+                    <div class="circle-petit-one"></div>
+                </div>
+                <div class="circle-petit-petit-container"></div>
+            </article>
         </div>
-        <div class="row">
-            <div class="small-4 small-centered columns">
-                <div class="description">
-                    <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
-                    <hr>
-                    <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+
+        <div class="thetitle">
+            <div class="title">
+                <h3>Les plus vendus</h3>
+            </div>
+            <div class="row">
+                <div class="small-4 small-centered columns">
+                    <div class="description">
+                        <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
+                        <hr>
+                        <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,9 +180,15 @@
 
             <div class="small-3 columns">
                 <a href="<?php the_permalink(); ?>" class="product-link" title="<?php the_title(); ?>">
+                    <!--<div class="image-product"><?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" />'; ?></div>-->
                     <div class="image-product"><img src="<?php echo $image[0]; ?>" alt=""></div>
                     <span class="article-subtitle"><?php the_title(); ?></span>
-                    <span class="article-title">Oyster perpetual</span>
+                    <span class="article-title">
+                        <?php
+                        $name = get_the_terms($product->ID, 'product_cat');
+                        echo $name[0]->name;
+                        ?>
+                    </span>
                     <span class="price" style="display:none;"><?php echo $product->get_price_html(); ?></span>
                     <button class="custom-button-yo" id="left-disappear">Découvrir</button>
                 </a>

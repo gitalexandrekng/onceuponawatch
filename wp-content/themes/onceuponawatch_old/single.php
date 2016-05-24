@@ -7,7 +7,6 @@
  */
 
 get_header(); ?>
-
 <div id="single-post" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
@@ -19,6 +18,7 @@ get_header(); ?>
             endif;
         ?>
     </div>
+
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header class="topset">
 			<h1 class="entry-title"><?php the_title(); ?></h1>

@@ -1,5 +1,26 @@
 <section class="custom-header">
 
+    <!-- Montre -->
+    <div class="containz" style="width:500px;height:500px;top:30px" id="maybehide">
+        <article class="clock">
+            <div class="seconds-containerz">
+                <div class="secondsz"></div>
+            </div>
+            <div class="circle-container">
+                <div class="circle-one"></div>
+                <div class="circle-two"></div>
+                <div class="circle-three"></div>
+                <div class="circle-four"></div>
+            </div>
+            <div class="circle-petit-container">
+                <div class="circle-petit-one"></div>
+                <div class="circle-petit-two"></div>
+                <div class="circle-petit-three"></div>
+            </div>
+            <div class="circle-petit-petit-container"></div>
+        </article>
+    </div>
+
     <!-- Informations de langues -->
     <div class="infos">
         <ul class="left-infos">
@@ -39,12 +60,10 @@
                     <div class="item">Eminence</div>
                     <div class="item">Qualité</div>
                 </div>
-                <div class="scrollsvpcontain">
+                <!--<div class="scrollsvpcontain">
                     <div class="scrollsvp">
-                        <div class="inz">
-                        </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>

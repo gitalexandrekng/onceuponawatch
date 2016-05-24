@@ -18,20 +18,39 @@ get_header();
 
 <section class="intheblog">
 
-	<!-- TITRE -->
-    <div class="title">
-        <h3>Dans le journal</h3>
-    </div>
-
-	<!-- Slogan -->
-	<div class="row" style="text-align:center;">
-        <div class="small-4 small-centered columns">
-            <div class="description">
-                <span>On ne doute pas de votre connaissance en horlogerie, mais, une chose est sûre, ces articles pourraient vous interesser</span>
-                <hr>
-                <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
-            </div>
+    <div class="jesuisletitre">
+        <div class="containz">
+            <article class="clock">
+                <div class="seconds-container">
+                    <div class="seconds"></div>
+                </div>
+                <div class="circle-container">
+                    <div class="circle-one"></div>
+                    <div class="circle-two"></div>
+                </div>
+                <div class="circle-petit-container">
+                    <div class="circle-petit-one"></div>
+                </div>
+                <div class="circle-petit-petit-container"></div>
+            </article>
         </div>
+        <div class="thetitle">
+            <!-- TITRE -->
+            <div class="title">
+                <h3>Dans le journal</h3>
+            </div>
+
+        	<!-- Slogan -->
+        	<div class="row">
+                <div class="small-4 small-centered columns">
+                    <div class="description">
+                        <span>On ne doute pas de votre connaissance en horlogerie, mais, une chose est sûre, ces articles pourraient vous interesser</span>
+                        <hr>
+                        <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+                    </div>
+                </div>
+            </div>
+    	</div>
     </div>
 
 	<div class="row">
@@ -52,7 +71,7 @@ get_header();
 
 	</div>
 
-	<div class="text-center" style="margin-top:50px;"><a href="" class="custom-button-reverse">Voir tous les articles</a></div>
+	<div class="text-center" style="margin-top:50px;"><a href="<?php echo bloginfo('home') ?>/category/montres" class="custom-button-reverse">Voir tous les articles</a></div>
 
 </section>
 

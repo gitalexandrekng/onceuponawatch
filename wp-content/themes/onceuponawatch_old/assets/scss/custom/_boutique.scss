@@ -8,6 +8,47 @@
     }
 }
 
+.brandz{
+    text-align:left;
+    border-top:1px solid #CCC;
+    text-transform: uppercase;
+    padding-top:5px;
+    padding-bottom:10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    a{
+        color:#CCC;
+        font-size:20px;
+    }
+}
+
+.filariane{
+    display:none;
+    width:100%;
+    background:red;
+    background:url(../../images/watchproduit.jpg);
+    background-size:cover;
+    color:white;
+    background-attachment:fixed;
+    text-transform: uppercase;
+    position:relative;
+    z-index:10;
+    text-align:center;
+
+    .fade{
+        padding-top:40px;
+        padding-bottom:40px;
+        background:rgba(0,0,0,0.8);
+        letter-spacing: 2px;
+        font-weight:bold;
+    }
+
+    a{
+        color:white;
+    }
+}
+
 .inboutique{
     display:none;
     background:url(../../images/walpp.jpg);
@@ -105,9 +146,7 @@
 }
 
 .produitsrelatifs{
-    //border-bottom:1px solid darken(#fafafa, 10%);
     padding-top:50px;
-    //padding-bottom:50px;
     display:none;
     text-align:center;
 
@@ -118,6 +157,23 @@
 
     img{
         transition:0.5s;
+    }
+
+    .buttonrelatifs{
+        width:100%;
+        background:white !important;
+        color:black !important;
+        border-radius:0px !important;
+        border:2px solid black !important;
+        text-transform:uppercase;
+        padding-top:15px !important;
+        padding-bottom:15px !important;
+        letter-spacing: 1px;
+
+        &:hover{
+            background:black !important;
+            color:white !important;
+        }
     }
 }
 
@@ -229,5 +285,17 @@
     background-size:cover;
     color:white;
     background-attachment:fixed;
-    height:300px;
+
+    .in{
+        background:rgba(0,0,0,0.5);
+        width:100%;
+        padding-top:100px;
+        padding-bottom:100px;
+        height:100%;
+        text-align:center;
+
+        .inzeed{
+            margin:auto;
+        }
+    }
 }

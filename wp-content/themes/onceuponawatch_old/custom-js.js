@@ -79,9 +79,12 @@ $('.sloganz-slide').owlCarousel({
 	// Image produit
 
 	$('.product-link').hover(function(){
-		$(this).find('img').css('transform', 'scale(1.1)');
+		$(this).find('img').css('transform', 'translatey(-10px)');
 		$(this).find('#left-disappear').css({opacity : "1", margin : "0px 0px 0px 0px"})
 	}, function(){
-		$(this).find('img').css('transform', 'scale(1)');
+		$(this).find('img').css('transform', 'translatey(0)');
 		$(this).find('#left-disappear').css({opacity : "0", margin : "0px 0px 0px -300px"})
 	});
+
+	// Li rechercher
+	$('.fixed-navi #menu-headmenu').append('<li><a href="#openSearch"><i class="fa fa-search"></i></li>')

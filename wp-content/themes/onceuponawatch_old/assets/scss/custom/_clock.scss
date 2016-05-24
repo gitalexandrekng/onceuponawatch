@@ -1,0 +1,184 @@
+.containz{
+    width:200px;
+    height:200px;
+    left:0;
+    right:0;
+    top:-30px;
+    z-index:1;
+    margin:auto;
+    position:absolute;
+}
+
+.clock {
+    border-radius: 50%;
+    background-size: 88%;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.minutes-container, .hours-container, .seconds-container, .seconds-containerz, .circle-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.circlemodel{
+    border-radius:50%;
+    height:20px;
+    width:20px;
+    background:$gold;
+    position:absolute;
+    margin:auto;
+}
+
+.circle-container{
+    border:3px solid $gold;
+    border-radius:50%;
+
+    .circle-one{
+        @extend .circlemodel;
+        bottom:-10px;
+        left:0;
+        right:0;
+    }
+
+    .circle-two{
+        @extend .circlemodel;
+        top:-10px;
+        left:0;
+        right:0;
+    }
+
+    .circle-three{
+        @extend .circlemodel;
+        top:0;
+        bottom:0;
+        left:-10px;
+    }
+
+    .circle-four{
+        @extend .circlemodel;
+        top:0;
+        bottom:0;
+        right:-10px;
+    }
+}
+
+.circle-petit-container{
+    border-radius:50%;
+    border:1px solid $gold;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    width:80%;
+    height:80%;
+    margin:auto;
+}
+
+.circle-petit-petit-container{
+    border-radius:50%;
+    border:2px solid $gold;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+}
+
+.circle-petit-one{
+    border-radius:50%;
+    height:15px;
+    width:15px;
+    background:$gold;
+    position:absolute;
+    bottom:-7.5px;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+.circle-petit-two{
+    border-radius:50%;
+    height:15px;
+    width:15px;
+    background:$gold;
+    position:absolute;
+    top:-7.5px;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+.circle-petit-three{
+    border-radius:50%;
+    height:15px;
+    width:15px;
+    background:$gold;
+    position:absolute;
+    left:-7.5px;
+    top:0;
+    bottom:0;
+    margin:auto;
+}
+
+.seconds {
+display:none;
+background: #000;
+height: 25%;
+left: 50%;
+position: absolute;
+top: 14%;
+transform-origin: 50% 80%;
+width: 1%;
+z-index: 8;
+}
+
+.secondsz {
+background: $gold;
+height: 25%;
+left: 50%;
+position: absolute;
+top: 14%;
+transform-origin: 50% 80%;
+width: 1%;
+z-index: 8;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.circle-petit-container{
+    animation:rotate 15s infinite linear;
+}
+
+.seconds-containerz{
+    animation: rotate 60s infinite steps(60);
+    transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+}
+
+.hours-container {
+
+    animation: rotate 5s infinite linear;
+}
+
+.circle-container{
+    animation: rotate 10s infinite linear;
+}
+
+.minutes-container {
+    animation: rotate 3600s infinite steps(60);
+    transition: transform 0.3s cubic-bezier(.4,2.08,.55,.44);
+}
+.seconds-container {
+    animation: rotate 60s infinite steps(60);
+    transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
+}

@@ -1,11 +1,13 @@
 <!-- Excellence bandeau
 ======================= -->
 
-<section class="excellence-band" STYLE="DISPLAY:NONE;">
+<section class="excellence-band">
     <div class="fade">
-        <h3>L'excellence d'un tout nouveau genre</h3>
-        <hr>
-        <div class="in">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Irécemment, par son</div>
+        <div class="thetitle">
+            <div class="title">
+                <h3>Nos marques</h3>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -15,12 +17,12 @@
 <div class="intransparent">
     <div class="hellohello">
         <div class="text-center">
-            <img src="<?php echo get_stylesheet_directory_uri()?>/text.svg" alt="" />
+            <img style="opacity:0.9" src="<?php echo get_stylesheet_directory_uri()?>/text.svg" alt="" />
         </div>
     </div>
     <div class="intransparent-after">
-        <div style="width:50%;margin:auto">
-            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+        <div style="width:50%;margin:auto;opacity:0.8;font-size:118px;font-family:'Montserrat'">
+            ONCE UPON<br>A WATCH
         </div>
     </div>
 </div>
@@ -29,16 +31,36 @@
 ============================= -->
 
 <section class="another">
-    <div class="title">
-        <h3>Avis clients</h3>
-    </div>
 
-    <div class="row" style="text-align:center;">
-        <div class="small-4 small-centered columns">
-            <div class="description">
-                <span>Ils nous font confiance et le font savoir !.</span>
-                <hr>
-                <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+    <div class="jesuisletitre">
+        <div class="containz">
+            <article class="clock">
+                <div class="seconds-container">
+                    <div class="seconds"></div>
+                </div>
+                <div class="circle-container">
+                    <div class="circle-one"></div>
+                    <div class="circle-two"></div>
+                </div>
+                <div class="circle-petit-container">
+                    <div class="circle-petit-one"></div>
+                </div>
+                <div class="circle-petit-petit-container"></div>
+            </article>
+        </div>
+        <div class="thetitle">
+            <div class="title">
+                <h3>Avis clients</h3>
+            </div>
+
+            <div class="row">
+                <div class="small-4 small-centered columns">
+                    <div class="description">
+                        <span>Ils nous font confiance et le font savoir !.<br>Donnez vous aussi votre avis</span>
+                        <hr>
+                        <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -49,7 +71,7 @@
             <div class="thename">Cara Delevingne</div>
             <div class="theavis">
                 <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
-                <p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>
+                <!--<p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>-->
             </div>
         </div>
         <div class="small-4 columns">
@@ -57,7 +79,7 @@
             <div class="thename">Camila Cabillo</div>
             <div class="theavis">
                 <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
-                <p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>
+                <!--<p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>-->
             </div>
         </div>
         <div class="small-4 columns">
@@ -65,14 +87,14 @@
             <div class="thename">Nekfeu</div>
             <div class="theavis">
                 <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
-                <p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>
+                <!--<p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>-->
             </div>
         </div>
     </div>
 
-    <div class="row" style="margin-top:30px;">
+    <div class="row" style="margin-top:30px;text-align:center;" id="jedonnemonavis">
         <div class="small-6 small-centered columns">
-            <div class="text-center"><h5>Donnez vous aussi votre avis !</h5></div>
+            <h5>Donnez vous aussi votre avis !</h5>
             <?php if (is_user_logged_in()){ ?>
                 <form action="#">
                     <textarea name="" id="avisclients"></textarea>
@@ -89,7 +111,8 @@
 ======================== -->
 
 <section class="newsletter">
-    <div class="title">
+
+    <div class="text-center">
         <h3>Restez informés</h3>
     </div>
     <div class="row" style="text-align:center;">
@@ -170,7 +193,7 @@
         <div class="small-6 columns">
             <div class="payments">
                 <div class="text-center">
-                    <h4>Modes de paiement</h4>
+                    <h4>Paiement sécurisé</h4>
                     <ul>
                         <li><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icons/payments/1.jpg" alt=""></li>
                         <li><img src="<?php echo get_stylesheet_directory_uri() ?>/images/icons/payments/2.jpg" alt=""></li>

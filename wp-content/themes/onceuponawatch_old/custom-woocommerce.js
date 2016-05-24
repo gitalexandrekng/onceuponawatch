@@ -1,11 +1,9 @@
 // Pour le hover des images
 
-$('.shopping li.product').on('mouseenter', function(){
-    $(this).find('img').css('transform', 'scale(1.1)');
-})
-
-$('.shopping li.product').on('mouseleave', function(){
-    $(this).find('img').css('transform', 'scale(1)');
+$('.shopping li.product').hover(function(){
+    $(this).find('img').css('transform', 'translatey(-10px)');
+}, function(){
+    $(this).find('img').css('transform', 'translatey(0)')
 })
 
     $(document).ready(function(){
@@ -14,18 +12,29 @@ $('.shopping li.product').on('mouseleave', function(){
             $('.inboutique').show().after($('.widget_price_filter'));
             $('.widget_product_categories, .widget_layered_nav').addClass('inlinefiltres');
             $('.widget_price_filter').css({maxWidth:'1200px', margin:'auto auto 50px auto', listStyleType:'none', textAlign:'center'});
+            $('#maybehide').hide();
 
             if ($('.product_title').length ) {
-                $('.single_add_to_cart_button').css('background', 'black')
+                $('#maybehide').show();
+
                 $('h1').addClass('custom-title-produit');
                 $('.inboutique').remove();
                 $('p.price').css('text-align', 'left')
-                $('.shopping').css({backgroundColor:'#FFF', minWidth:'100%', padding:'20px',}).removeClass('small-12 large-12 columns');
-                $('button').removeClass('').css({borderRadius:'0px', height:'39px'});
+                $('.shopping').css({backgroundColor:'#FFF', minWidth:'100%', padding:'50px 0px',}).removeClass('small-12 large-12 columns');
+                $('button').removeClass('').css({borderRadius:'0px', height:'39px', background:'black'});
                 $('.woocommerce-product-rating').remove();
 
+                $('h1').after($('.brandz').append($('.product_meta a')))
+                $('.product_meta').hide()
+
+                // S.E.O
+                $('.custom-header').after($('.filariane').show());
+
+                // bouton produits relatifs
+                $('.add_to_cart_button').addClass('buttonrelatifs')
+
                 // Pour afficher après la fiche produit
-                $("div.row:eq(3)").after($('.lesinformations'))
+                $('div.row:eq(3)').after($('.lesinformations'))
 
                 // Montrer les blocs
 

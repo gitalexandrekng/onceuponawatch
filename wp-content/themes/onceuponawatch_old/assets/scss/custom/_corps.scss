@@ -1,6 +1,8 @@
+$gold : #e3ceb6;
+
 h3{
-    text-transform: uppercase;
-    font-family:"Oswald";
+    //text-transform: uppercase;
+    font-family:"Merriweather";
     font-weight: normal;
 }
 
@@ -10,19 +12,40 @@ section{
     position:relative;
 }
 
-.title{
-    display:flex;
-    text-align: center;
-    justify-content: center;
+.jesuisletitre{
+    text-align:center;
+    margin-top:50px;
+    position:relative;
+    margin-bottom:30px;
 
-    h3{
+    .thetitle{
         position:relative;
-        z-index:10;
-        border-bottom:12px inset #d7eefa;
-        padding-left:5px;
-        padding-right:5px;
-        height:40px;
-        margin-bottom:20px;
+
+        .title{
+            z-index:2;
+            display:flex;
+            text-align: center;
+            justify-content: center;
+
+            h3{
+                text-transform: uppercase;
+                position:relative;
+                z-index:10;
+                padding-left:5px;
+                padding-right:5px;
+            }
+        }
+
+        .description{
+            position:relative;
+            z-index:2;
+
+            .citation{
+                font-family: "Merriweather";
+                display: block;
+                margin-bottom:30px;
+            }
+        }
     }
 }
 
@@ -33,15 +56,6 @@ hr{
     width:100%;
 }
 
-.description{
-
-    .citation{
-        font-family: "Merriweather";
-        display: block;
-        margin-bottom:30px;
-    }
-}
-
 .last-articles{
     text-align:center;
     padding-top:50px;
@@ -50,6 +64,9 @@ hr{
     .product-link{
         display:block;
         overflow:hidden;
+        border:1px solid lighten(#CCC, 10%);
+        padding-top:20px;
+        padding-bottom:20px;
 
         #left-disappear{
             opacity:0;
@@ -61,7 +78,7 @@ hr{
 
     .image-product{
         img{
-            transition:2s;
+            transition:0.5s;
         }
     }
 
@@ -110,6 +127,9 @@ hr{
     .product-link{
         display:block;
         overflow:hidden;
+        border:1px solid lighten(#CCC, 10%);
+        padding-top:20px;
+        padding-bottom:20px;
 
         #left-disappear{
             opacity:0;
@@ -370,6 +390,7 @@ hr{
 .intheblog{
     padding-top:50px;
     padding-bottom:50px;
+    margin-bottom:-10px;
 
     article{
 
@@ -529,9 +550,14 @@ hr{
         padding-top:10px;
     }
 
+    #jedonnemonavis{
+        border:1px solid #666;
+    }
+
     #avisclients{
         height:100px;
-        border:1px solid black;
+        border:0px solid #FAFAFA;
+        background:#FAFAFA;
         box-shadow:0px 0px 0px;
     }
 
