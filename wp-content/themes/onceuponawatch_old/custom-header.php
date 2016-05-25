@@ -68,8 +68,3 @@
         </div>
     </div>
 </section>
-
-<!-- Woocommerce
-================== -->
-
-<?php include('custom-boutique.php'); ?>

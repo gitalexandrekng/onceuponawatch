@@ -10,6 +10,11 @@ get_header();
 
 ?>
 
+<!-- Woocommerce
+================== -->
+
+<?php include('custom-boutique.php'); ?>
+
 <div class="row">
 	<div class="small-12 large-12 columns shopping" role="main">
 

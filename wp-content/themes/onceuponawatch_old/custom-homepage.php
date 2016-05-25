@@ -24,7 +24,7 @@
                 <h3>Derniers articles</h3>
             </div>
             <div class="row">
-                <div class="small-4 small-centered columns">
+                <div class="small-8 small-centered columns">
                     <div class="description">
                         <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
                         <hr>
@@ -154,7 +154,7 @@
                 <h3>Les plus vendus</h3>
             </div>
             <div class="row">
-                <div class="small-4 small-centered columns">
+                <div class="small-8 small-centered columns">
                     <div class="description">
                         <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
                         <hr>
@@ -210,7 +210,7 @@
         <div class="small-6 columns"><div class="right"></div></div>
     </div>
     <div class="row channel-style">
-        <div class="small-4 columns small-centered">
+        <div class="small-8 columns small-centered">
             <div class="channel-texte">
                 <div class="in">
                     <div class="inz">

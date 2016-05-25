@@ -29,7 +29,7 @@ $('.sloganz-slide').owlCarousel({
 
 	$('.wrapper').css('height', $( window ).height() - 220);
 
-	$('.annonces-container .item').css('height', $( window ).height());
+	$('.annonces-container .item').css('height', $( window ).height() / 2);
 
 	/*$('.annonces-container').hover(function(){
 		$('.annonces-container .in').css('transform', 'scale(1.1)');
@@ -87,4 +87,4 @@ $('.sloganz-slide').owlCarousel({
 	});
 
 	// Li rechercher
-	$('.fixed-navi #menu-headmenu').append('<li><a href="#openSearch"><i class="fa fa-search"></i></li>')
+	$('.fixed-navi #menu-headmenu').append('<li><a href="#openSearch"><i class="fa fa-search"></i></li><li><a href="#openSearch"><i class="fa fa-shopping-basket"></i></li>')
