@@ -24,7 +24,7 @@
                 <h3>Derniers articles</h3>
             </div>
             <div class="row">
-                <div class="small-8 small-centered columns">
+                <div class="large-8 medium-10 small-centered columns">
                     <div class="description">
                         <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
                         <hr>
@@ -49,7 +49,7 @@
             	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
             <?php endif; ?>
 
-            <div class="small-3 columns">
+            <div class="large-3 medium-6 columns">
                 <a href="<?php the_permalink(); ?>" class="product-link" title="<?php the_title(); ?>">
                     <!--<div class="image-product"><?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" />'; ?></div>-->
                     <div class="image-product"><img src="<?php echo $image[0]; ?>" alt=""></div>
@@ -154,7 +154,7 @@
                 <h3>Les plus vendus</h3>
             </div>
             <div class="row">
-                <div class="small-8 small-centered columns">
+                <div class="large-8 medium-10 columns small-centered columns">
                     <div class="description">
                         <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
                         <hr>
@@ -178,7 +178,7 @@
                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
             <?php endif; ?>
 
-            <div class="small-3 columns">
+            <div class="large-3 medium-6 columns">
                 <a href="<?php the_permalink(); ?>" class="product-link" title="<?php the_title(); ?>">
                     <!--<div class="image-product"><?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" />'; ?></div>-->
                     <div class="image-product"><img src="<?php echo $image[0]; ?>" alt=""></div>
@@ -210,7 +210,7 @@
         <div class="small-6 columns"><div class="right"></div></div>
     </div>
     <div class="row channel-style">
-        <div class="small-8 columns small-centered">
+        <div class="large-8 medium-10 columns small-centered">
             <div class="channel-texte">
                 <div class="in">
                     <div class="inz">

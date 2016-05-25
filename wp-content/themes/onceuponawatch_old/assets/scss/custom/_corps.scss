@@ -1,5 +1,3 @@
-$gold : #e3ceb6;
-
 section{
     background:#FFF;
     z-index:10;
@@ -62,6 +60,7 @@ hr{
         border:1px solid lighten(#CCC, 10%);
         padding-top:20px;
         padding-bottom:20px;
+        margin-bottom:20px;
 
         #left-disappear{
             opacity:0;
@@ -125,6 +124,7 @@ hr{
         border:1px solid lighten(#CCC, 10%);
         padding-top:20px;
         padding-bottom:20px;
+        margin-bottom:20px;
 
         #left-disappear{
             opacity:0;
@@ -241,6 +241,10 @@ hr{
                 top:0;
                 //background:rgba(255,255,255,0.5);
 
+                @include breakpoint(medium down){
+                    width:100%;
+                }
+
                 .inset{
                     margin:auto;
                     text-align:center;
@@ -257,6 +261,8 @@ hr{
                         display:flex;
 
                         .zzz{
+                            margin:auto;
+                            padding:15px;
 
                             .toutpetit{
                                 display:block;
@@ -265,8 +271,6 @@ hr{
                                 letter-spacing: 2px;
                                 margin-bottom:10px;
                             }
-                            margin:auto;
-                            padding:15px;
                         }
                     }
                 }
@@ -384,6 +388,13 @@ hr{
     padding-bottom:50px;
     margin-bottom:-10px;
 
+    .inzer{
+        margin-bottom:50px;
+        @include breakpoint(medium down) {
+
+        }
+    }
+
     article{
 
         .article-photo{
@@ -425,7 +436,6 @@ hr{
             font-size:22px;
             font-weight: normal;
             text-align: center;
-            font-family: "Oswald";
         }
     }
 }
@@ -439,6 +449,10 @@ hr{
         background:#989898;
         margin-top:40px;
         margin-bottom:50px;
+
+        @include breakpoint(medium down) {
+            width:80%;
+        }
     }
 
     .inzoo{
@@ -447,6 +461,10 @@ hr{
             display:inline-block;
             margin-left:20px;
             margin-right: 20px;
+
+            @include breakpoint(small down){
+                display:block;
+            }
 
             a{
                 color:white;
@@ -470,8 +488,14 @@ hr{
 
                 img{
                     border-radius: 3px;
+                    width:40px;
+                    height:auto;
                 }
             }
+        }
+
+        @include breakpoint(small down) {
+            margin-top:40px;
         }
     }
 }
@@ -517,6 +541,24 @@ hr{
     padding-bottom:100px;
     text-align: center;
     color:white;
+
+    #ouww{
+        width:50%;
+        margin:auto;
+        opacity:0.8;
+        font-size:118px;
+        font-family:'Montserrat';
+
+        @include breakpoint(medium only) {
+            width:75%;
+            font-size:72px;
+        }
+
+        @include breakpoint(small down) {
+            font-size:36px;
+            width:90%;
+        }
+    }
 }
 
 .another{
@@ -528,6 +570,10 @@ hr{
         background:white;
         padding:10px;
         position:relative;
+
+        @include breakpoint(medium down){
+            margin-bottom:20px;
+        }
     }
 
     .thename{
@@ -545,6 +591,11 @@ hr{
     #jedonnemonavis{
         border:1px solid #CCC;
         padding: 50px 0px;
+
+        @include breakpoint(medium down){
+            border:0;
+            padding:0px 0px;
+        }
     }
 
     #avisclients{
@@ -586,9 +637,18 @@ hr{
             margin-left:25px;
             margin-right:25px;
 
+            @include breakpoint(small down){
+                margin-left:10px;
+                margin-right:10px;
+            }
+
             a{
 
                 i{
+                    @include breakpoint(small down){
+                        font-size:30px;
+                    }
+
                     transition:1s;
 
                     &:hover{

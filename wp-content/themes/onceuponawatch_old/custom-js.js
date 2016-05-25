@@ -27,7 +27,7 @@ $('.sloganz-slide').owlCarousel({
 		}, 2000);
 	});
 
-	$('.wrapper').css('height', $( window ).height() - 220);
+	$('.wrapper').css('height', $( window ).height() - ($('.header-containz').innerHeight() + 20));
 
 	$('.annonces-container .item').css('height', $( window ).height() / 2);
 
@@ -47,6 +47,9 @@ $('.sloganz-slide').owlCarousel({
 
 	$('.shopping a').addClass('non');
 	$('.inboutique a').addClass('non');
+
+	$('.wpcf7-submit').addClass('custom-button');
+	$('.wpcf7-text').addClass('input-group-field')
 
 	$('.login-submit #wp-submit').addClass('custom-button-reverse');
 
@@ -68,6 +71,15 @@ $('.sloganz-slide').owlCarousel({
 		}
 	});
 
+	// Li rechercher
+	$('.fixed-navi #menu-headmenu-1').append('<li><a href="#" class="openSearchbutton non"><i class="fa fa-search"></i></a></li><li><a href="#openBasket"><i class="fa fa-shopping-basket"></i>Panier</a></li>')
+
+	// OPEN rechercher
+	$(".openSearchbutton").on('click', function(e){
+		e.preventDefault();
+		$('.rechercherrr').toggle('slow')
+	})
+
 	// Aperçu des articles du journal
 
 	$('.inzer').hover(function(){
@@ -85,6 +97,3 @@ $('.sloganz-slide').owlCarousel({
 		$(this).find('img').css('transform', 'translatey(0)');
 		$(this).find('#left-disappear').css({opacity : "0", margin : "0px 0px 0px -300px"})
 	});
-
-	// Li rechercher
-	$('.fixed-navi #menu-headmenu').append('<li><a href="#openSearch"><i class="fa fa-search"></i></li><li><a href="#openSearch"><i class="fa fa-shopping-basket"></i></li>')

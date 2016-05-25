@@ -10,13 +10,13 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
     <div class="title_news">
         <div class="fade">
-            <h2 class="newstitle">Nouveautés</h2>
+            <h1 class="newstitle">Nouveautés</h1>
         </div>
     </div>
     <article class="row pagenews">
         <div class="small-12 columns" style="margin-top:50px;">
             <?php
-            $args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 4, 'orderby' =>'date','order' => 'DESC' );
+            $args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 8, 'orderby' =>'date','order' => 'DESC' );
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post(); global $product;
             ?>
@@ -25,7 +25,7 @@ get_header(); ?>
             	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
             <?php endif; ?>
 
-            <div class="small-3 columns">
+            <div class="large-3 medium-6 columns end">
                 <a href="<?php the_permalink(); ?>" class="product-link" title="<?php the_title(); ?>">
                     <!--<div class="image-product"><?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" />'; ?></div>-->
                     <div class="image-product"><img src="<?php echo $image[0]; ?>" alt=""></div>

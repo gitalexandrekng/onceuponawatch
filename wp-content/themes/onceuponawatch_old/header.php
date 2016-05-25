@@ -50,11 +50,43 @@
     	</div>
     </div>
 
+	<!-- Responsive menu
+	====================================== -->
+    <div id="openMenu" class="menuDialog">
+    	<div class="inmenu">
+    		<div class="texte">
+                <a href="#close" title="Close" class="close non"><i class="fa fa-times-circle-o"></i></a>
+        		<div>
+                    <h4>Menu</h4>
+        		    <?php wp_nav_menu( array( 'theme_location' => 'headmenu' ) ); ?>
+        		</div>
+                <div>
+                    <h4>Compte</h4>
+                    <ul id="zozo">
+                        <li><?php if (is_user_logged_in()){ echo '<a href="' . wp_logout_url( site_url( '/' ) ) .'"><i class="fa fa-sign-out"></i>Se déconnecter</a>'; } else { ?><a href="#openLogin" class="non"><i class="fa fa-sign-in"></i>S'identifier</a><?php } ?></li>
+                        <?php if (!is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/inscription"><i class="fa fa-check"></i>Inscription</a></li><?php } ?>
+                        <?php if (is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/mon-compte/"><i class="fa fa-user"></i>Mon compte</a></li><?php } ?>
+                    </ul>
+                </div>
+    		</div>
+    	</div>
+    </div>
+
 	<!-- Navigation fixed-navi
 	=============================== -->
 
     <div class="fixed-navi">
         <?php wp_nav_menu( array( 'theme_location' => 'headmenu' ) ); ?>
+		<div id="headmenuresponsive">
+		    <ul>
+		        <li><a href="#openMenu" class="non"><i class="fa fa-bars"></i>Menu</a></li>
+                <li><a href="#" class="openSearchbutton non"><i class="fa fa-search"></i></a></li>
+                <li><a href="#openBasket"><i class="fa fa-shopping-basket"></i>Panier</a></li>
+		    </ul>
+		</div>
+        <div class="rechercherrr">
+            <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+        </div>
     </div>
 
 	<!-- Video background

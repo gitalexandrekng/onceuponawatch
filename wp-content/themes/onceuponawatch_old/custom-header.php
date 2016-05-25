@@ -1,7 +1,12 @@
 <section class="custom-header">
 
+    <!-- menu burger -->
+    <div class="burgermenu">
+        <a href="#openMenu" class="non"><i class="fa fa-bars fa-lg"></i>Menu</a>
+    </div>
+
     <!-- Montre -->
-    <div class="containz" style="width:500px;height:500px;top:30px" id="maybehide">
+    <div class="containz contzresp" id="maybehide">
         <article class="clock">
             <div class="seconds-containerz">
                 <div class="secondsz"></div>
@@ -21,31 +26,36 @@
         </article>
     </div>
 
-    <!-- Informations de langues -->
-    <div class="infos">
-        <ul class="left-infos">
-            <li><a href="#">FR</a></li>
-            <li><a href="#">Besoin d'aide ?</a></li>
-        </ul>
-        <ul class="right-infos">
-            <li><?php if (is_user_logged_in()){ echo '<a href="' . wp_logout_url( site_url( '/' ) ) .'">Se déconnecter</a>'; } else { ?><a href="#openLogin" class="non">S'identifier</a><?php } ?></li>
-            <?php if (!is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/inscription">Inscription</a></li><?php } ?>
-            <?php if (is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/mon-compte/">Mon compte</a></li><?php } ?>
-            <li><a href="#openBasket" class="non openBasket">Panier</a></li>
-        </ul>
-    </div>
+    <!-- HEADER containz
+    ========================= -->
+    <div class="header-containz">
 
-    <!-- Titre -->
-    <div id="title-header">
-        <span class="in-title"><a href="<?php echo bloginfo('home'); ?>">Once upon a Watch</a></span>
-        <span class="subtitle">A chaque montre son histoire</span>
-    </div>
+        <!-- Informations de langues -->
+        <div class="infos">
+            <ul class="left-infos">
+                <li><a href="#">FR</a></li>
+                <li><a href="#">Besoin d'aide ?</a></li>
+            </ul>
+            <ul class="right-infos">
+                <li><?php if (is_user_logged_in()){ echo '<a href="' . wp_logout_url( site_url( '/' ) ) .'"><i class="fa fa-sign-out"></i>Se déconnecter</a>'; } else { ?><a href="#openLogin" class="non"><i class="fa fa-sign-in"></i>S'identifier</a><?php } ?></li>
+                <?php if (!is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/inscription"><i class="fa fa-check"></i>Inscription</a></li><?php } ?>
+                <?php if (is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/mon-compte/"><i class="fa fa-user"></i>Mon compte</a></li><?php } ?>
+                <li><a href="#openBasket" class="non openBasket"><i class="fa fa-shopping-basket"></i>Panier</a></li>
+            </ul>
+        </div>
 
-    <!-- Navigation -->
-    <div class="navigation-header">
-        <div class="navigation-container">
-            <div class="in-navigation">
-                <?php wp_nav_menu( array( 'theme_location' => 'headmenu' ) ); ?>
+        <!-- Titre -->
+        <div id="title-header">
+            <span class="in-title"><a href="<?php echo bloginfo('home'); ?>">Once upon a Watch</a></span>
+            <span class="subtitle">A chaque montre son histoire</span>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation-header">
+            <div class="navigation-container">
+                <div class="in-navigation">
+                    <?php wp_nav_menu( array( 'theme_location' => 'headmenu' ) ); ?>
+                </div>
             </div>
         </div>
     </div>

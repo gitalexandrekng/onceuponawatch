@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="intransparent-after">
-        <div style="width:50%;margin:auto;opacity:0.8;font-size:118px;font-family:'Montserrat'">
+        <div id="ouww">
             ONCE UPON<br>A WATCH
         </div>
     </div>
@@ -54,7 +54,7 @@
             </div>
 
             <div class="row">
-                <div class="small-4 small-centered columns">
+                <div class="large-8 medium-10 small-centered columns">
                     <div class="description">
                         <span>Ils nous font confiance et le font savoir !.<br>Donnez vous aussi votre avis</span>
                         <hr>
@@ -66,7 +66,7 @@
     </div>
 
     <div class="row" style="margin-top:30px;">
-        <div class="small-4 columns">
+        <div class="large-4 columns">
             <div class="photo"><img src="http://images.j-14.com/uploads/posts/image/78599/camila-cabello-ikwydls.jpg" alt=""></div>
             <div class="thename">Cara Delevingne</div>
             <div class="theavis">
@@ -74,7 +74,7 @@
                 <!--<p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>-->
             </div>
         </div>
-        <div class="small-4 columns">
+        <div class="large-4 columns">
             <div class="photo"><img src="http://images.j-14.com/uploads/posts/image/78599/camila-cabello-ikwydls.jpg" alt=""></div>
             <div class="thename">Camila Cabillo</div>
             <div class="theavis">
@@ -82,7 +82,7 @@
                 <!--<p style="text-align:right"><a href="#">http://caradelevingne.com</a></p>-->
             </div>
         </div>
-        <div class="small-4 columns">
+        <div class="large-4 columns">
             <div class="photo"><img src="http://www.rapghetto.com/uploads/151249/sx/nekfeu-mal-aime_48088.jpg" alt=""></div>
             <div class="thename">Nekfeu</div>
             <div class="theavis">
@@ -93,7 +93,7 @@
     </div>
 
     <div class="row" style="margin-top:30px;text-align:center;" id="jedonnemonavis">
-        <div class="small-6 small-centered columns">
+        <div class="large-6 small-10 small-centered columns">
             <h5>Donnez vous aussi votre avis !</h5>
             <?php if (is_user_logged_in()){ ?>
                 <form action="#">
@@ -116,7 +116,7 @@
         <h3>Restez informés</h3>
     </div>
     <div class="row" style="text-align:center;">
-        <div class="small-4 small-centered columns">
+        <div class="large-8 medium-10 small-centered columns">
             <div class="description">
                 <span>Ca serait dommage de rater la montre de votre vie, alors inscrivez votre adresse e-mail pour vous tenir informés.</span>
                 <hr>
@@ -126,8 +126,8 @@
     </div>
 
     <!-- nletter -->
-    <div class="row">
-        <div class="small-6 small-centered columns">
+    <div class="row" style="margin-top:50px;">
+        <div class="large-6 medium-10 small-10 small-centered columns">
             <form action="" id="form-newsletter">
                 <input type="text" id="newsletter" placeholder="Votre e-mail">
                 <input type="submit" id="newsletter-submit" value="S'inscrire">
@@ -137,7 +137,7 @@
 
     <!-- Reseraux socuix -->
     <div class="row">
-        <div class="small-6 small-centered columns">
+        <div class="large-6 medium-10 small-centered columns">
             <div class="text-center">
                 <ul class="socialmedia" style="margin-top:30px;">
                     <li><a href="#"><i class="fa fa-facebook fa-3x"></i></a></li>
@@ -156,30 +156,30 @@
 <section class="footer-infos">
 
     <div class="row">
-        <div class="small-6 columns">
+        <div class="medium-6 columns">
             <div class="reassurance">
                 <div class="row">
                     <div class="small-12 columns">
                         <div class="row">
-                            <div class="small-3 columns">
+                            <div class="medium-3 small-6 columns">
                                 <div class="theimage">
                                     <img src="<?php echo get_stylesheet_directory_uri() ?>/images/icons/delivery.svg" alt="">
                                     <span>Livraison<br>rapide</span>
                                 </div>
                             </div>
-                            <div class="small-3 columns">
+                            <div class="medium-3 small-6 columns">
                                 <div class="theimage">
                                     <img src="<?php echo get_stylesheet_directory_uri() ?>/images/icons/phone.svg" alt="">
                                     <span>Assistance<br>24h/24</span>
                                 </div>
                             </div>
-                            <div class="small-3 columns">
+                            <div class="medium-3 small-6 columns">
                                 <div class="theimage">
                                     <img src="<?php echo get_stylesheet_directory_uri() ?>/images/icons/gift.svg" alt="">
                                     <span>Cadeau<br>offert</span>
                                 </div>
                             </div>
-                            <div class="small-3 columns">
+                            <div class="medium-3 small-6 columns">
                                 <div class="theimage">
                                     <img src="<?php echo get_stylesheet_directory_uri() ?>/images/icons/free.svg" alt="">
                                     <span>Retour<br>gratuit</span>
@@ -190,7 +190,7 @@
                 </div>
             </div>
         </div>
-        <div class="small-6 columns">
+        <div class="medium-6 columns">
             <div class="payments">
                 <div class="text-center">
                     <h4>Paiement sécurisé</h4>
@@ -228,7 +228,7 @@
 
 <section class="footer-tqt">
     <div class="row">
-        <div class="small-6 small-centered columns">
+        <div class="large-6 medium-10 small-centered columns">
             ©Copyright 2016 - Once upon a watch <br>
             Created by Alexandre Kong - <a href="#">Mentions légales</a>
         </div>

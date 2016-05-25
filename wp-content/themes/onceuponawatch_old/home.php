@@ -42,7 +42,7 @@ get_header();
 
         	<!-- Slogan -->
         	<div class="row">
-                <div class="small-4 small-centered columns">
+                <div class="large-8 medium-10 small-centered columns">
                     <div class="description">
                         <span>On ne doute pas de votre connaissance en horlogerie, mais, une chose est sûre, ces articles pourraient vous interesser</span>
                         <hr>
@@ -71,7 +71,7 @@ get_header();
 
 	</div>
 
-	<div class="text-center" style="margin-top:50px;"><a href="<?php echo bloginfo('home') ?>/category/montres" class="custom-button-reverse">Voir tous les articles</a></div>
+	<div class="text-center"><a href="<?php echo bloginfo('home') ?>/category/montres" class="custom-button-reverse">Voir tous les articles</a></div>
 
 </section>
 

@@ -7,6 +7,7 @@
     z-index:1;
     margin:auto;
     position:absolute;
+    opacity:0.8;
 }
 
 .clock {
@@ -141,7 +142,7 @@ z-index: 8;
 
 .secondsz {
 background: $gold;
-height: 25%;
+height: 45%;
 left: 50%;
 position: absolute;
 top: 14%;
