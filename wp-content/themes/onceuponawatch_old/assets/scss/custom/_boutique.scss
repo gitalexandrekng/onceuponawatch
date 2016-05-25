@@ -80,6 +80,7 @@
     background:url(../../images/walpp.jpg) fixed;
     background-size:cover;
     margin-bottom:50px;
+    position:relative;
 
     .page-title{
         text-transform:uppercase;
@@ -110,6 +111,7 @@
         .inlinefiltres{
             display:inline-block;
             width:400px;
+            position:relative;
 
             select{
                 border:0;

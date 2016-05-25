@@ -73,7 +73,7 @@
         <?php include('custom-header.php') ?>
 
 		<?php if (is_home()){ include("custom-homepage.php"); } ?>
-		<?php if (is_page(7) or is_page(5) or is_page(70) or is_page(66)){ echo '<div class="removeheader"></div>';} ?>
+		<?php if (is_page(7) or is_page(5) or is_page(70) or is_page(66) or is_page(75)){ echo '<div class="removeheader"></div>';} ?>
 
 	<div class="container">
 		<?php do_action( 'foundationpress_after_header' );
