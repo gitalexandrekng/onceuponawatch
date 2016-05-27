@@ -1,5 +1,6 @@
 .title_news{
-    background:url(../../images/walpp.jpg) fixed center;
+    background:url(../../images/walpp.jpg) center;
+    background-attachment:fixed;
     background-size:cover;
     position:relative;
     z-index:10;
@@ -15,11 +16,69 @@
     }
 }
 
+.promoz{
+    width:100%;
+
+    .promozions{
+
+        .item{
+            .promoz-slide{
+                height:300px;
+                background-size:cover;
+                background-position:center;
+                color:black;
+                display:flex;
+                text-align:center;
+                padding:20px;
+                .inze{
+                    margin:auto;
+                    background:rgba(255,255,255,0.8);
+                    padding:50px;
+
+                    .titleze{
+                        text-transform: uppercase;
+                        font-weight:bold;
+                        font-size:18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .owl-dots{
+        text-align:center;
+
+        .owl-dot{
+            width:10px;
+            height:10px;
+            background:gray;
+            display:inline-block;
+            border-radius: 50%;
+            margin-left:5px;
+            margin-right:5px;
+            transition:0.5s;
+
+            &:hover{
+                background:black;
+            }
+        }
+
+        .active{
+            background:black;
+        }
+    }
+}
+
 .pagenews{
     background:white;
     width:100%;
     position:relative;
     z-index:20;
+
+    .listingproduit{
+        margin-top:50px;
+        margin-bottom:30px;
+    }
 
     .product-link{
         display:block;

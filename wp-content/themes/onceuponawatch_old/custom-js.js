@@ -9,6 +9,17 @@ $('.annonces-container').owlCarousel({
 	nav:false
 })
 
+$('.promozions').owlCarousel({
+	loop:true,
+	nav:true,
+	items:1,
+	animateOut: 'fadeOut',
+	autoplay:true,
+	loop:true,
+	autoplayTimeout:5000,
+	nav:false
+})
+
 $('.sloganz-slide').owlCarousel({
 	animateOut: 'slideOutDown',
     animateIn: 'flipInX',

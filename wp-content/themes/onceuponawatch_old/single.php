@@ -41,5 +41,5 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
 </div>
-<?php include('footer_other.php') ?>
+<?php include('footer_all.php') ?>
 <?php get_footer();

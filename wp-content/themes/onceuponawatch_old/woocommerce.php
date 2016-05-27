@@ -44,5 +44,5 @@ get_header();
 	</div>
 	<?php /* woocommerce_get_sidebar(); */ ?>
 </div>
-<?php include('footer_other.php'); ?>
+<?php include('footer_all.php'); ?>
 <?php get_footer();

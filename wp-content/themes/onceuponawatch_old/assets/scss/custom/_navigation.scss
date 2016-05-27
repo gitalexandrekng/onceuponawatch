@@ -15,9 +15,17 @@
     //box-shadow:0px 0px 15px rgba(0,0,0,0.2);
 
     .rechercherrr{
-        max-width:800px;
+        width:100%;
         margin:20px auto;
         display:none;
+        position:absolute;
+        left:0;
+        right:0;
+
+        .in{
+            max-width:800px;
+            margin:auto;
+        }
 
         @include breakpoint(850px down) {
             max-width:95%;

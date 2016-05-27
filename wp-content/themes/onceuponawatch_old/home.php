@@ -75,6 +75,6 @@ get_header();
 
 </section>
 
-<?php if (is_home()){ include("footer_home.php"); } else {}; ?>
+<?php if (is_home()){ include("footer_home.php"); include("footer_all.php"); } else {}; ?>
 
 <?php get_footer();

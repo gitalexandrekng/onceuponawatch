@@ -85,7 +85,9 @@
 		    </ul>
 		</div>
         <div class="rechercherrr">
-            <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+            <div class="in">
+                <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+            </div>
         </div>
     </div>
 
