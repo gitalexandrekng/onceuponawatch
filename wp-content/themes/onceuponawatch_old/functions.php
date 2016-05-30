@@ -49,16 +49,16 @@ require_once( 'library/responsive-images.php' );
 
 require_once( 'library/custom-post-slider.php' );
 
+function register_my_menu() {
+    register_nav_menu('headmenu',__( 'Header Menu' ));
+}
+    add_action( 'init', 'register_my_menu' );
+
 function home_page_menu_args( $args ) {
     $args['show_home'] = true;
     return $args;
 }
     add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
-
-function register_my_menu() {
-    register_nav_menu('headmenu',__( 'Header Menu' ));
-}
-    add_action( 'init', 'register_my_menu' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );

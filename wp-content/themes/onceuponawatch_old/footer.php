@@ -10,6 +10,8 @@
 
 ?>
 
+<?php if(is_page()){include('footer_all.php');} ?>
+
 		</div>
 		<div id="footer-container">
 			<footer id="footer">

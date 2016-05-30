@@ -42,18 +42,12 @@ $('.sloganz-slide').owlCarousel({
 
 	$('.annonces-container .item').css('height', $( window ).height() / 2);
 
-	/*$('.annonces-container').hover(function(){
-		$('.annonces-container .in').css('transform', 'scale(1.1)');
-	}, function(){
-		$('.annonces-container .in').css('transform', 'scale(1)')
-	})*/
-
 	$('a.add_to_cart_button').addClass('non');
 
 	$('.star-rating').css('margin', 'auto');
 
 	$('body').on('click', "a:not('.non')", function(){
-		$('.appear').addClass('animated fadeOutUp');
+		$('.appear').addClass('animated fadeOutUpBig');
 	});
 
 	$('.shopping a').addClass('non');

@@ -1,16 +1,11 @@
+body{overflow-x:hidden;}
+
 .site-header{
     display:none;
 }
 
-html, body{
-    height:100%;
-}
-
-body{overflow-x:hidden;}
-
 .appear{
     opacity:0;
-    min-height:100%;
 }
 
 .custom-button{

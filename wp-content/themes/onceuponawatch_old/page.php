@@ -16,7 +16,7 @@
 
  <?php get_template_part( 'template-parts/featured-image' ); ?>
 
- <div id="page" role="main">
+ <div id="page" role="main" style="background:white;position:relative;z-index:10;">
 
  <?php do_action( 'foundationpress_before_content' ); ?>
  <?php while ( have_posts() ) : the_post(); ?>
@@ -41,5 +41,4 @@
  <?php do_action( 'foundationpress_after_content' ); ?>
 
  </div>
- <?php include('footer_other.php'); ?>
  <?php get_footer();
