@@ -38,6 +38,7 @@
 <!-- Javascript perso -->
 <script src="<?php echo get_stylesheet_directory_uri() ?>/custom-js.js" type="text/javascript"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/custom-woocommerce.js" type="text/javascript"></script>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/custom-pageproduit.js" type="text/javascript"></script>
 
 <!-- Pour la parallax des bandeaux -->
 <script type="text/javascript">
