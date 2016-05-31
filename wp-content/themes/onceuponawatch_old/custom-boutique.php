@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div class="brandz"></div>
+<?php /*<div class="brandz"></div>
 
 <div class="lesinformations">
 
@@ -92,4 +92,4 @@
     <!-- Probleme
     ==================== -->
 
-</div>
+</div> ?>

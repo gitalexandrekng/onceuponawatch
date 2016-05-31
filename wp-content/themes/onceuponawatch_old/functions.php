@@ -49,6 +49,20 @@ require_once( 'library/responsive-images.php' );
 
 require_once( 'library/custom-post-slider.php' );
 
+
+/*add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+
+    unset( $tabs['description'] );      	// Remove the description tab
+    unset( $tabs['reviews'] ); 			// Remove the reviews tab
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+    return $tabs;
+
+}*/
+
+
 function register_my_menu() {
     register_nav_menu('headmenu',__( 'Header Menu' ));
 }

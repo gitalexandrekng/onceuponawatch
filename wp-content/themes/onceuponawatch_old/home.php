@@ -71,7 +71,7 @@ get_header();
 
 	</div>
 
-	<div class="text-center"><a href="<?php echo bloginfo('home') ?>/category/montres" class="custom-button-reverse">Voir tous les articles</a></div>
+	<div class="text-center"><a href="<?php echo bloginfo('home') ?>/category/montres" class="custom-button">Voir tous les articles</a></div>
 
 </section>
 

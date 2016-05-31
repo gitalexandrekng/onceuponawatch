@@ -28,7 +28,7 @@ $attributes = $product->get_attributes();
 ob_start();
 
 ?>
-<div class="shop_attributes">
+<table class="shop_attributes">
 
 	<?php if ( $product->enable_dimensions_display() ) : ?>
 
@@ -75,7 +75,7 @@ ob_start();
 	<?php endforeach; ?>
 
 
-</div>
+</table>
 <?php
 if ( $has_row ) {
 	echo ob_get_clean();

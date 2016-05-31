@@ -15,8 +15,8 @@ get_header();
 
 <?php include('custom-boutique.php'); ?>
 
-<div class="row">
-	<div class="small-12 large-12 columns shopping" role="main">
+<div class="row theboutique">
+	<div class="small-12 columns shopping shopping-in" role="main">
 
 	<?php do_action( 'foundationpress_before_content' ); ?>
 
@@ -25,6 +25,7 @@ get_header();
 			<header>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</header>
+
 			<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 			<div class="entry-content">
 				<?php the_content(); ?>

@@ -133,3 +133,6 @@ $('.sloganz-slide').owlCarousel({
 		$(this).find('.decouvrir').css({opacity:'0', marginLeft:'-200px'})
 		$(this).find('.overflowed').css('transform', 'scale(1)')
 	})
+
+	// custom button
+	$('.custom-button, .custom-button-reverse').addClass('hvr-bounce-to-top')

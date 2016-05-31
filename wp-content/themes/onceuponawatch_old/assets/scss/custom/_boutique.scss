@@ -381,6 +381,11 @@
 
  */
 
+ .fullwidth{
+     width:100%;
+     max-width: initial;
+ }
+
 .insane{
     position:relative;
     z-index:40;
@@ -388,18 +393,41 @@
 
     .breadfond{
         width:100%;
-        background:url(../../images/watchproduit.jpg) fixed center;
+        background:url(../../images/walpp.jpg) fixed center;
         background-size:cover;
-        /*background:lighten(black,20%);*/
 
         .fade{
             background:rgba(0,0,0,0.7);
             width:100%;
             text-align:center;
             color:white;
-            padding-top:30px;
-            padding-bottom:30px;
+            padding-top:100px;
+            padding-bottom:100px;
             font-family: "Montserrat";
+
+            .themarque{
+                text-transform:uppercase;
+                display:flex;
+                margin-bottom:20px;
+
+                h5{
+                    margin:auto;
+                    font-family:"Oswald";
+                    padding-bottom:2px;
+                    border-bottom:4px solid $gold;
+                }
+            }
+
+            .thetitre{
+                h1{
+                    margin:0px;
+                    letter-spacing: 3px;
+                }
+            }
+
+            a{
+                color:white;
+            }
         }
     }
 
@@ -440,15 +468,81 @@
             height:100%;
         }
 
-        .left{
+        .leftz{
             width:50%;
             text-align: center;
         }
 
-        .right{
+        .rightz{
             width:50%;
-            position:relative;
+            position:absolute;
             z-index:20;
+            right:0;
+            bottom:0;
+            top:0px;
+            margin:auto;
+            display:flex;
+
+            .inno{
+                width:80%;
+                margin:auto 0px;
+
+                .soci{
+                    margin-top:20px;
+
+                    ul{
+                        margin:0;
+
+                        li{
+                            display: inline-block;
+                            margin-left:10px;
+                            margin-right:10px;
+
+                            a{
+                                transition: 1s;
+                                display: block;
+
+                                &:hover{
+                                    transform:rotate(360deg);
+                                    color:$gold;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                h4{
+                    margin:auto;
+                    color:$gold;
+                    text-transform: uppercase;
+                }
+
+                .describeme{
+                    font-family:"Ubuntu Condensed";
+                    opacity:0.8;
+                }
+
+                .prices{
+                    font-family: "Montserrat";
+                    margin-top:10px;
+                }
+
+                .addd{
+                    margin-top:20px;
+
+                    input{
+                        height:42px;
+                        margin-right:20px;
+                    }
+
+                    .cart{
+                        display:flex;
+
+                        .single_add_to_cart_button{
+                        }
+                    }
+                }
+            }
         }
 
         .prod{
@@ -458,13 +552,7 @@
             width:100%;
             text-align: center;
             padding-top:50px;
-
-            .sepz{
-                background:$gold;
-                height:4px;
-                width:200px;
-                margin:auto;
-            }
+            display:none;
 
             .marque{
                 text-transform: uppercase;
@@ -477,6 +565,11 @@
                     border-bottom:5px solid $gold;
                     margin:auto;
                     letter-spacing: 2px;
+                    font-family:"Oswald";
+
+                    a{
+                        color:#666;
+                    }
                 }
 
             }
@@ -487,5 +580,161 @@
                 opacity:0.8;
             }
         }
+    }
+
+    .photoz{
+        overflow:hidden;
+
+        .inphoto{
+            width:100%;
+            height:200px;
+            background-size:cover;
+            background-position:center;
+        }
+
+        .testp{
+            height:200px;
+            background-size:cover;
+            background-position:center;
+            display:block;
+            transition:0.5s;
+            text-indent:-200000px;
+        }
+    }
+
+    .moreinfos{
+        background:#fafafa;
+        width:100%;
+        text-align:center;
+        padding-top:50px;
+        padding-bottom:50px;
+
+        .in{
+            max-width:1200px;
+            margin:auto;
+
+            .quoi{
+                margin-top:0px;margin-bottom:20px;
+                font-family: 'Ubuntu Condensed';
+            }
+
+            .titrz{
+                display:flex;
+
+                h4{
+                    margin:auto;
+                    text-transform: uppercase;
+                    color:#a09090;
+                    //font-family:"Ubuntu Condensed";
+                    //border-bottom:3px solid #a09090;
+                    font-size:32px;
+                }
+            }
+
+            table{
+
+                tbody{
+                    background-color:transparent;
+                }
+            }
+        }
+    }
+
+    .photofull{
+        width:100%;
+        background:url(../../images/home.jpg) fixed;
+        background-size:cover;
+
+        .fade{
+            background:rgba(0,0,0,0.8);
+            width:100%;
+            height:100%;
+            padding-top:70px;
+            padding-bottom:70px;
+            text-align: center;
+
+            h3{
+                color:white;
+                text-transform: uppercase;
+            }
+
+            .eip{
+                color:white;
+                opacity:0.6;
+            }
+        }
+    }
+
+    .clientsavis{
+        width:100%;
+        padding-top:50px;
+        padding-bottom:50px;
+        background:#fff;
+        text-align: center;
+
+        .in{
+            margin:auto;
+            max-width:600px;
+
+            .comment-text{
+                margin:0 !important;
+                border:1px solid lighten(#CCC, 10%) !important;
+                border-radius:0 !important;
+
+                .meta{
+                    text-transform: uppercase;
+                    font-family: 'Montserrat';
+                    margin-bottom:0px !important;
+                }
+
+                .description{
+                    font-family: 'Ubuntu Condensed';
+                }
+            }
+
+            #comment{
+                //border:1px solid lighten(#CCC, 10%);
+                border:0;
+                background:lighten(#CCC, 17%);
+            }
+
+            label{
+                display:none;
+            }
+
+            .comment-form-rating{
+                margin-top:10px !important;
+                margin-bottom:0px !important;
+
+                .stars{
+                    margin-bottom:0px !important;
+                }
+            }
+
+            h2{
+                font-size:16px;
+                text-transform: uppercase;
+            }
+
+            h3{
+                font-size:18px;
+                text-transform: uppercase;
+                margin-top:50px !important;
+            }
+
+            h4{
+                text-transform: uppercase;
+                color:#a09090;
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+.produitsautre{
+    .in{
+        padding-top:50px;
+        max-width:1200px;
+        margin:auto;
     }
 }

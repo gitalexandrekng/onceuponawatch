@@ -21,43 +21,31 @@ body{overflow-x:hidden;}
     padding-right:50px;
 
     &:hover{
+        background:transparent;
+    }
+
+    &:before{
         background:black;
     }
 }
 
-.custom-button-reverse-white{
+.custom-button-button{
     @extend .button;
-    background:transparent;
     letter-spacing:1px;
     transition:0.5s;
-    //font-weight:bold;
     font-family: "Montserrat";
     text-transform: uppercase;
-    border:2px solid black;
-    color:black;
+    background:black;
+    //border:2px solid black;
+    color:white;
+    width:100%;
+    margin-top:-12px;
     padding-left:50px;
     padding-right:50px;
 
     &:hover{
-        background:black;
-    }
-}
-
-.custom-button-reverse{
-    @extend .button;
-    letter-spacing:1px;
-    background:transparent;
-    transition:0.5s;
-    //font-weight:bold;
-    font-family: "Montserrat";
-    text-transform: uppercase;
-    border:2px solid black;
-    color:black;
-    padding-left:50px;
-    padding-right:50px;
-
-    &:hover{
-        background:black;
+        background:transparent;
+        color:black;
     }
 }
 

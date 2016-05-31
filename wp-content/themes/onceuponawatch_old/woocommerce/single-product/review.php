@@ -29,17 +29,9 @@ $verified = wc_review_is_from_verified_owner( $comment->comment_ID );
 
 	<div id="comment-<?php comment_ID(); ?>" class="comment_container">
 
-		<?php echo get_avatar( $comment, apply_filters( 'woocommerce_review_gravatar_size', '60' ), '' ); ?>
+		<?php //echo get_avatar( $comment, apply_filters( 'woocommerce_review_gravatar_size', '60' ), '' ); ?>
 
 		<div class="comment-text">
-
-			<?php if ( $rating && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) : ?>
-
-				<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="<?php echo sprintf( __( 'Rated %d out of 5', 'woocommerce' ), $rating ) ?>">
-					<span style="width:<?php echo ( $rating / 5 ) * 100; ?>%"><strong itemprop="ratingValue"><?php echo $rating; ?></strong> <?php _e( 'out of 5', 'woocommerce' ); ?></span>
-				</div>
-
-			<?php endif; ?>
 
 			<?php do_action( 'woocommerce_review_before_comment_meta', $comment ); ?>
 

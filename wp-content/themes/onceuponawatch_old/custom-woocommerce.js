@@ -25,7 +25,7 @@ $('.shopping li.product').hover(function(){
             $('li.product .add_to_cart_button').addClass('customadding')
             //$('#maybehide').hide();
 
-            if ($('.product_title').length ) {
+            if ($('.product_title').length ) {/*
 
                 $('h1').addClass('custom-title-produit');
                 $('.inboutique').remove();
@@ -72,7 +72,7 @@ $('.shopping li.product').hover(function(){
                         $('h2').remove();
                         $('.produitsrelatifsin').append($('.related'))
                     })
-                }
+                }*/
             }
         }
 
