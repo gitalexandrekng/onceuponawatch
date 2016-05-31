@@ -19,6 +19,7 @@
 /**
  * Load utility functions.
  */
+require_once( WPMEM_PATH . 'inc/api.php' );
 require_once( WPMEM_PATH . 'inc/utilities.php' );
 
 
@@ -68,6 +69,7 @@ if ( ! function_exists( 'wpmem_block' ) ):
  *
  * @since 2.6.0
  * @since 3.0.0 Now a wrapper for $wpmem->is_blocked().
+ * @deprecated 3.1.1 Use wpmem_is_blocked() instead.
  *
  * @global object $wpmem The WP-Members object class.
  *
@@ -493,10 +495,10 @@ function wpmem_wp_reg_validate( $errors, $sanitized_user_login, $user_email ) {
 	foreach ( $wpmem->fields as $field ) {
 		$is_error = false;
 		if ( $field[5] == 'y' && $field[2] != 'user_email' && ! in_array( $field[2], $exclude ) ) {
-			if ( ( $field[3] == 'checkbox' ) && ( ! isset( $_POST[ $field[2] ] ) ) ) {
+			if ( ( $field[3] == 'checkbox' || $field[3] == 'multicheckbox' || $field[3] == 'multiselect' || $field[3] == 'radio' ) && ( ! isset( $_POST[ $field[2] ] ) ) ) {
 				$is_error = true;
 			} 
-			if ( ( $field[3] != 'checkbox' ) && ( ! $_POST[ $field[2] ] ) ) {
+			if ( ( $field[3] != 'checkbox' && $field[3] != 'multicheckbox' && $field[3] != 'multiselect' && $field[3] != 'radio' ) && ( ! $_POST[ $field[2] ] ) ) {
 				$is_error = true;
 			}
 			if ( $is_error ) { $errors->add( 'wpmem_error', sprintf( $wpmem->get_text( 'reg_empty_field' ), __( $field[1], 'wp-members' ) ) ); }
@@ -511,9 +513,11 @@ function wpmem_wp_reg_validate( $errors, $sanitized_user_login, $user_email ) {
  * Inserts registration data from the native WP registration.
  *
  * @since 2.8.3
+ * @since 3.1.1 Added new 3.1 field types and activate user support.
+ *
+ * @todo Compartmentalize file upload along with main register function.
  *
  * @global object $wpmem The WP-Members object class.
- *
  * @param int $user_id The WP user ID.
  */
 function wpmem_wp_reg_finalize( $user_id ) {
@@ -526,9 +530,21 @@ function wpmem_wp_reg_finalize( $user_id ) {
 		// @todo This needs to change to $wpmem->excluded_fields($tag).
 		$exclude = wpmem_get_excluded_meta( 'register' );
 		foreach ( $wpmem->fields as $meta ) {
-			if ( isset( $_POST[ $meta[2] ] ) && ! in_array( $meta[2], $exclude ) ) {
-				update_user_meta( $user_id, $meta[2], sanitize_text_field( $_POST[ $meta[2] ] ) );
+			if ( isset( $_POST[ $meta[2] ] ) && ! in_array( $meta[2], $exclude ) && 'file' != $meta[3] && 'image' != $meta[3] ) {
+				if ( 'multiselect' == $meta[3] || 'multicheckbox' == $meta[3] ) {
+					$delimiter = ( isset( $meta[8] ) ) ? $meta[8] : '|';
+					$data = implode( $delimiter, $_POST[ $meta[2] ] );
+				} else {
+					$data = $_POST[ $meta[2] ];
+				}
+				update_user_meta( $user_id, $meta[2], sanitize_text_field( $data ) );
 			}
+		}
+		
+		// If moderated registration and activate is checked, set active flags.
+		if ( is_admin() && $add_new && 1 == $wpmem->mod_reg && isset( $_POST['activate_user'] ) ) {
+			update_user_meta( $user_id, 'active', 1 );
+			wpmem_set_user_status( $user_id, 0 );
 		}
 	}
 	return;
@@ -592,34 +608,6 @@ function wpmem_securify_comments_array( $comments , $post_id ) {
 	global $wpmem;
 	$comments = ( ! is_user_logged_in() && $wpmem->is_blocked() ) ? array() : $comments;
 	return $comments;
-}
-
-
-/**
- * Redirects a user to defined login page with return redirect.
- *
- * @since 3.0.2
- *
- * @global object $wp    The WordPress object.
- * @global object $post  The WordPress post object.
- * @global object $wpmem The WP-Members object.
- */
-function wpmem_redirect_to_login() {
-	
-	global $wp, $post, $wpmem;
-
-	if ( ! is_user_logged_in() && $wpmem->is_blocked() ) {
-		
-		// Get current page location.
-		$current_page = home_url( add_query_arg( array(), $wp->request ) );
-		$redirect_to  = urlencode( $current_page );
-		
-		$url = add_query_arg( 'redirect_to', $redirect_to, $wpmem->user_pages['login'] );
-		
-		wp_redirect( $url );
-		exit();
-	}
-	return;
 }
 
 

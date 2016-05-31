@@ -12,7 +12,7 @@ $('.shopping li.product').hover(function(){
             $('.inboutique').show().after($('.widget_price_filter'));
             $('.inboutique .fade').prepend($('.page-title'), '<hr>')
             $('.widget_product_categories, .widget_layered_nav').addClass('inlinefiltres');
-            $('.widget_price_filter').css({maxWidth:'1200px', margin:'auto auto 50px auto', listStyleType:'none', textAlign:'center'});
+            $('.widget_price_filter').css({display:'none', maxWidth:'1200px', margin:'auto auto 50px auto', listStyleType:'none', textAlign:'center'});
             $('li.product').each(function(){
                 $(this).addClass('customproduit')
                 $(this).hover(function(){

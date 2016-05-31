@@ -3,7 +3,7 @@
 Plugin Name: WP-Members
 Plugin URI:  http://rocketgeek.com
 Description: WP access restriction and user registration.  For more information on plugin features, refer to <a href="http://rocketgeek.com/plugins/wp-members/users-guide/">the online Users Guide</a>. A <a href="http://rocketgeek.com/plugins/wp-members/quick-start-guide/">Quick Start Guide</a> is also available. WP-Members(tm) is a trademark of butlerblog.com.
-Version:     3.1.0.3
+Version:     3.1.1
 Author:      Chad Butler
 Author URI:  http://butlerblog.com/
 Text Domain: wp-members
@@ -62,7 +62,7 @@ License:     GPLv2
 
 
 // Initialize constants.
-define( 'WPMEM_VERSION', '3.1.0.3' );
+define( 'WPMEM_VERSION', '3.1.1' );
 define( 'WPMEM_DEBUG', false );
 define( 'WPMEM_DIR',  plugin_dir_url ( __FILE__ ) );
 define( 'WPMEM_PATH', plugin_dir_path( __FILE__ ) );
@@ -75,6 +75,9 @@ add_action( 'after_setup_theme', 'wpmem_init', 10 );
 
 // Install the plugin.
 register_activation_hook( __FILE__, 'wpmem_install' );
+
+// Downgrade settings on deactivation.
+register_deactivation_hook( __FILE__, 'wpmem_downgrade' );
 
 
 /**
@@ -225,8 +228,11 @@ function wpmem_admin_options() {
  * Install the plugin options.
  *
  * @since 2.5.2
+ * @since 3.1.1 Added rollback.
+ *
+ * @param 
  */
-function wpmem_install() {
+function wpmem_install( $rollback = false ) {
 
 	/**
 	 * Load the install file.
@@ -249,15 +255,25 @@ function wpmem_install() {
 		$original_blog_id = get_current_blog_id();   
 		foreach ( $blogs as $blog_id ) {
 			switch_to_blog( $blog_id->blog_id );
-			wpmem_do_install();
+			( 'downgrade' == $rollback ) ? wpmem_downgrade_dialogs() : wpmem_do_install();
 		}
 		switch_to_blog( $original_blog_id );
 
 	} else {
 
 		// Single site install.
-		wpmem_do_install();
+		( 'downgrade' == $rollback ) ? wpmem_downgrade_dialogs() : wpmem_do_install();
 	}
+}
+
+
+/**
+ * Runs downgrade steps in install function.
+ *
+ * @since 3.1.1
+ */
+function wpmem_downgrade() {
+	wpmem_install( 'downgrade' );
 }
 
 

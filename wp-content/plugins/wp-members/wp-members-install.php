@@ -15,10 +15,10 @@
  *
  * Functions included:
  * - wpmem_do_install
- * - wpmem_update_settings
- * - wpmem_append_email
- * - wpmem_default_dialogs
- * - wpmem_update_captcha
+ * - wpmem_upgrade_settings
+ * - wpmem_upgrade_email
+ * - wpmem_upgrade_dialogs
+ * - wpmem_upgrade_captcha
  */
 
  
@@ -125,15 +125,15 @@ function wpmem_do_install() {
 		update_option( 'wpmembers_fields', $wpmem_fields_options_arr, '', 'yes' ); // using update_option to allow for forced update
 
 		$wpmem_dialogs_arr = array(
-			"This content is restricted to site members.  If you are an existing user, please log in.  New users may register below.",
-			"Sorry, that username is taken, please try another.",
-			"Sorry, that email address already has an account.<br />Please try another.",
-			"Congratulations! Your registration was successful.<br /><br />You may now log in using the password that was emailed to you.",
-			"Your information was updated!",
-			"Passwords did not match.<br /><br />Please try again.",
-			"Password successfully changed!",
-			"Either the username or email address do not exist in our records.",
-			"Password successfully reset!<br /><br />An email containing a new password has been sent to the email address on file for your account.",
+			'restricted_msg'   => "This content is restricted to site members.  If you are an existing user, please log in.  New users may register below.",
+			'user'             => "Sorry, that username is taken, please try another.",
+			'email'            => "Sorry, that email address already has an account.<br />Please try another.",
+			'success'          => "Congratulations! Your registration was successful.<br /><br />You may now log in using the password that was emailed to you.",
+			'editsuccess'      => "Your information was updated!",
+			'pwdchangerr'      => "Passwords did not match.<br /><br />Please try again.",
+			'pwdchangesuccess' => "Password successfully changed!",
+			'pwdreseterr'      => "Either the username or email address do not exist in our records.",
+			'pwdresetsuccess'  => "Password successfully reset!<br /><br />An email containing a new password has been sent to the email address on file for your account.",
 		);
 
 		// Insert TOS dialog placeholder.
@@ -165,6 +165,9 @@ function wpmem_do_install() {
  * @return array $wpmem_newsettings
  */
 function wpmem_upgrade_settings() {
+	
+	// Update dialogs to 3.1.1 settings.
+	wpmem_upgrade_dialogs();
 
 	$wpmem_settings = get_option( 'wpmembers_settings' );
 
@@ -447,29 +450,49 @@ username: [username]
 
 
 /**
- * Checks the dialogs array for string changes.
+ * Checks the dialogs array for necessary changes.
  *
  * @since 2.9.3
  * @since 3.0.0 Changed from update_dialogs() to wpmem_update_dialogs().
  * @since 3.1.0 Changed from wpmem_update_dialogs() to wpmem_upgrade_dialogs().
+ * @since 3.1.1 Converts numeric dialog array to associative.
  */
 function wpmem_upgrade_dialogs() {
 
-	$wpmem_dialogs_arr = get_option( 'wpmembers_dialogs' );
-	$do_update = false;
-
-	if ( $wpmem_dialogs_arr[0] == "This content is restricted to site members.  If you are an existing user, please login.  New users may register below." ) {
-		$wpmem_dialogs_arr[0] = "This content is restricted to site members.  If you are an existing user, please log in.  New users may register below.";
-		$do_update = true;
+	$wpmem_dialogs = get_option( 'wpmembers_dialogs' );
+	
+	if ( ! array_key_exists( 'restricted_msg', $wpmem_dialogs ) ) {
+		// Update is needed.
+		$new_arr  = array();
+		$new_keys = array( 'restricted_msg', 'user', 'email', 'success', 'editsuccess', 'pwdchangerr', 'pwdchangesuccess', 'pwdreseterr', 'pwdresetsuccess' );
+		foreach ( $wpmem_dialogs as $key => $val ) {
+			$new_arr[ $new_keys[ $key ] ] = $val;
+		}
+		update_option( 'wpmembers_dialogs', $new_arr, '', 'yes' );
 	}
 
-	if ( $wpmem_dialogs_arr[3] == "Congratulations! Your registration was successful.<br /><br />You may now login using the password that was emailed to you." ) {
-		$wpmem_dialogs_arr[3] = "Congratulations! Your registration was successful.<br /><br />You may now log in using the password that was emailed to you.";
-		$do_update = true;
-	}
+	return;
+}
 
-	if ( $do_update ) {
-		update_option( 'wpmembers_dialogs', $wpmem_dialogs_arr, '', 'yes' );
+
+/**
+ * Downgrades dialogs array for pre-3.1.1 version rollback.
+ *
+ * @since 3.1.1
+ */
+function wpmem_downgrade_dialogs() {
+	
+	$wpmem_dialogs = get_option( 'wpmembers_dialogs' );
+	
+	if ( array_key_exists( 'restricted_msg', $wpmem_dialogs ) ) {
+		// Update is needed.
+		$new_arr  = array();
+		$i = 0;
+		foreach ( $wpmem_dialogs as $key => $val ) {
+			$new_arr[ $i ] = $val;
+			$i++;
+		}
+		update_option( 'wpmembers_dialogs', $new_arr, '', 'yes' );
 	}
 
 	return;

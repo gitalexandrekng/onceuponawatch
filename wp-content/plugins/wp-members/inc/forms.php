@@ -52,10 +52,12 @@ function wpmem_inc_login( $page = "page", $redirect_to = null, $show = 'show' ) 
 
 	     if ( $wpmem_regchk != "success" ) {
 
-			$arr = get_option( 'wpmembers_dialogs' );
+			$dialogs = get_option( 'wpmembers_dialogs' );
 			
 			// This shown above blocked content.
-			$str = '<p>' . __( stripslashes( $arr[0] ), 'wp-members' ) . '</p>';
+			$msg = $wpmem->get_text( 'restricted_msg' );
+			$msg = ( $dialogs['restricted_msg'] == $msg ) ? $msg : __( stripslashes( $dialogs['restricted_msg'] ), 'wp-members' );
+			$str = "<p>$msg</p>";
 			
 			/**
 			 * Filter the post restricted message.
@@ -817,14 +819,18 @@ function wpmem_inc_registration( $toggle = 'new', $heading = '', $redirect_to = 
 				
 					// For all other input types.
 					//$input = wpmem_create_formfield( $field[2], $field[3], $val, $valtochk );
-					$input = $wpmem->forms->create_form_field( array( 
+					$formfield_args = array( 
 						'name'     => $field[2],
 						'type'     => $field[3],
 						'value'    => $val,
 						'valtochk' => $valtochk,
 						//'class'    => ( $class ) ? $class : 'textbox',
 						'required' => ( 'y' == $field[5] ) ? true : false,
-					) );
+					);
+					if ( 'multicheckbox' == $field[3] || 'multiselect' == $field[3] ) {
+						$formfield_args['delimiter'] = ( isset( $field[8] ) ) ? $field[8] : '|';
+					}
+					$input = $wpmem->forms->create_form_field( $formfield_args );
 				
 				}
 				
@@ -912,7 +918,7 @@ function wpmem_inc_registration( $toggle = 'new', $heading = '', $redirect_to = 
 	// Put the rows from the array into $form.
 	$form = ''; $enctype = '';
 	foreach ( $rows as $row_item ) {
-		$enctype = ( $row_item['type'] == 'file' ) ? "multipart/form-data" : $enctype;
+		$enctype = ( $row_item['type'] == 'file' ||  $row_item['type'] == 'image' ) ? "multipart/form-data" : $enctype;
 		$row  = ( $row_item['row_before']   != '' ) ? $row_item['row_before'] . $args['n'] . $row_item['label'] . $args['n'] : $row_item['label'] . $args['n'];
 		$row .= ( $row_item['field_before'] != '' ) ? $row_item['field_before'] . $args['n'] . $args['t'] . $row_item['field'] . $args['n'] . $row_item['field_after'] . $args['n'] : $row_item['field'] . $args['n'];
 		$row .= ( $row_item['row_after']    != '' ) ? $row_item['row_after'] . $args['n'] : '';
@@ -1131,18 +1137,21 @@ endif;
  * Create an attribution link in the form.
  *
  * @since 2.6.0
+ * @since 3.1.1 Updated to use new object setting.
  *
+ * @global object $wpmem
  * @return string $str
  */
 function wpmem_inc_attribution() {
 
+	global $wpmem;
 	$http = ( is_ssl() ) ? 'https://' : 'http://';
 	$str = '
 	<div align="center">
 		<small>Powered by <a href="' . $http . 'rocketgeek.com" target="_blank">WP-Members</a></small>
 	</div>';
 		
-	return ( get_option( 'wpmembers_attrib' ) ) ? $str : '';
+	return ( 1 == $wpmem->attrib ) ? $str : '';
 }
 
 

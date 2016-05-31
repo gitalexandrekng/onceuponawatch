@@ -64,16 +64,23 @@
     <div class="wrapper">
         <div class="header-image-container">
             <div class="in">
-                <div class="searchbar"><?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?></div>
-                <div class="owl-carousel sloganz sloganz-slide">
-                    <div class="item">Finesse</div>
-                    <div class="item">Eminence</div>
-                    <div class="item">Qualité</div>
-                </div>
-                <!--<div class="scrollsvpcontain">
-                    <div class="scrollsvp">
+                <div class="zzzer">
+                    <div class="searchbar"><?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?></div>
+                    <div class="in-head">
+                        <div class="flex">
+                            <div class="owl-carousel sloganz sloganz-slide">
+                                <div class="item">Finesse</div>
+                                <div class="item">Eminence</div>
+                                <div class="item">Qualité</div>
+                                <div class="item">Elégance</div>
+                            </div>
+                            <div class="citation">
+                                « Celui qui a dit que l’argent ne faisait pas le bonheur ne savait tout simplement pas où faire son shopping »
+                            </div>
+
+                        </div>
                     </div>
-                </div>-->
+                </div>
             </div>
         </div>
     </div>

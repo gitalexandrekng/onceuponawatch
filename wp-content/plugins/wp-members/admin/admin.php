@@ -69,7 +69,7 @@ function wpmem_admin_plugin_links( $links, $file ) {
 		$wpmem_plugin = plugin_basename( WPMEM_PATH . '/wp-members.php' );
 	}
 	if ( $file == $wpmem_plugin ) {
-		$settings_link = '<a href="options-general.php?page=wpmem-settings">' . __( 'Settings', 'wp-members' ) . '</a>';
+		$settings_link = '<a href="' . add_query_arg( 'page', 'wpmem-settings', 'options-general.php' ) . '">' . __( 'Settings', 'wp-members' ) . '</a>';
 		$links = array_merge( array( $settings_link ), $links );
 	}
 	return $links;
@@ -291,6 +291,52 @@ function wpmem_admin_enqueue_scripts( $hook ) {
 	if ( $hook == 'settings_page_wpmem-settings' ) {
 		wp_enqueue_script( 'wpmem-admin', WPMEM_DIR . 'admin/js/admin.js', '', WPMEM_VERSION );
 	}
+}
+
+
+/**
+ * Wrapper function for adding custom emails.
+ *
+ * @since 3.1.1
+ *
+ * @global object $wpmem         The WP_Members object class.
+ * @param  string $tag           Slug for the custom email.
+ * @param  string $heading       Heading to display in admin panel.
+ * @param  string $subject_input Slug for the subject. 
+ * @param  string $message_input Slug for the message body.
+ */
+function wpmem_add_custom_email( $tag, $heading, $subject_input, $message_input ) {
+	global $wpmem;
+	$args = array(
+		'name'          => $tag,
+		'heading'       => $heading, 
+		'subject_input' => $subject_input,
+		'body_input'    => $message_input,	
+	);
+	$wpmem->admin->add_email( $args );
+}
+
+
+/**
+ * Wrapper function for adding custom dialogs.
+ *
+ * @since 3.1.1
+ *
+ * @param  array  $dialogs Dialog settings array.
+ * @param  string $tag     Slug for dialog to be added.
+ * @param  string $msg     The dialog message.
+ * @param  string $label   Label for admin panel.
+ * @return array  $dialogs Dialog settings array with prepped custom dialog added.
+ */
+function wpmem_add_custom_dialog( $dialogs, $tag, $msg, $label ) {
+	if ( is_admin() && isset( $_GET['tab'] ) && 'dialogs' == $_GET['tab'] ) {
+		$dialogs[ $tag ] = array(
+			'name'  => $tag,
+			'label' => $label,
+			'value' => ( ! isset( $dialogs[ $tag ] ) ) ? $msg : $dialogs[ $tag ],
+		);
+	}
+	return $dialogs;
 }
 
 // End of File.

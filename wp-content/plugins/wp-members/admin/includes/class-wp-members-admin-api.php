@@ -26,6 +26,15 @@ class WP_Members_Admin_API {
 	 * @var array
 	 */
 	public $emails = array();
+	
+	/**
+	 * Container for dialogs.
+	 *
+	 * @since 3.1.1
+	 * @access public
+	 * @var array
+	 */
+	public $dialogs = array();
 
 	/**
 	 * Plugin initialization function.
@@ -45,6 +54,9 @@ class WP_Members_Admin_API {
 
 		// Load default emails.
 		$emails = $this->default_emails();
+		
+		// Load default dialogs.
+		$dialogs = $this->default_dialogs();
 	}
 
 	/**
@@ -66,8 +78,8 @@ class WP_Members_Admin_API {
 			require_once( WPMEM_PATH . 'admin/tab-dialogs.php' );
 			require_once( WPMEM_PATH . 'admin/tab-emails.php' );
 			require_once( WPMEM_PATH . 'admin/tab-captcha.php' );
+			require_once( WPMEM_PATH . 'admin/tab-about.php' );
 			require_once( WPMEM_PATH . 'admin/dialogs.php' );
-			//require_once( WPMEM_PATH . 'admin/tab-about.php' );
 		}
 		if ( current_user_can( 'edit_posts' ) ) {
 			require_once( WPMEM_PATH . 'admin/post.php' );
@@ -100,6 +112,10 @@ class WP_Members_Admin_API {
 			add_action( 'manage_posts_custom_column', 'wpmem_post_columns_content', 10, 2 );
 			add_filter( 'manage_pages_columns',       'wpmem_post_columns' );
 			add_action( 'manage_pages_custom_column', 'wpmem_post_columns_content', 10, 2 );
+			
+			add_action( 'wpmem_admin_after_profile',  'wpmem_profile_show_activate',   7 );
+			add_action( 'wpmem_admin_after_profile',  'wpmem_profile_show_expiration', 8 );
+			add_action( 'wpmem_admin_after_profile',  'wpmem_profile_show_ip',         9 );
 		}
 	} // End of load_hooks()
 
@@ -207,6 +223,64 @@ class WP_Members_Admin_API {
 	}
 
 	/**
+	 * Adds dialogs to the Dialogs tab.
+	 *
+	 * @since 3.1.1
+	 *
+	 * @param array $args Settings array for the dialog.
+	 */
+	function do_dialog_input( $args ) { ?>
+        <tr valign="top"> 
+            <th scope="row"><?php echo $args['label']; ?></th> 
+            <td><textarea name="<?php echo $args['name'] . "_dialog"; ?>" rows="3" cols="50" id="" class="large-text code"><?php echo stripslashes( $args['value'] ); ?></textarea></td> 
+        </tr><?php
+	}
+
+	/**
+	 * Saves custom dialog settings.
+	 *
+	 * @since 3.1.1
+	 */
+	function dialog_update() {
+		$settings = array();
+		foreach ( $this->dialogs as $dialog ) {
+			if ( isset( $_POST[ $dialog['name'] . '_dialog' ] ) ) {
+				$settings[ $dialog['name'] ] = $_POST[ $dialog['name'] . '_dialog' ];
+			}
+		}
+		update_option( 'wpmembers_dialogs', $settings, true );
+		// Refresh settings
+		$this->default_dialogs();
+		return;
+	}	
+		
+	/**
+	 * Handles custom dialog settings.
+	 *
+	 * @since 3.1.1
+	 *
+	 * @param  array $args Settings array for the dialog.
+	 * @return array $args
+	 */
+	function add_dialog( $args ) {
+		global $wpmem;
+		$defaults = array(
+			'name'  => $args['name'],
+            'label' => $args['label'],
+			//'input' => $args['name'] . '_dialog',
+			'value' => $args['value'],
+			//'value' => ( $args['value'] ) ? $args['value'] : $wpmem->get_text( $key ),
+        );
+		
+		// Merge args with settings.
+		$args = wp_parse_args( $args, $defaults );
+		
+		$this->dialogs[ $args['name'] ] = $args;
+		
+		//return $args;
+	}
+
+	/**
 	 * Settings for default tabs.
 	 *
 	 * @since 3.1.0
@@ -276,6 +350,76 @@ class WP_Members_Admin_API {
 			) );
 		}
 	
+	}
+	
+	/** 
+	 * Settings for default dialogs.
+	 *
+	 * @since 3.1.1
+	 */	
+	function default_dialogs() {
+		global $wpmem;
+		
+		/**
+		 * Filter the dialog array to add custom dialogs.
+		 *
+		 * @since 3.1.1
+		 *
+		 * @param array $dialog_array
+		 */
+		$dialogs = apply_filters( 'wpmem_dialogs', get_option( 'wpmembers_dialogs' ) );
+		
+		$dialog_labels = array(
+			'restricted_msg'   => __( "Restricted post (or page), displays above the login/registration form", 'wp-members' ),
+			'user'             => __( "Username is taken", 'wp-members' ),
+			'email'            => __( "Email is registered", 'wp-members' ),
+			'success'          => __( "Registration completed", 'wp-members' ),
+			'editsuccess'      => __( "User update", 'wp-members' ),
+			'pwdchangerr'      => __( "Passwords did not match", 'wp-members' ),
+			'pwdchangesuccess' => __( "Password changes", 'wp-members' ),
+			'pwdreseterr'      => __( "Username or email do not exist when trying to reset forgotten password", 'wp-members' ),
+			'pwdresetsuccess'  => __( "Password reset", 'wp-members' ),
+		);
+		
+		foreach ( $dialogs as $key => $val ) {
+			if ( array_key_exists( $key, $dialog_labels ) ) {
+				$dialogs[ $key ] = array(
+					'name'  => $key,
+					'label' => $dialog_labels[ $key ],
+					'value' => $dialogs[ $key ],
+				);
+			}
+		}
+
+		foreach ( $dialogs as $val ) {
+			$this->add_dialog( $val );
+		}
+	}
+	
+	
+	/**
+	 * Get the current form.
+	 *
+	 * @since 3.1.2
+	 *
+	 * @todo Work on multi-form project for 3.1.2
+	 */
+	function get_form( $form = 'default' ) {
+		/*
+		$current_form = ( isset( $_GET['form'] ) ) ? $_GET['form'] : $form;
+		$wpmem_forms = get_option( 'wpmembers_forms' );
+		$fields = $wpmem_forms[ $current_form ];
+		$this->current_form = $current_form;
+		$this->current_form_fields = $fields;
+		*/
+		$current_form = ( isset( $_GET['form'] ) ) ? $_GET['form'] : $form;
+		$this->current_form = $current_form;
+		global $wpmem;
+		// Add numeric array form fields as associative
+		foreach( $wpmem->fields as $field ) {
+			$wpmem->fields[ $field[2] ] = $field;
+		}
+		$this->current_form_fields = $wpmem->fields;
 	}
 	
 } // End of WP_Members_Admin_API class.

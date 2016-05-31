@@ -38,12 +38,13 @@ class WP_Members_Forms {
 	 */
 	function create_form_field( $args ) {
 		
-		$name     = $args['name'];
-		$type     = $args['type'];
-		$value    = $args['value'];
-		$valtochk = $args['valtochk'];
-		$class    = ( isset( $args['class'] ) ) ? $args['class'] : 'textbox';
-		$required = ( isset( $args['required'] ) ) ? $args['required'] : false;
+		$name      = $args['name'];
+		$type      = $args['type'];
+		$value     = maybe_unserialize( $args['value'] );
+		$valtochk  = $args['valtochk'];
+		$class     = ( isset( $args['class'] ) ) ? $args['class'] : 'textbox';
+		$required  = ( isset( $args['required'] ) ) ? $args['required'] : false;
+		$delimiter = ( isset( $args['delimiter'] ) ) ? $args['delimiter'] : '|';
 	
 		switch ( $type ) { 
 			
@@ -97,7 +98,7 @@ class WP_Members_Forms {
 				$pieces = explode( '|', $option );
 				if ( 'multiselect' == $type ) {
 					$chk = '';
-					$values = ( empty( $valtochk ) ) ? array() : ( is_array( $valtochk ) ? $valtochk : explode( '|', $valtochk ) );
+					$values = ( empty( $valtochk ) ) ? array() : ( is_array( $valtochk ) ? $valtochk : explode( $delimiter, $valtochk ) );
 				} else {
 					$chk = $valtochk;
 					$values = array();
@@ -113,7 +114,7 @@ class WP_Members_Forms {
 			$str = '';
 			foreach ( $value as $option ) {
 				$pieces = explode( '|', $option );
-				$values = ( empty( $valtochk ) ) ? array() : ( is_array( $valtochk ) ? $valtochk : explode( '|', $valtochk ) );
+				$values = ( empty( $valtochk ) ) ? array() : ( is_array( $valtochk ) ? $valtochk : explode( $delimiter, $valtochk ) );
 				$chk = ( isset( $pieces[2] ) && '' == $valtochk ) ? $pieces[1] : '';
 				$str = $str . $this->create_form_field( array(
 					'name' => $name . '[]',
@@ -192,7 +193,27 @@ class WP_Members_Forms {
 		return false;
 	} // End upload_file()
 	
-	
+	/**
+	 * Sets the file upload directory.
+	 *
+	 * This is a filter function for upload_dir.
+	 *
+	 * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/upload_dir
+	 *
+	 * @since 3.1.0
+	 *
+	 * @param  array $param {
+	 *     The directory information for upload.
+	 *
+	 *     @type string $path
+	 *     @type string $url
+	 *     @type string $subdir
+	 *     @type string $basedir
+	 *     @type string $baseurl
+	 *     @type string $error
+	 * }
+	 * @return array $param
+	 */
 	function file_upload_dir( $param ) {
 		$user_id  = ( isset( $this->file_user_id ) ) ? $this->file_user_id : null;
 		
@@ -210,7 +231,7 @@ class WP_Members_Forms {
 		 */
 		$args = apply_filters( 'wpmem_user_upload_dir', $args );
 
-		$param['subdir'] = $sub_dir;
+		$param['subdir'] = '/' . $args['wpmem_dir'] . $args['user_dir'];
 		$param['path']   = $param['basedir'] . '/' . $args['wpmem_dir'] . $args['user_dir'];
 		$param['url']    = $param['baseurl'] . '/' . $args['wpmem_dir'] . $args['user_dir'];
 	

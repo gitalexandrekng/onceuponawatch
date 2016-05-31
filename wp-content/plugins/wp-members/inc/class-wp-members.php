@@ -69,9 +69,9 @@ class WP_Members {
 		require_once( WPMEM_PATH . 'inc/class-wp-members-forms.php' );
 		$this->forms = new WP_Members_Forms;
 		
-		// Load utilities.
-		require_once( WPMEM_PATH . 'inc/class-wp-members-utilities.php' );
-		$this->utitilies = new WP_Members_Utilities;
+		// Load api.
+		require_once( WPMEM_PATH . 'inc/class-wp-members-api.php' );
+		$this->api = new WP_Members_API;
 		
 	}
 
@@ -95,6 +95,7 @@ class WP_Members {
 		add_shortcode( 'wpmem_form',       'wpmem_sc_forms'        );
 		add_shortcode( 'wpmem_show_count', 'wpmem_sc_user_count'   );
 		add_shortcode( 'wpmem_profile',    'wpmem_sc_user_profile' );
+		add_shortcode( 'wpmem_loginout',   'wpmem_sc_loginout'     );
 		
 		/**
 		 * Fires after shortcodes load (for adding additional custom shortcodes).
@@ -366,7 +367,11 @@ class WP_Members {
 	 * The Securify Content Filter.
 	 *
 	 * This is the primary function that picks up where get_action() leaves off.
-	 * Determines whether content is shown or hidden for both post and pages.
+	 * Determines whether content is shown or hidden for both post and pages. This
+	 * is a filter function for the_content.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/the_content/
+	 * @link https://developer.wordpress.org/reference/hooks/the_content/
 	 *
 	 * @since 3.0.0
 	 *
@@ -481,6 +486,19 @@ class WP_Members {
 	 */
 	function load_fields() {
 		$this->fields = get_option( 'wpmembers_fields' );
+		
+		// Add new field array keys
+		// @todo multi-form project for 3.1.2
+		/*for( $row = 0; $row < count( $this->fields ); $row++ ) {
+			$this->fields[ $row ]['id']            = $this->fields[ $row ][0];
+			$this->fields[ $row ]['label']         = $this->fields[ $row ][1];
+			$this->fields[ $row ]['meta_key']      = $this->fields[ $row ][2];
+			$this->fields[ $row ]['type']          = $this->fields[ $row ][3];
+			$this->fields[ $row ]['display']       = ( 'y' == $this->fields[ $row ][4] ) ? true : false;
+			$this->fields[ $row ]['required']      = ( 'y' == $this->fields[ $row ][5] ) ? true : false;
+			$this->fields[ $row ]['profile_only']  = '';
+			$this->fields[ $row ]['native']        = ( 'y' == $this->fields[ $row ][6] ) ? true : false;
+		}*/
 	}
 	
 	/**

@@ -51,7 +51,7 @@ hr{
 
 .last-articles{
     text-align:center;
-    padding-top:50px;
+    padding-top:10px;
     padding-bottom:50px;
 
     .product-link{
@@ -61,6 +61,7 @@ hr{
         padding-top:20px;
         padding-bottom:20px;
         margin-bottom:20px;
+        transition:0.5s;
 
         #left-disappear{
             opacity:0;
@@ -78,7 +79,8 @@ hr{
 
     .article-subtitle{
         display:block;
-        font-family: "Merriweather";
+        font-family: "Montserrat";
+        text-transform: uppercase;
         margin-top:10px;
     }
 
@@ -115,16 +117,104 @@ hr{
 
 .bestseller{
     text-align:center;
-    padding-top:50px;
+    padding-top:20px;
     padding-bottom:50px;
+
+    .singleproduct{
+        position:relative;
+
+        .ecritures{
+            width:60%;
+            text-align:center;
+            position:absolute;
+            height:100%;
+            display:flex;
+
+            .ine{
+                margin:auto;
+                position:relative;
+                z-index:4;
+
+                .titreproduit{
+                    display:block;
+                    font-size:26px;
+                    background:rgba(255,255,255,0.9);
+                    padding:10px 30px;
+                }
+
+                .marqueproduit{
+                    display:block;
+                    text-transform:uppercase;
+                    margin-bottom:20px;
+                }
+
+                .decouvrir{
+                    opacity:0;
+                    transition:0.5s;
+                    border-bottom:4px solid #d7eefa;
+                    margin-left:-200px;
+                }
+            }
+        }
+
+        .thumbnail-product{
+            max-width:600px;
+            margin:auto;
+            overflow:hidden;
+            background:white;
+            position:relative;
+
+            .link{
+                display:block;
+                position:absolute;
+                left:0;
+                top:0;
+                width:100%;
+                height:100%;
+            }
+
+            .overflowed{
+                transition:0.5s;
+            }
+        }
+    }
+
+    .bestsell-title{
+        width:100%;
+        background:url(../../images/home.jpg) fixed;
+        background-size:cover;
+        background-position:center;
+
+        .fade{
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.7);
+            color:white;
+            padding-top:100px;
+            padding-bottom:100px;
+
+            hr{
+                background:white;
+            }
+        }
+    }
 
     .product-link{
         display:block;
         overflow:hidden;
-        border:1px solid lighten(#CCC, 10%);
         padding-top:20px;
         padding-bottom:20px;
         margin-bottom:20px;
+        position:relative;
+
+        .inza{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.1);
+            top:0;
+            left:0;
+        }
 
         #left-disappear{
             opacity:0;
@@ -212,10 +302,41 @@ hr{
     }
 }
 
+.assure{
+    text-align:center;
+    margin-top:15px;
+    margin-bottom:10px;
+
+    .oklm{
+        border:1px solid #000;
+        padding:10px 0px;
+        position:relative;
+        display:block;
+        transition:0.3s;
+
+        &:hover{
+            color:$gold;
+            border:1px solid $gold;
+        }
+
+        i{
+            position:absolute;
+            top:8px;
+            bottom:0;left:14px;
+            font-size:28px;
+        }
+    }
+}
+
 .annonces{
+    //width:1180px;
+    width:1180px;
+    //margin:-50px auto 0px auto;
+    margin:auto;
 
     .annonces-container{
-        //padding:0px 20px 0px 20px;
+        padding:5px 5px 0px 5px;
+        //padding-top:5px;
 
         .item{
             overflow:hidden;
@@ -250,8 +371,8 @@ hr{
                     text-align:center;
                     padding:10px;
                     background:rgba(255,255,255,0.9);
-                    min-width:400px;
-                    max-width:400px;
+                    min-width:700px;
+                    max-width:700px;
                     //height:400px;
                     padding:15px;
 

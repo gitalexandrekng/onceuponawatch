@@ -225,6 +225,11 @@ function wpmem_sc_logged_in( $atts, $content = null, $tag = 'wpmem_logged_in' ) 
 					}
 				}
 			}
+			
+			// If the current page is the user profile and an action is being handled.
+			if ( ( wpmem_current_url() == $wpmem->user_pages['profile'] ) && isset( $_GET['a'] ) ) {
+				$do_return = false;
+			}
 		
 		}
 
@@ -329,10 +334,10 @@ function wpmem_shortcode( $attr, $content = null, $tag = 'wp-members' ) {
 		$user_info = get_userdata( $the_user_ID );
 
 		if ( $atts['underscores'] == 'off' && $user_info ) {
-			$user_info->$atts['field'] = str_replace( '_', ' ', $user_info->$atts['field'] );
+			$user_info->{$atts['field']} = str_replace( '_', ' ', $user_info->{$atts['field']} );
 		}
 
-		return ( $user_info ) ? htmlspecialchars( $user_info->$atts['field'] ) . do_shortcode( $content ) : do_shortcode( $content );
+		return ( $user_info ) ? htmlspecialchars( $user_info->{$atts['field']} ) . do_shortcode( $content ) : do_shortcode( $content );
 	}
 
 	// Logout link shortcode.
@@ -528,6 +533,39 @@ function wpmem_sc_user_count( $atts, $content = null ) {
 function wpmem_sc_user_profile() {
 	$content = wpmem_do_sc_pages( 'user-profile' );
 	return $content;
+}
+
+
+/**
+ * Log in/out shortcode.
+ *
+ * @since 3.1.1
+ *
+ * @param  array  $atts
+ * @param  string $content
+ * @param  string $tag
+ * @return string $content
+ */
+function wpmem_sc_loginout( $atts, $content, $tag ) {
+	$defaults = array(
+		'login_redirect_to'  => ( isset( $atts['login_redirect_to']  ) ) ? $atts['login_redirect_to']  : wpmem_current_url(),
+		'logout_redirect_to' => ( isset( $atts['logout_redirect_to'] ) ) ? $atts['logout_redirect_to'] : wpmem_current_url(),
+		'login_link_text'    => ( isset( $atts['login_link_text']    ) ) ? $atts['login_link_text']    : __( 'log in',  'wp-members' ),
+		'logout_link_text'   => ( isset( $atts['logout_link_text']   ) ) ? $atts['logout_link_text']   : __( 'log out', 'wp-members' ),
+	);
+	$args = wp_parse_args( $atts, $defaults );
+	$redirect_to = ( is_user_logged_in() ) ? $args['logout_redirect_to'] : $args['login_redirect_to'];
+	$text = ( is_user_logged_in() ) ? $args['logout_link_text'] : $args['login_link_text'];
+	if ( is_user_logged_in() ) {
+		/** This filter is defined in /inc/dialogs.php */
+		$link = apply_filters( 'wpmem_logout_link', add_query_arg( 'a', 'logout' ) );
+		$link = sprintf( '<a href="%s">%s</a>', $link, $text );
+	} else {
+		$link = wpmem_login_url();
+		$link = $link . add_query_arg( 'redirect_to', $args['login_redirect_to'], $link );
+		$link = sprintf( '<a href="%s">%s</a>', $link, $text );
+	}
+	return $link;
 }
 
 // End of file.

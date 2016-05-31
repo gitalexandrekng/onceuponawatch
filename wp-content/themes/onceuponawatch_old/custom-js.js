@@ -20,6 +20,18 @@ $('.promozions').owlCarousel({
 	nav:false
 })
 
+$('#bestsellz').owlCarousel({
+	loop:true,
+	nav:true,
+	items:1,
+	animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+	autoplay:true,
+	loop:true,
+	autoplayTimeout:5000,
+	nav:false
+})
+
 $('.sloganz-slide').owlCarousel({
 	animateOut: 'slideOutDown',
     animateIn: 'flipInX',
@@ -27,7 +39,7 @@ $('.sloganz-slide').owlCarousel({
     margin:30,
     stagePadding:30,
     smartSpeed:450,
-	autoplayTimeout:2500,
+	autoplayTimeout:5000,
 	loop:true,
 	autoplay:true,
 })
@@ -38,9 +50,16 @@ $('.sloganz-slide').owlCarousel({
 		}, 2000);
 	});
 
-	$('.wrapper').css('height', $( window ).height() - ($('.header-containz').innerHeight() + 20));
+	//$('.wrapper').css('height', $( window ).height() - ($('.header-containz').innerHeight() + 20));
 
-	$('.annonces-container .item').css('height', $( window ).height() / 2);
+	$('.annonces-container').hover(function(){
+		$(this).find('.in').css('transform', 'scale(1.1)')
+	}, function(){
+		$(this).find('.in').css('transform', 'scale(1)')
+	})
+
+	//$('.annonces-container .item').css('height', $( window ).height() / 2);
+	$('.annonces-container .item').css('height', '400px');
 
 	$('a.add_to_cart_button').addClass('non');
 
@@ -95,10 +114,20 @@ $('.sloganz-slide').owlCarousel({
 
 	// Image produit
 
-	$('.product-link').hover(function(){
+	$('.last-articles .product-link').hover(function(){
 		$(this).find('img').css('transform', 'translatey(-10px)');
 		$(this).find('#left-disappear').css({opacity : "1", margin : "0px 0px 0px 0px"})
 	}, function(){
 		$(this).find('img').css('transform', 'translatey(0)');
 		$(this).find('#left-disappear').css({opacity : "0", margin : "0px 0px 0px -300px"})
 	});
+
+	//bestseel
+
+	$('.singleproduct').hover(function(){
+		$(this).find('.decouvrir').css({opacity:'1', marginLeft:'0px'})
+		$(this).find('.overflowed').css('transform', 'scale(1.1)')
+	}, function(){
+		$(this).find('.decouvrir').css({opacity:'0', marginLeft:'-200px'})
+		$(this).find('.overflowed').css('transform', 'scale(1)')
+	})
