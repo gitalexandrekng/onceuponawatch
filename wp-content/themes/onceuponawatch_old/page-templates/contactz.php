@@ -4,8 +4,6 @@ Template Name: Page contact
 */
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
-
 <div class="title_news">
     <div class="fade">
         <h1 class="newstitle"><?php the_title(); ?></h1>

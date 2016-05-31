@@ -63,6 +63,7 @@ body{overflow-x:hidden;}
 
 .header-containz{
     padding-top:10px;
+    //background:lighten(black, 20%);
 }
 
 .custom-header{
@@ -114,18 +115,47 @@ body{overflow-x:hidden;}
         }
     }
 
+    .searchbar{
+        margin:20px auto 0px auto;
+        max-width:600px;
+        display:none;
+        /*position:absolute;
+        display:none;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;*/
+
+        @include breakpoint(850px down){
+            max-width:95%;
+        }
+
+        .probox{
+            background-color:transparent !important;
+            border:0px !important;
+            box-shadow:0px 0px 0px !important;
+
+            input{
+            }
+        }
+    }
+
     .navigation-header{
-        z-index:10;
+        z-index:9999;
         width:100%;
-        //margin-bottom:20px;
         position:relative;
         text-transform: uppercase;
 
         .navigation-container{
+            position:relative;
 
             .in-navigation{
+                padding-top:20px;
+                background:rgba(255,255,255,0.5);
+                box-shadow:0px 0px 15px rgba(0,0,0,0.1);
                 text-align: center;
                 padding-bottom:20px;
+                position:relative;
 
                 @include breakpoint(medium down) {
                     display:none;
@@ -133,7 +163,6 @@ body{overflow-x:hidden;}
 
                 ul{
                     margin:0;padding:0;
-                    //font-family:"Montserrat";
 
                     .active{
                         background-color:transparent;
@@ -141,7 +170,7 @@ body{overflow-x:hidden;}
                         a{
                             background:transparent;
                             color:black;
-                            border-bottom:5px solid black;
+                            font-weight:bold;
                         }
                     }
 
@@ -153,12 +182,10 @@ body{overflow-x:hidden;}
                         margin-left:20px;
 
                         a{
-                            border-bottom:5px solid transparent;
                             transition:0.5s;
                             color:darken(#b0b0b0, 15%);
 
                             &:hover{
-                                border-bottom:5px solid #000;
                                 color:#000;
                             }
                         }
@@ -281,29 +308,6 @@ body{overflow-x:hidden;}
                                 margin:auto;
                                 font-size:20px;
                                 padding-bottom:50px;
-                            }
-                        }
-                    }
-
-                    .searchbar{
-                        max-width:800px;
-                        margin-left:auto;
-                        margin-right:auto;
-                        left:0;
-                        right:0;
-                        top:-20px;
-                        position:absolute;
-
-                        @include breakpoint(850px down){
-                            max-width:95%;
-                        }
-
-                        .probox{
-                            background-color:transparent !important;
-                            border:0px !important;
-                            box-shadow:0px 0px 0px !important;
-
-                            input{
                             }
                         }
                     }

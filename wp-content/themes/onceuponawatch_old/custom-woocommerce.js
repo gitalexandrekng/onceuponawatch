@@ -26,13 +26,12 @@ $('.shopping li.product').hover(function(){
             //$('#maybehide').hide();
 
             if ($('.product_title').length ) {
-                $('#maybehide').show();
 
                 $('h1').addClass('custom-title-produit');
                 $('.inboutique').remove();
                 $('p.price').css('text-align', 'left')
-                $('.shopping').css({backgroundColor:'#FFF', minWidth:'100%', padding:'50px 0px',}).removeClass('small-12 large-12 columns');
-                //$('button').css({borderRadius:'0px', height:'39px', background:'black'});
+                $('.shopping').css({backgroundColor:'#FFF', padding:'50px 0px',});
+
                 $('button').addClass('hoveringadd');
                 $('.woocommerce-product-rating').remove();
 

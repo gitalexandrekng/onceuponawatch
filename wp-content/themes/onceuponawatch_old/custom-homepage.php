@@ -8,44 +8,6 @@
     </div>
 </div>
 
-<!-- Annonces genre promotions
-==================================== -->
-
-<section class="annonces">
-
-    <div class="annonces-container owl-carousel">
-
-        <?php
-        $args = array('post_type' => 'annonces');
-        $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post();
-        ?>
-
-        <?php if (has_post_thumbnail( $post->ID ) ): ?>
-        	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-        <?php endif; ?>
-
-        <div class="item">
-            <div class="in" style="background-image:url(<?php echo $image[0]; ?>)"></div>
-            <div class="texte">
-                <div class="inset">
-                    <div class="inzzz">
-                        <div class="zzz">
-                            <span class="toutpetit">Onceuponawatch</span>
-                            <h3><?php the_title(); ?></h3>
-                            <span><?php the_excerpt(); ?></span>
-                            <a href="<?php the_permalink(); ?>" class="custom-button">En savoir plus</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <?php endwhile;?>
-    </div>
-
-</section>
-
 <!-- Derniers articles
 ============================= -->
 

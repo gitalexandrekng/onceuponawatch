@@ -55,6 +55,13 @@
             <div class="navigation-container">
                 <div class="in-navigation">
                     <?php wp_nav_menu( array( 'theme_location' => 'headmenu' ) ); ?>
+                    
+                    <!-- SEARCH BAR
+                    ====================== -->
+                    <div class="searchbar">
+                        <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -63,23 +70,43 @@
     <!-- Image -->
     <div class="wrapper">
         <div class="header-image-container">
+
             <div class="in">
                 <div class="zzzer">
-                    <div class="searchbar"><?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?></div>
-                    <div class="in-head">
-                        <div class="flex">
-                            <div class="owl-carousel sloganz sloganz-slide">
-                                <div class="item">Finesse</div>
-                                <div class="item">Eminence</div>
-                                <div class="item">Qualité</div>
-                                <div class="item">Elégance</div>
-                            </div>
-                            <div class="citation">
-                                « Celui qui a dit que l’argent ne faisait pas le bonheur ne savait tout simplement pas où faire son shopping »
-                            </div>
 
+                    <!-- ANNONCES -->
+                    <div class="annonces">
+                        <div id="annonces-container" class="owl-carousel owl-theme">
+
+                            <?php
+                            $args = array('post_type' => 'annonces');
+                            $loop = new WP_Query( $args );
+                            while ( $loop->have_posts() ) : $loop->the_post();
+                            ?>
+
+                            <?php if (has_post_thumbnail( $post->ID ) ): ?>
+                            	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+                            <?php endif; ?>
+
+                            <div class="item">
+                                <div class="inz" style="background-image:url(<?php echo $image[0]; ?>)"></div>
+                                <div class="texte">
+                                    <div class="inset">
+                                        <div class="inzzz">
+                                            <div class="zzz">
+                                                <span class="toutpetit">Onceuponawatch</span>
+                                                <h3><?php the_title(); ?></h3>
+                                                <span><?php the_excerpt(); ?></span>
+                                                <a href="<?php the_permalink(); ?>" class="custom-button">En savoir plus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endwhile;?>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

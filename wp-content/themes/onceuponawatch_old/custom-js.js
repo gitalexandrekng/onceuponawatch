@@ -1,4 +1,4 @@
-$('.annonces-container').owlCarousel({
+$('#annonces-container').owlCarousel({
 	loop:true,
 	nav:true,
 	items:1,
@@ -6,12 +6,11 @@ $('.annonces-container').owlCarousel({
 	autoplay:true,
 	loop:true,
 	autoplayTimeout:5000,
-	nav:false
-})
+	nav:false,
+});
 
 $('.promozions').owlCarousel({
 	loop:true,
-	nav:true,
 	items:1,
 	animateOut: 'fadeOut',
 	autoplay:true,
@@ -22,13 +21,11 @@ $('.promozions').owlCarousel({
 
 $('#bestsellz').owlCarousel({
 	loop:true,
-	nav:true,
 	items:1,
 	animateOut: 'fadeOut',
     animateIn: 'fadeIn',
-	autoplay:true,
+	autoplay:false,
 	loop:true,
-	autoplayTimeout:5000,
 	nav:false
 })
 
@@ -50,16 +47,21 @@ $('.sloganz-slide').owlCarousel({
 		}, 2000);
 	});
 
+	$('ul#menu-headmenu-2').append('<li><a href="#" class="ouvresmoi non"><i class="fa fa-search"></i></a></li>')
+	$('.ouvresmoi').on('click', function(){
+		$('.searchbar').toggle('slow')
+	})
+
 	//$('.wrapper').css('height', $( window ).height() - ($('.header-containz').innerHeight() + 20));
 
-	$('.annonces-container').hover(function(){
-		$(this).find('.in').css('transform', 'scale(1.1)')
+	$('#annonces-container').hover(function(){
+		$(this).find('.inz').css('transform', 'scale(1.1)')
 	}, function(){
-		$(this).find('.in').css('transform', 'scale(1)')
+		$(this).find('.inz').css('transform', 'scale(1)')
 	})
 
 	//$('.annonces-container .item').css('height', $( window ).height() / 2);
-	$('.annonces-container .item').css('height', '400px');
+	$('#annonces-container .item').css('height', $( window ).height() / 2);
 
 	$('a.add_to_cart_button').addClass('non');
 

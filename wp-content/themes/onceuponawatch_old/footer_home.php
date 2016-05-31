@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="large-4 columns">
-            <div class="photo"><img src="http://www.rapghetto.com/uploads/151249/sx/nekfeu-mal-aime_48088.jpg" alt=""></div>
+            <div class="photo"><img src="http://images.j-14.com/uploads/posts/image/78599/camila-cabello-ikwydls.jpg" alt=""></div>
             <div class="thename">Nekfeu</div>
             <div class="theavis">
                 <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles.</p>
