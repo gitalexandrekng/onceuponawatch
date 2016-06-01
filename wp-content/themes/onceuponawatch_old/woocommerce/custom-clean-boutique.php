@@ -42,6 +42,20 @@
     </article>
 
     <article class="moreinfos">
+        <div class="jassure row">
+            <div class="medium-4 columns">
+                <div class="butz">
+                    <div class="icon"><i class="fa fa-truck fa-2x"></i></div>
+                    <div class="zea">Livraison et retour gratuits</div>
+                </div>
+            </div>
+            <div class="medium-4 columns">
+                <div class="zea">Garantie constructeur</div>
+            </div>
+            <div class="medium-4 columns">
+                <div class="zea">Authenticié garantie</div>
+            </div>
+        </div>
         <div class="in">
             <div class="titrz"><h4>Plus d'informations</h4></div>
             <div class="text-center quoi">Toujours pas convaincu ?</div>
