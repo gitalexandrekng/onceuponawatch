@@ -16,13 +16,13 @@ $('.shopping li.product').hover(function(){
             $('li.product').each(function(){
                 $(this).addClass('customproduit')
                 $(this).hover(function(){
-                    $(this).find('.add_to_cart_button').css({marginLeft:'0px', opacity:'1'})
+                    $(this).find('.add_to_cart_button').css({bottom:'0px', opacity:'1'})
                 }, function(){
-                    $(this).find('.add_to_cart_button').css({marginLeft:'-250px', opacity:'0'})
+                    $(this).find('.add_to_cart_button').css({bottom:'-40px', opacity:'0'})
                 })
             })
             $('li.product .star-rating').remove()
-            $('li.product .add_to_cart_button').addClass('customadding')
+            $('li.product .add_to_cart_button').addClass('customadding hvr-bounce-to-top')
             //$('#maybehide').hide();
 
             if ($('.product_title').length ) {/*

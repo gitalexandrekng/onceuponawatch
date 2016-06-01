@@ -4,7 +4,7 @@ Donate link: http://kubiq.sk
 Tags: smooth scroll, mousewheel scroll, scrolling
 Requires at least: 3.0.1
 Tested up to: 4.5
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,3 +72,6 @@ Replace basic scrolling "effect" with nice smooth scroll
 
 = 2.2 =
 * Escaping option values for better security
+
+= 2.3 =
+* Enqueue script in footer

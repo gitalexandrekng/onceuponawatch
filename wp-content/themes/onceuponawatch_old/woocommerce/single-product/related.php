@@ -45,7 +45,7 @@ $woocommerce_loop['columns'] = $columns;
 
 if ( $products->have_posts() ) : ?>
 
-	<div class="related products">
+	<div class="related products row">
 
 		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
 
@@ -53,7 +53,11 @@ if ( $products->have_posts() ) : ?>
 
 			<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<div class="large-3 medium-6 columns end prodrela">
+				    <div class="photoproduit" style="background-image:url(<?php echo the_post_thumbnail_url() ?>)"></div>
+                    <div class="titre"><?php the_title() ?></div>
+                    <a href="<?php the_permalink() ?>" class="discover"><div class="te"><span>Découvrir <i class="fa fa-angle-double-right"></i></span></div></a>
+				</div>
 
 			<?php endwhile; // end of the loop. ?>
 

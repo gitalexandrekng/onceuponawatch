@@ -97,6 +97,16 @@ $('.sloganz-slide').owlCarousel({
 		}
 	});
 
+	$('.wc-forward').remove()
+
+	$('.butz').hover(function(){
+		$(this).find('.icon').css({height:'60px', width:'60px'})
+		$(this).find('.zea').css({color:'#000', borderColor:'#e3e3e3'})
+	}, function(){
+		$(this).find('.icon').css({height:'50px', width:'50px'})
+		$(this).find('.zea').css({color:'#646464', borderColor:'#FFF'})
+	})
+
 	// Li rechercher
 	$('.fixed-navi #menu-headmenu-1').append('<li><a href="#" class="openSearchbutton non"><i class="fa fa-search"></i></a></li><li><a href="#openBasket"><i class="fa fa-shopping-basket"></i>Panier</a></li>')
 

@@ -32,6 +32,31 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
+	<!-- Infos de reassurance
+	================================ -->
+	<div id="realiv" class="readialog">
+		<div class="rea">
+            <div class="fermer"><a href="#close" class="non"><i class="fa fa-angle-double-right fa-2x"></i></a></div>
+            <div class="texte">
+                <article>
+                    <h4><i class="fa fa-send fa-2x"></i>Livraison et retours gratuits</h4>
+                    <p>Notre service de livraison Standard vous permet de recevoir votre commande à  votre domicile, à une adresse professionnelle ou dans un point relais proche de chez vous. Pour plus d'informations sur la " Livraison en point relais " , cliquez ici.Si le total de votre commande dépasse 25.00 €, les frais pour la livraison Standard seront offerts.</p><p>Si le total de votre commande n'atteint pas ce montant, les frais pour la livraison Standard s'élèveront à 3,00 €.</p>
+                    <a href="#" class="custom-button">En savoir encore plus</a>
+                </article>
+                <article>
+                    <h4><i class="fa fa-cogs fa-2x"></i>Garantie constructeur</h4>
+                    <p>La garantie commerciale est un engagement du professionnel à votre égard, en plus des garanties obligatoires. Elle peut porter sur le remboursement du prix d'achat, le remplacement ou la réparation du bien que vous avez acheté.</p><p>Le professionnel en définit librement le contenu. Ainsi, la garantie peut couvrir les pièces mais pas la main-d’œuvre.</p>
+                    <a href="#" class="custom-button">Encore plus ?</a>
+                </article>
+                <article>
+                    <h4><i class="fa fa-certificate fa-2x"></i>Authenticité garantie</h4>
+                    <p>L'authenticité est, en matière d'œuvre d'art, une notion dont la prise en compte est assez récente. Selon Stéphanie Lequette-de Kervenoaël : « Ce n'est qu'à partir de la Renaissance et surtout du xixe siècle, avec la conception romantique de l'artiste, être exceptionnel et inspiré, que l'authenticité est devenue la qualité essentielle des œuvres d'art9. »</p>
+                    <a href="#" class="custom-button">Vous êtes curieux</a>
+                </article>
+            </div>
+        </div>
+	</div>
+
 	<!-- Boite de dialogue pour le login
 	====================================== -->
     <div id="openLogin" class="loginDialog">
