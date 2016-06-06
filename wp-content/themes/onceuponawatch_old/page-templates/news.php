@@ -42,9 +42,9 @@ get_header(); ?>
     </div>
     <div class="text-center"><a href="<?php echo bloginfo('home') ?>/categorie-produit/montres/" class="custom-button">Tout découvrir</a></div>
 </section>
-<section class="promoz row">
+<section class="promoz row fullwidth small-collapse">
     <div class="small-12 columns">
-        <div class="jesuisletitre">
+        <div class="jesuisletitre custom">
             <div class="thetitle">
                 <div class="title">
                     <h3>Promotions</h3>
@@ -53,12 +53,11 @@ get_header(); ?>
                     <div class="large-8 medium-10 small-centered columns">
                         <div class="description">
                             <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
-                            <hr>
-                            <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="losange"></div>
         </div>
         <div class="owl-carousel promozions">
             <?php

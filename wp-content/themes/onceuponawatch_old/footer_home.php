@@ -1,7 +1,7 @@
 <!-- Excellence bandeau
 ======================= -->
 
-<section class="excellence-band">
+<section class="excellence-band" style="display:none;">
     <div class="fade">
         <div class="thetitle">
             <div class="title">
@@ -33,21 +33,6 @@
 <section class="another">
 
     <div class="jesuisletitre">
-        <div class="containz">
-            <article class="clock">
-                <div class="seconds-container">
-                    <div class="seconds"></div>
-                </div>
-                <div class="circle-container">
-                    <div class="circle-one"></div>
-                    <div class="circle-two"></div>
-                </div>
-                <div class="circle-petit-container">
-                    <div class="circle-petit-one"></div>
-                </div>
-                <div class="circle-petit-petit-container"></div>
-            </article>
-        </div>
         <div class="thetitle">
             <div class="title">
                 <h3>Avis clients</h3>
@@ -98,7 +83,7 @@
             <?php if (is_user_logged_in()){ ?>
                 <form action="#">
                     <textarea name="" id="avisclients"></textarea>
-                    <div class="text-center"><input type="submit" class="custom-button-reverse" value="Envoyer"></div>
+                    <div class="text-center"><input type="submit" class="custom-button" value="Envoyer"></div>
                 </form>
             <?php } else { ?>
                 Il faut être connecté pour pouvoir donner votre avis.

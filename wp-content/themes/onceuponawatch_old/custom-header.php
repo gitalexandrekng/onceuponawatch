@@ -6,7 +6,7 @@
     </div>
 
     <!-- Montre -->
-    <div class="containz contzresp" id="maybehide">
+    <div class="containz contzresp" id="maybehide" style="display:none;">
         <article class="clock">
             <div class="seconds-containerz">
                 <div class="secondsz"></div>
@@ -40,7 +40,7 @@
                 <li><?php if (is_user_logged_in()){ echo '<a href="' . wp_logout_url( site_url( '/' ) ) .'"><i class="fa fa-sign-out"></i>Se déconnecter</a>'; } else { ?><a href="#openLogin" class="non"><i class="fa fa-sign-in"></i>S'identifier</a><?php } ?></li>
                 <?php if (!is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/inscription"><i class="fa fa-check"></i>Inscription</a></li><?php } ?>
                 <?php if (is_user_logged_in()){ ?><li><a href="<?php echo bloginfo('home')?>/mon-compte/"><i class="fa fa-user"></i>Mon compte</a></li><?php } ?>
-                <li><a href="#openBasket" class="non openBasket"><i class="fa fa-shopping-basket"></i>Panier</a></li>
+                <li><a href="<?php echo WC()->cart->get_cart_url(); ?>" class="non openBasket"><i class="fa fa-shopping-basket"></i>Panier <span class="total"><?php echo sprintf (_n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?></span></a></li>
             </ul>
         </div>
 
@@ -55,7 +55,7 @@
             <div class="navigation-container">
                 <div class="in-navigation">
                     <?php wp_nav_menu( array( 'theme_location' => 'headmenu' ) ); ?>
-                    
+
                     <!-- SEARCH BAR
                     ====================== -->
                     <div class="searchbar">

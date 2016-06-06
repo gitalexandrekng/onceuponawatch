@@ -68,7 +68,7 @@ $('.sloganz-slide').owlCarousel({
 	$('.star-rating').css('margin', 'auto');
 
 	$('body').on('click', "a:not('.non')", function(){
-		$('.appear').addClass('animated fadeOutUpBig');
+		$('body').addClass('animated fadeOutUpBig');
 	});
 
 	$('.shopping a').addClass('non');
@@ -77,7 +77,7 @@ $('.sloganz-slide').owlCarousel({
 	$('.wpcf7-submit').addClass('custom-button');
 	$('.wpcf7-text').addClass('input-group-field')
 
-	$('.login-submit #wp-submit').addClass('custom-button-reverse');
+	$('.login-submit #wp-submit').addClass('custom-button').removeClass('button-primary')
 
 	var lanavigation = $(".navigation-header");
 
@@ -108,7 +108,7 @@ $('.sloganz-slide').owlCarousel({
 	})
 
 	// Li rechercher
-	$('.fixed-navi #menu-headmenu-1').append('<li><a href="#" class="openSearchbutton non"><i class="fa fa-search"></i></a></li><li><a href="#openBasket"><i class="fa fa-shopping-basket"></i>Panier</a></li>')
+	$('.fixed-navi #menu-headmenu-1').append('<li><a href="#" class="openSearchbutton non"><i class="fa fa-search"></i></a></li><li><a href="http://localhost:8888/onceuponawatch/panier/"><i class="fa fa-shopping-basket"></i>Panier</a></li>')
 
 	// OPEN rechercher
 	$(".openSearchbutton").on('click', function(e){
@@ -119,14 +119,36 @@ $('.sloganz-slide').owlCarousel({
 	// Aperçu des articles du journal
 
 	$('.inzer').hover(function(){
-		$(this).find('.fadeyo').css('bottom', '0');
+		$(this).find('.fadeyo').css({
+			opacity:'1',
+		});
+
+		$(this).find('.zertitle').css({
+			opacity:'0',
+			marginTop:'-100px',
+		})
 	}, function(){
-		$(this).find('.fadeyo').css('bottom', '-250px');
+		$(this).find('.fadeyo').css({
+			opacity:'0',
+		});
+
+		$(this).find('.zertitle').css({
+			opacity:'1',
+			marginTop:'0',
+		})
 	});
 
 	// Image produit
 
 	$('.last-articles .product-link').hover(function(){
+		$(this).find('img').css('transform', 'translatey(-10px)');
+		$(this).find('#left-disappear').css({opacity : "1", margin : "0px 0px 0px 0px"})
+	}, function(){
+		$(this).find('img').css('transform', 'translatey(0)');
+		$(this).find('#left-disappear').css({opacity : "0", margin : "0px 0px 0px -300px"})
+	});
+
+	$('.listingproduit .product-link').hover(function(){
 		$(this).find('img').css('transform', 'translatey(-10px)');
 		$(this).find('#left-disappear').css({opacity : "1", margin : "0px 0px 0px 0px"})
 	}, function(){
@@ -142,6 +164,18 @@ $('.sloganz-slide').owlCarousel({
 	}, function(){
 		$(this).find('.decouvrir').css({opacity:'0', marginLeft:'-200px'})
 		$(this).find('.overflowed').css('transform', 'scale(1)')
+	})
+
+	$('.bestseller .bestq').hover(function(){
+		$(this).find('.btnmore').css({
+			opacity:'1',
+			bottom:'0',
+		})
+	}, function(){
+		$(this).find('.btnmore').css({
+			opacity:'0',
+			bottom:'-50px',
+		})
 	})
 
 	// custom button

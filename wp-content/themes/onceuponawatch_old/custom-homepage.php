@@ -100,6 +100,7 @@
     <!-- Titre -->
     <div class="bestsell-title">
         <div class="fade">
+            <div class="losange"></div>
             <div class="jesuisletitre" style="margin:auto;">
                 <div class="thetitle">
                     <div class="title">
@@ -117,7 +118,7 @@
         </div>
     </div>
 
-    <article>
+    <article style="padding-top:50px;">
 
         <!-- Single product -->
         <div class="singleproduct row owl-carousel" id="bestsellz">
@@ -156,7 +157,7 @@
             <?php wp_reset_query(); ?>
         </div>
 
-        <div class="row">
+        <div class="row noshowresp">
 
             <?php
             $args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 4, 'meta_key' => 'total_sales', 'orderby' =>'meta_value_num' );
@@ -168,7 +169,7 @@
                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
             <?php endif; ?>
 
-            <div class="large-3 medium-6 columns">
+            <div class="medium-3 columns bestq" style="position:relative">
                 <a href="#<?php echo $product->id; ?>" class="product-link non" title="<?php the_title(); ?>">
                     <div class="image-product"><img src="<?php echo $image[0]; ?>" alt=""></div>
                     <span class="article-subtitle"><?php the_title(); ?></span>
@@ -178,8 +179,10 @@
                         echo $name[0]->name;
                         ?>
                     </span>
-                    <span class="price" style="display:none;"><?php echo $product->get_price_html(); ?></span>
-                    <button class="custom-button-yo" id="left-disappear">Découvrir</button>
+                    <span class="price"><?php echo $product->get_price_html(); ?></span>
+                </a>
+                <a class="btnmore" href="<?php the_permalink() ?>">
+                    <span>Découvrir</span>
                 </a>
             </div>
             <?php /* woocommerce_template_loop_add_to_cart( $loop->post, $product ); */ ?>
@@ -193,7 +196,7 @@
 <!-- Collections
 ======================= -->
 
-<section class="collections">
+<section class="collections" style="display:none;">
     <div class="row in-collections">
         <div class="small-6 columns"><div class="left"></div></div>
         <div class="small-6 columns"><div class="right"></div></div>
@@ -211,6 +214,17 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- COLLEC V2
+====================== -->
+
+<!-- Collections
+======================= -->
+
+<section class="collec" style="display:none;">
+
+    <div class="border"></div>
 </section>
 
 <!-- In the bloginfo

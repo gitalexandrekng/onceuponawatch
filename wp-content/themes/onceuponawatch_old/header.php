@@ -102,7 +102,7 @@
 		    <ul>
 		        <li><a href="#openMenu" class="non"><i class="fa fa-bars"></i>Menu</a></li>
                 <li><a href="#" class="openSearchbutton non"><i class="fa fa-search"></i></a></li>
-                <li><a href="#openBasket"><i class="fa fa-shopping-basket"></i>Panier</a></li>
+                <li><a href="<?php echo WC()->cart->get_cart_url(); ?>"><i class="fa fa-shopping-basket"></i>Panier<span class="total"><?php echo sprintf (_n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span></a></li>
 		    </ul>
 		</div>
         <div class="rechercherrr">

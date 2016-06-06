@@ -18,22 +18,7 @@ get_header();
 
 <section class="intheblog">
 
-    <div class="jesuisletitre">
-        <div class="containz">
-            <article class="clock">
-                <div class="seconds-container">
-                    <div class="seconds"></div>
-                </div>
-                <div class="circle-container">
-                    <div class="circle-one"></div>
-                    <div class="circle-two"></div>
-                </div>
-                <div class="circle-petit-container">
-                    <div class="circle-petit-one"></div>
-                </div>
-                <div class="circle-petit-petit-container"></div>
-            </article>
-        </div>
+    <div class="jesuisletitre" style="display:none;">
         <div class="thetitle">
             <!-- TITRE -->
             <div class="title">
@@ -53,7 +38,11 @@ get_header();
     	</div>
     </div>
 
-	<div class="row">
+    <div class="fulltitre">
+        <h3>Sur le blog</h3>
+    </div>
+
+	<div class="row fullWidth small-collapse">
 
 	<?php if ( have_posts() ) : ?>
 
@@ -71,7 +60,8 @@ get_header();
 
 	</div>
 
-	<div class="text-center"><a href="<?php echo bloginfo('home') ?>/category/montres" class="custom-button">Voir tous les articles</a></div>
+	<div class="text-center" style="display:none;"><a href="<?php echo bloginfo('home') ?>/category/montres" class="custom-button">Voir tous les articles</a></div>
+    <a class="morelink">Voir tous les articles</a>
 
 </section>
 

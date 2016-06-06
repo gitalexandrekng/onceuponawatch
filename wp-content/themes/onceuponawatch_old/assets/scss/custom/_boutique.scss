@@ -136,6 +136,10 @@
             width:400px;
             position:relative;
 
+            @include breakpoint(small down) {
+                width:300px;
+            }
+
             select{
                 border:0;
                 box-shadow:0px 0px 0px;
@@ -622,6 +626,40 @@
                 opacity:0.8;
             }
         }
+
+        @include breakpoint(medium down) {
+            display:block;
+
+            .soci{
+                padding-bottom:30px;
+            }
+
+            .addd{
+                display:flex !important;
+
+                .cart{
+                    margin:auto;
+                    text-align: center !important;
+                    display:flex !important;
+                }
+            }
+
+            .leftz{
+                width:100%;
+            }
+
+            .rightz{
+                width:100%;
+                display:block;
+                position:relative;
+                text-align: center;
+
+                .inno{
+                    width:90%;
+                    margin:auto;
+                }
+            }
+        }
     }
 
     .photoz{
@@ -921,7 +959,7 @@
 .readialog {
 	position: fixed;
 	top: 0;
-	right: -45%;
+	right: -55%;
 	bottom: 0;
 	left: 0;
     margin-left:auto;

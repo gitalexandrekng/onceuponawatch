@@ -6,7 +6,7 @@ section{
 
 .jesuisletitre{
     text-align:center;
-    margin-top:50px;
+    //margin-top:50px;
     position:relative;
     margin-bottom:30px;
 
@@ -33,6 +33,13 @@ section{
             position:relative;
             z-index:2;
 
+            hr{
+                height:4px;
+                border:0;
+                background:$gold;
+                width:50px;
+            }
+
             .citation{
                 font-family: "Merriweather";
                 display: block;
@@ -42,16 +49,13 @@ section{
     }
 }
 
-hr{
-    height:1px;
-    border:0;
-    background:#000;
-    width:100%;
+.fullWidth{
+    min-width: 100%;
 }
 
 .last-articles{
     text-align:center;
-    padding-top:10px;
+    padding-top:50px;
     padding-bottom:50px;
 
     .product-link{
@@ -120,8 +124,29 @@ hr{
     padding-top:20px;
     padding-bottom:50px;
 
+    .noshowresp{
+        @include breakpoint(small down) {
+            display:none;
+        }
+    }
+
     .singleproduct{
         position:relative;
+
+        @include breakpoint(medium down) {
+            .ecritures{
+                width:100% !important;
+
+                .ine{
+
+                    .marqueproduit{
+                        margin-top:20px;
+                        background:rgba(255,255,255,0.8);
+                        padding:20px;
+                    }
+                }
+            }
+        }
 
         .ecritures{
             width:60%;
@@ -146,6 +171,7 @@ hr{
                     display:block;
                     text-transform:uppercase;
                     margin-bottom:20px;
+                    font-family: "Oswald";
                 }
 
                 .decouvrir{
@@ -192,10 +218,50 @@ hr{
             color:white;
             padding-top:100px;
             padding-bottom:100px;
+            position:relative;
+
+            .losange{
+                position:absolute;
+                background:white;
+                width:80px;
+                height:80px;
+                transform:rotate(45deg);
+                left:0;
+                right:0;
+                bottom:-40px;
+                margin:auto;
+            }
 
             hr{
                 background:white;
             }
+        }
+    }
+
+    .btnmore{
+        width:100px;
+        height:100px;
+        background:#4d4d4d;
+        position:absolute;
+        bottom:-50px;
+        border-radius: 50%;
+        display:block;
+        left:0;
+        right:0;
+        margin:auto;
+        color:white;
+        display:flex;
+        transition: 0.3s;
+        opacity:0;
+
+        &:hover{
+            background:darken(#4d4d4d,10%);
+            width:110px;
+            height:110px;
+        }
+
+        span{
+            margin:auto;
         }
     }
 
@@ -232,7 +298,8 @@ hr{
 
     .article-subtitle{
         display:block;
-        font-family: "Merriweather";
+        font-family: "Oswald";
+        text-transform: uppercase;
         margin-top:10px;
     }
 
@@ -304,7 +371,6 @@ hr{
 
 .assure{
     text-align:center;
-    margin-bottom:10px;
     background:#CCC;
     background:lighten(black, 20%);
 
@@ -327,6 +393,26 @@ hr{
             font-size:28px;
         }
 
+    }
+}
+
+.collec{
+    width:100%;
+    height:500px;
+    position:relative;
+    padding:15px;
+
+    .fadez{
+        width:100%;
+        height:100%;
+        background: radial-gradient(circle, rgba(0,0,0,0), $gold);
+        opacity:0.5;
+    }
+
+    .border{
+        width:100%;
+        height:100%;
+        border:1px solid #CCC;
     }
 }
 
@@ -362,7 +448,8 @@ hr{
                 //background:rgba(255,255,255,0.5);
 
                 @include breakpoint(medium down){
-                    width:100%;
+                    width:100% !important;
+                    padding:20px !important;
                 }
 
                 .inset{
@@ -370,10 +457,12 @@ hr{
                     text-align:center;
                     padding:10px;
                     background:rgba(255,255,255,0.9);
-                    min-width:700px;
-                    max-width:700px;
-                    //height:400px;
+                    width:700px;
                     padding:15px;
+
+                    @include breakpoint(medium down) {
+                        width:100% !important;
+                    }
 
                     .inzzz{
                         border:1px solid rgba(0,0,0,0.2);
@@ -391,6 +480,11 @@ hr{
                                 font-size:10px;
                                 letter-spacing: 2px;
                                 margin-bottom:10px;
+                            }
+
+                            h3{
+                                font-family: "Oswald";
+                                text-transform: uppercase;
                             }
                         }
                     }
@@ -508,12 +602,44 @@ hr{
 }
 
 .intheblog{
-    padding-top:50px;
-    padding-bottom:50px;
-    margin-bottom:-10px;
+    /*padding-top:50px;
+    padding-bottom:50px;*/
+    margin-bottom:-1px;
+
+    .morelink{
+        display:block;
+        position:relative;
+        z-index:10;
+        padding-top:20px;
+        padding-bottom:20px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "Montserrat";
+        letter-spacing: 2px;
+        color:white;
+        transition:0.3s;
+        background:black;
+
+        &:hover{
+            background:darken(#666, 25%);
+        }
+    }
+
+    .fulltitre{
+        padding:15px;
+        text-transform: uppercase;
+        //background:black;
+        border-top:1px solid black;
+        text-align: center;
+        display:none;
+
+        h3{
+            color:black;
+        }
+    }
 
     .inzer{
-        margin-bottom:50px;
+        //margin-bottom:50px;
         @include breakpoint(medium down) {
 
         }
@@ -523,10 +649,31 @@ hr{
 
         .article-photo{
             background-size:cover;
-            height:200px;
+            height:50vh;
             width:100%;
+            background-position:center;
             overflow:hidden;
             position:relative;
+            display:flex;
+            padding:10px;
+
+            .zertitle{
+                background:rgba(0,0,0,0.7);
+                height:50px;
+                width:100%;
+                color:white;
+                text-transform: uppercase;
+                display:flex;
+                transition:0.3s;
+                margin-bottom:auto;
+
+                h2{
+                    font-size:16px;
+                    text-align: center;
+                    margin:auto;
+                    font-family:"Oswald";
+                }
+            }
 
             .fadeyo{
                 display: flex;
@@ -535,14 +682,24 @@ hr{
                 height:100%;
                 background:rgba(0,0,0,0.8);
                 position:absolute;
-                bottom:-200px;
-                transition:0.5s;
+                left:0;
+                bottom:0;
+                opacity:0;
+                transition:0.3s;
                 color:white;
 
-                div{
+                .pllus{
+                    font-family: "Oswald";
+                    text-transform: uppercase;
+                }
+
+                .za{
                     margin:auto;
                     text-align:center;
-                    font-weight: bold;
+
+                    .texte{
+                        padding:20px;
+                    }
 
                     i{
                         margin-top:10px;
