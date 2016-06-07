@@ -26,6 +26,7 @@ section{
                 z-index:10;
                 padding-left:5px;
                 padding-right:5px;
+                font-family:"Oswald";
             }
         }
 
@@ -184,7 +185,7 @@ section{
         }
 
         .thumbnail-product{
-            max-width:600px;
+            max-width:500px;
             margin:auto;
             overflow:hidden;
             background:white;
@@ -373,6 +374,7 @@ section{
     text-align:center;
     background:#CCC;
     background:lighten(black, 20%);
+    text-transform: uppercase;
 
     .oklm{
         padding:15px 0px;
@@ -381,7 +383,7 @@ section{
         transition:0.3s;
         color:white;
         //background:lighten(black,15%);
-        font-family:"Montserrat";
+        font-family:"Oswald";
 
         &:hover{
             color:darken($gold, 10%);
@@ -870,7 +872,7 @@ section{
     }
 
     #jedonnemonavis{
-        border:1px solid #CCC;
+        //border:1px solid #CCC;
         padding: 50px 0px;
 
         @include breakpoint(medium down){

@@ -3,7 +3,8 @@
   //margin-top: 3rem;
   padding-top:25px;
   padding-bottom:50px;
-  border-top:1px solid #e7e7e7;
+  //border-top:1px solid #e7e7e7;
+  background:transparent !important;
 
   .main-content {
     @include breakpoint(small) {

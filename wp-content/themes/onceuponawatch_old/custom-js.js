@@ -156,6 +156,9 @@ $('.sloganz-slide').owlCarousel({
 		$(this).find('#left-disappear').css({opacity : "0", margin : "0px 0px 0px -300px"})
 	});
 
+	$('#featured-hero').remove()
+	$('table.shop_table').removeClass('shop_table')
+
 	//bestseel
 
 	$('.singleproduct').hover(function(){
