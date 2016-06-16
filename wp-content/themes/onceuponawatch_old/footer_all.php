@@ -10,8 +10,6 @@
         <div class="large-8 medium-10 small-centered columns">
             <div class="description">
                 <span>Ca serait dommage de rater la montre de votre vie, alors inscrivez votre adresse e-mail pour vous tenir informés.</span>
-                <hr>
-                <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
             </div>
         </div>
     </div>
@@ -96,7 +94,6 @@
         </div>
     </div>
 
-    <hr>
 
     <div class="row">
         <div class="small-12 columns">

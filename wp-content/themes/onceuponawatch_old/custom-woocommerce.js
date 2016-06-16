@@ -8,7 +8,7 @@ $('.shopping li.product').hover(function(){
 
     $(document).ready(function(){
         if ( $('.shopping').length ) {
-            $('.wrapper').remove();
+            $('.annonces').remove();
             $('.inboutique').show().after($('.widget_price_filter'));
             $('.inboutique .fade').prepend($('.page-title'), '<hr>')
             $('.widget_product_categories, .widget_layered_nav').addClass('inlinefiltres');
@@ -23,7 +23,6 @@ $('.shopping li.product').hover(function(){
             })
             $('li.product .star-rating').remove()
             $('li.product .add_to_cart_button').addClass('customadding hvr-bounce-to-top')
-            //$('#maybehide').hide();
 
             if ($('.product_title').length ) {/*
 
@@ -77,10 +76,11 @@ $('.shopping li.product').hover(function(){
         }
 
         if( $('.myaccount_user').length){
-            $('header.title').after($("a.edit").css({display:'block', width:'100%', textAlign: 'center'}))
+            //$('header.title').after($("a.edit").css({display:'block', width:'100%', textAlign: 'center'}))
+            $('a.edit').remove()
         }
 
         if( $('.removeheader').length){
-            $('.wrapper').remove();
+            $('.annonces').remove();
         }
     })

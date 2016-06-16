@@ -67,48 +67,36 @@
         </div>
     </div>
 
-    <!-- Image -->
-    <div class="wrapper">
-        <div class="header-image-container">
+    <!-- ANNONCES -->
+    <div class="annonces">
+        <div id="annonces-container" class="owl-carousel owl-theme">
 
-            <div class="in">
-                <div class="zzzer">
+            <?php
+            $args = array('post_type' => 'annonces');
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();
+            ?>
 
-                    <!-- ANNONCES -->
-                    <div class="annonces">
-                        <div id="annonces-container" class="owl-carousel owl-theme">
+            <?php if (has_post_thumbnail( $post->ID ) ): ?>
+                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+            <?php endif; ?>
 
-                            <?php
-                            $args = array('post_type' => 'annonces');
-                            $loop = new WP_Query( $args );
-                            while ( $loop->have_posts() ) : $loop->the_post();
-                            ?>
-
-                            <?php if (has_post_thumbnail( $post->ID ) ): ?>
-                            	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-                            <?php endif; ?>
-
-                            <div class="item">
-                                <div class="inz" style="background-image:url(<?php echo $image[0]; ?>)"></div>
-                                <div class="texte">
-                                    <div class="inset">
-                                        <div class="inzzz">
-                                            <div class="zzz">
-                                                <span class="toutpetit">Onceuponawatch</span>
-                                                <h3><?php the_title(); ?></h3>
-                                                <span><?php the_excerpt(); ?></span>
-                                                <a href="<?php the_permalink(); ?>" class="custom-button">En savoir plus</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="item">
+                <div class="inz" style="background-image:url(<?php echo $image[0]; ?>)"></div>
+                <div class="texte">
+                    <div class="inset">
+                        <div class="inzzz">
+                            <div class="zzz">
+                                <span class="toutpetit">Onceuponawatch</span>
+                                <h3><?php the_title(); ?></h3>
+                                <span><?php the_excerpt(); ?></span>
+                                <a href="<?php the_permalink(); ?>" class="custom-button">En savoir plus</a>
                             </div>
-                            <?php endwhile;?>
                         </div>
                     </div>
-
                 </div>
             </div>
+            <?php endwhile;?>
         </div>
     </div>
 </section>

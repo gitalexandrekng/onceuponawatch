@@ -33,7 +33,6 @@
                 <div class="large-8 medium-10 small-centered columns">
                     <div class="description">
                         <span>Découvrez nos dernières montres qui n'attendent que d'être à votre poignet</span>
-                        <hr>
                         <span class="citation">« La différence entre le style et la mode est la qualité.»</span>
                     </div>
                 </div>
@@ -57,7 +56,6 @@
 
             <div class="large-3 medium-6 columns">
                 <a href="<?php the_permalink(); ?>" class="product-link" title="<?php the_title(); ?>">
-                    <!--<div class="image-product"><?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" />'; ?></div>-->
                     <div class="image-product"><img src="<?php echo $image[0]; ?>" alt=""></div>
                     <span class="article-subtitle"><?php the_title(); ?></span>
                     <span class="article-title">
@@ -70,7 +68,6 @@
                     <button class="custom-button-yo" id="left-disappear">Découvrir</button>
                 </a>
             </div>
-            <?php /* woocommerce_template_loop_add_to_cart( $loop->post, $product ); */ ?>
             <?php endwhile; ?>
             <?php wp_reset_query(); ?>
         </div>
@@ -92,7 +89,7 @@
     </div>
 </section>
 
-<!-- Les plus vendus
+<!-- Les plus vendues
 =========================== -->
 
 <section class="bestseller">
@@ -214,17 +211,6 @@
             </div>
         </div>
     </div>
-</section>
-
-<!-- COLLEC V2
-====================== -->
-
-<!-- Collections
-======================= -->
-
-<section class="collec" style="display:none;">
-
-    <div class="border"></div>
 </section>
 
 <!-- In the bloginfo

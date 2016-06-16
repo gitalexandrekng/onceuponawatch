@@ -61,7 +61,7 @@ get_header();
 	</div>
 
 	<div class="text-center" style="display:none;"><a href="<?php echo bloginfo('home') ?>/category/montres" class="custom-button">Voir tous les articles</a></div>
-    <a class="morelink">Voir tous les articles</a>
+    <a href="<?php bloginfo('home') ?>/category/montres" class="morelink">Voir tous les articles</a>
 
 </section>
 

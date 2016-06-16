@@ -18,6 +18,8 @@
 get_header(); ?>
 
 <div id="page" role="main">
+
+	<h3 class="zear">Les derniers articles du blog</h3>
 	<article class="main-content">
 	<?php if ( have_posts() ) : ?>
 
@@ -43,6 +45,6 @@ get_header(); ?>
 
 </div>
 
-<?php include('footer_other.php'); ?>
+<?php include('footer_all.php'); ?>
 
 <?php get_footer();

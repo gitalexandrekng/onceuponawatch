@@ -44,6 +44,7 @@ section{
             .citation{
                 font-family: "Merriweather";
                 display: block;
+                margin-top:20px;
                 margin-bottom:30px;
             }
         }
@@ -72,7 +73,7 @@ section{
             opacity:0;
             margin-left:-250px;
             transition:0.5s;
-            border-bottom:4px solid #d7eefa;
+            border-bottom:4px solid $gold;
         }
     }
 
@@ -91,8 +92,9 @@ section{
 
     .article-title{
         display:block;
-        font-size:24px;
+        font-size:18px;
         color:#828080;
+        letter-spacing: 1px;
         text-transform: uppercase;
         margin-bottom:10px;
     }
@@ -126,6 +128,10 @@ section{
     padding-bottom:50px;
 
     .noshowresp{
+        margin-top:-200px;
+        position:relative;
+        z-index:20;
+
         @include breakpoint(small down) {
             display:none;
         }
@@ -211,6 +217,7 @@ section{
         background:url(../../images/home.jpg) fixed;
         background-size:cover;
         background-position:center;
+        background-attachment: fixed;
 
         .fade{
             width:100%;
@@ -266,6 +273,10 @@ section{
         }
     }
 
+    .active{
+        opacity:1 !important;
+    }
+
     .product-link{
         display:block;
         overflow:hidden;
@@ -273,6 +284,12 @@ section{
         padding-bottom:20px;
         margin-bottom:20px;
         position:relative;
+        opacity:0.3;
+        transition:0.3s;
+
+        &:hover{
+            opacity:1;
+        }
 
         .inza{
             position:absolute;
@@ -287,7 +304,7 @@ section{
             opacity:0;
             margin-left:-250px;
             transition:0.5s;
-            border-bottom:4px solid #d7eefa;
+            border-bottom:4px solid $gold;
         }
     }
 
@@ -431,6 +448,7 @@ section{
             .inz{
                 background-position: center;
                 background-size:cover;
+                //background-attachment: fixed;
                 width:100%;
                 height:100%;
                 transition:0.5s;
@@ -604,8 +622,6 @@ section{
 }
 
 .intheblog{
-    /*padding-top:50px;
-    padding-bottom:50px;*/
     margin-bottom:-1px;
 
     .morelink{
@@ -623,14 +639,13 @@ section{
         background:black;
 
         &:hover{
-            background:darken(#666, 25%);
+            background:$gold;
         }
     }
 
     .fulltitre{
         padding:15px;
         text-transform: uppercase;
-        //background:black;
         border-top:1px solid black;
         text-align: center;
         display:none;
@@ -641,13 +656,21 @@ section{
     }
 
     .inzer{
-        //margin-bottom:50px;
         @include breakpoint(medium down) {
 
         }
     }
 
+    article:nth-child(2){
+        border-left:0px solid white;
+    }
+
+    article:nth-child(3){
+        border-left:0px solid white;
+    }
+
     article{
+        border-bottom:0px solid white;
 
         .article-photo{
             background-size:cover;
@@ -739,6 +762,8 @@ section{
     }
 
     .inzoo{
+
+        margin-top:50px;
 
         li{
             display:inline-block;
@@ -872,8 +897,12 @@ section{
     }
 
     #jedonnemonavis{
-        //border:1px solid #CCC;
         padding: 50px 0px;
+
+        h5{
+            text-transform: uppercase;
+            font-family: "Oswald";
+        }
 
         @include breakpoint(medium down){
             border:0;
@@ -883,8 +912,8 @@ section{
 
     #avisclients{
         height:100px;
-        border:0px solid #FAFAFA;
-        background:#FAFAFA;
+        border:1px solid #000;
+        //background:#FAFAFA;
         box-shadow:0px 0px 0px;
     }
 
@@ -907,6 +936,11 @@ section{
     background:#fafafa;
     padding-top:50px;
     padding-bottom:50px;
+
+    h3{
+        font-family: "Oswald";
+        text-transform: uppercase;
+    }
 
     input{
         display:inline-block;
@@ -983,6 +1017,14 @@ section{
     padding-bottom:50px;
     background:#222222;
     text-align: center;
+
+    a{
+        color:white;
+
+        &:hover{
+            color:$gold;
+        }
+    }
 }
 
 .container{

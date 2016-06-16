@@ -16,14 +16,18 @@
 
  <?php get_template_part( 'template-parts/featured-image' ); ?>
 
- <div id="page" role="main" style="background:white;position:relative;z-index:10;">
-
  <?php do_action( 'foundationpress_before_content' ); ?>
  <?php while ( have_posts() ) : the_post(); ?>
+
+     <div class="title_news">
+         <div class="fade">
+             <h1 class="newstitle"><?php the_title(); ?></h1>
+         </div>
+     </div>
+
+      <div id="page" role="main" style="background:white;position:relative;z-index:10;">
+
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-       <header>
-           <h1 class="entry-title"><?php the_title(); ?></h1>
-       </header>
        <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
        <div class="entry-content">
            <?php the_content(); ?>
@@ -36,9 +40,9 @@
        <?php comments_template(); ?>
        <?php do_action( 'foundationpress_page_after_comments' ); ?>
    </article>
+
+    </div>
  <?php endwhile;?>
 
  <?php do_action( 'foundationpress_after_content' ); ?>
-
- </div>
  <?php get_footer();

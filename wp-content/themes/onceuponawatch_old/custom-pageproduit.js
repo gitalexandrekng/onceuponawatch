@@ -1,7 +1,7 @@
 if ($('.degageheader').length){
 
     // Remove
-    $('.wrapper, .inboutique').remove();
+    $('.annonces, .inboutique').remove();
 
 
     // AddClass

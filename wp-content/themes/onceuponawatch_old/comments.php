@@ -119,7 +119,7 @@ if ( comments_open() ) :
 				<?php echo allowed_tags(); ?>
 			</code>
 		</p>-->
-		<p><input name="submit" class="custom-button-reverse" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'foundationpress' ); ?>"></p>
+		<p><input name="submit" class="custom-button-zer" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'foundationpress' ); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>

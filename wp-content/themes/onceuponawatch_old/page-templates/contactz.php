@@ -4,16 +4,17 @@ Template Name: Page contact
 */
 get_header(); ?>
 
-<div class="title_news">
-    <div class="fade">
-        <h1 class="newstitle"><?php the_title(); ?></h1>
-    </div>
-</div>
-
-<div id="page-full-width" role="main" style="background:white;position:relative;z-index:10;">
-
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
+
+    <div class="title_news">
+        <div class="fade">
+            <h1 class="newstitle"><?php the_title(); ?></h1>
+        </div>
+    </div>
+
+    <div id="page-full-width" role="main" style="background:white;position:relative;z-index:10;">
+
   <article <?php post_class('main-content pagecontact') ?> id="post-<?php the_ID(); ?>">
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
       <div class="entry-content">
@@ -28,9 +29,9 @@ get_header(); ?>
       <?php comments_template(); ?>
       <?php do_action( 'foundationpress_page_after_comments' ); ?>
   </article>
+
+  </div>
 <?php endwhile;?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
-
-</div>
 <?php get_footer();

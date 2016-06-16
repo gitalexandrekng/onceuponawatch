@@ -19,18 +19,42 @@
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/assets/components/hover/css/hover-min.css" media="screen" title="no title" charset="utf-8">
 		<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-        <script>
-		$(window).load(function(){
-        	$('.appear').addClass('animated fadeInUpBig');
-        });
-		</script>
-
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 	<?php do_action( 'foundationpress_after_body' ); ?>
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
+
+	<!-- LOADER
+	================================ -->
+    <div class="loaderz">
+        <div class="mlo">
+            <div class="t">Once upon a Watch</div>
+            <div class="a">A chaque montre son histoire</div>
+            <div class="containz" style="width:300px;height:300px;margin:auto;position:relative;">
+                <div class="ld"></div>
+                <div class="la"></div>
+                <article class="clock">
+                    <div class="seconds-containerz">
+                        <div class="secondsz"></div>
+                    </div>
+                    <div class="circle-container">
+                        <div class="circle-one"></div>
+                        <div class="circle-two"></div>
+                        <div class="circle-three"></div>
+                        <div class="circle-four"></div>
+                    </div>
+                    <div class="circle-petit-container">
+                        <div class="circle-petit-one"></div>
+                        <div class="circle-petit-two"></div>
+                        <div class="circle-petit-three"></div>
+                    </div>
+                    <div class="circle-petit-petit-container"></div>
+                </article>
+            </div>
+        </div>
+	</div>
 
 	<!-- Infos de reassurance
 	================================ -->
@@ -40,17 +64,17 @@
             <div class="texte">
                 <article>
                     <h4><i class="fa fa-send fa-2x"></i>Livraison et retours gratuits</h4>
-                    <p>Notre service de livraison Standard vous permet de recevoir votre commande à  votre domicile, à une adresse professionnelle ou dans un point relais proche de chez vous. Pour plus d'informations sur la " Livraison en point relais " , cliquez ici.Si le total de votre commande dépasse 25.00 €, les frais pour la livraison Standard seront offerts.</p><p>Si le total de votre commande n'atteint pas ce montant, les frais pour la livraison Standard s'élèveront à 3,00 €.</p>
+                    <p>Notre service de livraison Standard vous permet de recevoir votre commande à  votre domicile, à une adresse professionnelle ou dans un point relais proche de chez vous. Pour plus d'informations sur la " Livraison en point relais " , cliquez ici.Si le total de votre commande dépasse 25.00 €, les frais pour la livraison Standard seront offerts.</p>
                     <a href="#" class="custom-button">En savoir encore plus</a>
                 </article>
                 <article>
                     <h4><i class="fa fa-cogs fa-2x"></i>Garantie constructeur</h4>
-                    <p>La garantie commerciale est un engagement du professionnel à votre égard, en plus des garanties obligatoires. Elle peut porter sur le remboursement du prix d'achat, le remplacement ou la réparation du bien que vous avez acheté.</p><p>Le professionnel en définit librement le contenu. Ainsi, la garantie peut couvrir les pièces mais pas la main-d’œuvre.</p>
+                    <p>La garantie commerciale est un engagement du professionnel à votre égard, en plus des garanties obligatoires. Elle peut porter sur le remboursement du prix d'achat, le remplacement ou la réparation du bien que vous avez acheté.</p>
                     <a href="#" class="custom-button">Encore plus ?</a>
                 </article>
                 <article>
                     <h4><i class="fa fa-certificate fa-2x"></i>Authenticité garantie</h4>
-                    <p>L'authenticité est, en matière d'œuvre d'art, une notion dont la prise en compte est assez récente. Selon Stéphanie Lequette-de Kervenoaël : « Ce n'est qu'à partir de la Renaissance et surtout du xixe siècle, avec la conception romantique de l'artiste, être exceptionnel et inspiré, que l'authenticité est devenue la qualité essentielle des œuvres d'art9. »</p>
+                    <p>L'authenticité est, en matière d'œuvre d'art, une notion dont la prise en compte est assez récente. Selon Stéphanie Lequette-de Kervenoaël </p>
                     <a href="#" class="custom-button">Vous êtes curieux</a>
                 </article>
             </div>

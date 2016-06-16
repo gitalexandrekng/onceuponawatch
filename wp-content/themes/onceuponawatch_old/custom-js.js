@@ -1,3 +1,17 @@
+$(window).load(function(){
+	setTimeout(function(){
+		$('.loaderz').addClass('animated fadeOutDown')
+
+		setTimeout(function(){
+			$('.appear').addClass('animated fadeInDown')
+		}, 0)
+
+		setTimeout(function(){
+			$('.loaderz').remove()
+		}, 1000)
+	}, 1000)
+});
+
 $('#annonces-container').owlCarousel({
 	loop:true,
 	nav:true,
@@ -41,11 +55,11 @@ $('.sloganz-slide').owlCarousel({
 	autoplay:true,
 })
 
-	$('.appear').ready(function(){
+	/*$('.appear').ready(function(){
 		setTimeout(function(){
 			$('.appear').removeClass('animated fadeInUp').css('opacity', '1');
 		}, 2000);
-	});
+	});*/
 
 	$('ul#menu-headmenu-2').append('<li><a href="#" class="ouvresmoi non"><i class="fa fa-search"></i></a></li>')
 	$('.ouvresmoi').on('click', function(){
@@ -68,18 +82,18 @@ $('.sloganz-slide').owlCarousel({
 	$('.star-rating').css('margin', 'auto');
 
 	$('body').on('click', "a:not('.non')", function(){
-		$('body').addClass('animated fadeOutUpBig');
+		$('body').addClass('animated fadeOutUp');
 	});
 
 	$('.shopping a').addClass('non');
 	$('.inboutique a').addClass('non');
 
-	$('.wpcf7-submit').addClass('custom-button');
+	$('.wpcf7-submit').addClass('custom-button-input');
 	$('.wpcf7-text').addClass('input-group-field')
 
-	$('.login-submit #wp-submit').addClass('custom-button').removeClass('button-primary')
+	$('.login-submit #wp-submit').addClass('custom-button-input').removeClass('button-primary')
 
-	var lanavigation = $(".navigation-header");
+	var lanavigation = $(".navigation-header, .appear");
 
 	lanavigation.on('inview', function(event, isInView) {
 		if (isInView) {
@@ -108,7 +122,7 @@ $('.sloganz-slide').owlCarousel({
 	})
 
 	// Li rechercher
-	$('.fixed-navi #menu-headmenu-1').append('<li><a href="#" class="openSearchbutton non"><i class="fa fa-search"></i></a></li><li><a href="http://localhost:8888/onceuponawatch/panier/"><i class="fa fa-shopping-basket"></i>Panier</a></li>')
+	$('.fixed-navi #menu-headmenu-1').append('<li><a href="http://localhost:8888/onceuponawatch/panier/"><i class="fa fa-shopping-basket"></i></a></li><li><a href="#" class="openSearchbutton non"><i class="fa fa-search"></i></a></li>')
 
 	// OPEN rechercher
 	$(".openSearchbutton").on('click', function(e){
@@ -181,5 +195,21 @@ $('.sloganz-slide').owlCarousel({
 		})
 	})
 
+	$('.bestseller .bestq').on('click', function(){
+		$('.product-link').removeClass('active')
+		$(this).find('.product-link').addClass('active')
+	})
+
 	// custom button
 	$('.custom-button, .custom-button-reverse').addClass('hvr-bounce-to-top')
+
+
+if($('.custom-thumbnail').length){
+	$('.annonces').remove()
+
+	$(window).load(function(){
+		setTimeout(function(){
+			$('.entry-title').addClass('animated fadeInUp')
+		},1000)
+	})
+}

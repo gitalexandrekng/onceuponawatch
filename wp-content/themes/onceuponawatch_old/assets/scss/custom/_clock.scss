@@ -3,10 +3,11 @@
     height:200px;
     left:0;
     right:0;
-    top:-30px;
     z-index:1;
     margin:auto;
     position:absolute;
+    bottom:0;
+    top:0;
     opacity:0.8;
 }
 
@@ -36,7 +37,7 @@
 }
 
 .circle-container{
-    border:3px solid $gold;
+    border:1px solid $gold;
     border-radius:50%;
 
     .circle-one{
@@ -154,6 +155,12 @@ z-index: 8;
 @keyframes rotate {
   100% {
     transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotaterev {
+  100% {
+    transform: rotateZ(-360deg);
   }
 }
 

@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
  * The template for displaying the footer
  *
@@ -44,9 +44,9 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	//$('.excellence-band').parallax("50%", 0.5);
-	$('.header-image-container .in').parallax("50%", 0.5);
-	$('.yaprobleme').parallax("50%", 0.5);
-	$('.breadfond').parallax("50%", 0.5);
+	$('.bestsell-title').parallax('50%', 0.5)
+	$('.title_news').parallax('50%', 0.5)
+	//$('.custom-thumbnail').parallax('50%', 0.5)
 })
 </script>
 

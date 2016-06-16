@@ -1,7 +1,6 @@
 .fixed-navi{
     background:rgba(255,255,255,1);
     position:fixed;
-    font-weight:bold;
     top:0;
     margin:auto;
     width:100%;
@@ -12,7 +11,7 @@
     text-transform: uppercase;
     padding-top:5px;
     padding-bottom:5px;
-    //box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+    box-shadow:0px 0px 15px rgba(0,0,0,0.1);
 
     .rechercherrr{
         width:100%;
